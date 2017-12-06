@@ -5,16 +5,29 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QLCF.Domain;
+using QLCF.Domain.Validation;
+using QLCF.Repository;
 
 namespace QLCF.Services
 {
     public class AccountService : IAccountService<Account>
     {
         private IAccountRepository<Account> _repository;
+        private IValidationDictionary _validation;
 
-        public AccountService(IAccountRepository<Account> repository)
+        public AccountService(IValidationDictionary validation ,IAccountRepository<Account> repository)
         {
+            this._validation = validation;
             this._repository = repository;
+        }
+        public AccountService(IValidationDictionary validation) : this(validation,new AccountRepository()) { }
+
+        public bool ValidationAccount(Account acc)
+        {
+            _validation.DictionaryClear();
+            if (acc.userName.Length <= 0)
+                _validation.AddError("username", "Tên đăng nhập rỗng");
+            return _validation.IsValid;
         }
         public bool AddAccount_S(Account acc)
         {
@@ -22,9 +35,11 @@ namespace QLCF.Services
                 return true;
             return false;
         }
-
+        
         public bool CheckUser_S(Account acc)
         {
+            if (!ValidationAccount(acc))
+                return false;
             if (_repository.CheckUser(acc))
                 return true;
             return false;
