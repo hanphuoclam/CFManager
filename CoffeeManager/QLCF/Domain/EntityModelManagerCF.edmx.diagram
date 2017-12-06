@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="85f79a897c5d434a87f528a3bb4548bf" Name="Diagram1">
+        <EntityTypeShape EntityType="CFMModel.Account" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="CFMModel.Bill" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CFMModel.BillInfo" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CFMModel.Product" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="CFMModel.ProductCategory" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="CFMModel.Receipt" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="CFMModel.ReceiptInfo" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="CFMModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
+        <EntityTypeShape EntityType="CFMModel.TableFood" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
+        <AssociationConnector Association="CFMModel.FK__Bill__idTable__20C1E124" ManuallyRouted="false" />
+        <AssociationConnector Association="CFMModel.FK__BillInfo__idBill__239E4DCF" ManuallyRouted="false" />
+        <AssociationConnector Association="CFMModel.FK__BillInfo__idProd__24927208" ManuallyRouted="false" />
+        <AssociationConnector Association="CFMModel.FK__Product__idCateg__1A14E395" ManuallyRouted="false" />
+        <AssociationConnector Association="CFMModel.FK__ReceiptIn__idPro__2D27B809" ManuallyRouted="false" />
+        <AssociationConnector Association="CFMModel.FK__ReceiptIn__idRec__2C3393D0" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
