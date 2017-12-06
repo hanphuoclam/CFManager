@@ -43,6 +43,10 @@ namespace QLCF.UI
                 m.ShowDialog();
                 this.Show();
             }
+            else
+            {
+                MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
+            }
         }
         #region Methods
 
@@ -58,6 +62,19 @@ namespace QLCF.UI
         {
             login();
         }
-#endregion
+        #endregion
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            if(MessageBox.Show("Bạn có chắc chắn muốn thoát không?","Thông báo",MessageBoxButtons.OKCancel) != DialogResult.OK)
+            {
+                e.Cancel = true;
+            }
+        }
     }
 }
