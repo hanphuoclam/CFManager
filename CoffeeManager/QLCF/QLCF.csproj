@@ -92,6 +92,8 @@
     <Compile Include="Domain\IReceiptInfoService.cs" />
     <Compile Include="Domain\IReceiptRepository.cs" />
     <Compile Include="Domain\IReceiptService.cs" />
+    <Compile Include="Domain\ITableFoodRepository.cs" />
+    <Compile Include="Domain\ITableFoodService.cs" />
     <Compile Include="Domain\Product.cs">
       <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
     </Compile>
@@ -131,6 +133,7 @@
     <Compile Include="Repository\ProductRepository.cs" />
     <Compile Include="Repository\ReceiptInfoRepository.cs" />
     <Compile Include="Repository\ReceiptRepository.cs" />
+    <Compile Include="Repository\TableFoodRepository.cs" />
     <Compile Include="Services\AccountService.cs" />
     <Compile Include="Services\BillInfoService.cs" />
     <Compile Include="Services\BillService.cs" />
@@ -138,6 +141,7 @@
     <Compile Include="Services\ProductService.cs" />
     <Compile Include="Services\ReceiptInfoService.cs" />
     <Compile Include="Services\ReceiptService.cs" />
+    <Compile Include="Services\TableFoodService.cs" />
     <Compile Include="UI\AdminManager.cs">
       <SubType>Form</SubType>
     </Compile>

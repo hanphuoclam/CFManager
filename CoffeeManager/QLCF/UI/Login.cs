@@ -26,8 +26,8 @@ namespace QLCF.UI
             this._accService = new AccountService(new ValidationWrapper(this._modelState));
             InitializeComponent();
             InitData();
-           // SuportThisForm();
         }
+        #region Methods
         void InitData()
         {
             _modelState = new ModelStateValidation();
@@ -38,7 +38,8 @@ namespace QLCF.UI
             Account acc = new Account() { userName = txtUserName.Text, passWord = txtPassword.Text };
             if(_accService.CheckUser_S(acc))
             {
-                MainForm m = new MainForm();
+                Account accountLogin = _accService.GetAccountByUsername_S(acc.userName);
+                MainForm m = new MainForm(accountLogin);
                 this.Hide();
                 m.ShowDialog();
                 this.Show();
@@ -48,21 +49,13 @@ namespace QLCF.UI
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
             }
         }
-        #region Methods
-
-        void SuportThisForm()
-        {
-            this.txtUserName.Size = new System.Drawing.Size(250, 50);
-            this.txtPassword.Size = new System.Drawing.Size(250, 50);
-        }
-
+        
         #endregion
 #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
             login();
         }
-        #endregion
 
         private void btnExit_Click(object sender, EventArgs e)
         {
@@ -76,5 +69,6 @@ namespace QLCF.UI
                 e.Cancel = true;
             }
         }
+        #endregion
     }
 }

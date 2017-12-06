@@ -52,16 +52,16 @@
             this.thôngTinCáNhânToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.đăngXuấtToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.button13 = new System.Windows.Forms.Button();
-            this.button12 = new System.Windows.Forms.Button();
-            this.button11 = new System.Windows.Forms.Button();
-            this.button9 = new System.Windows.Forms.Button();
-            this.button8 = new System.Windows.Forms.Button();
-            this.button7 = new System.Windows.Forms.Button();
-            this.button6 = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button10 = new System.Windows.Forms.Button();
-            this.button5 = new System.Windows.Forms.Button();
+            this.btnTable_4 = new System.Windows.Forms.Button();
+            this.btnTable_2 = new System.Windows.Forms.Button();
+            this.btnTable_1 = new System.Windows.Forms.Button();
+            this.btnTable_5 = new System.Windows.Forms.Button();
+            this.btnTable_9 = new System.Windows.Forms.Button();
+            this.btnTable_10 = new System.Windows.Forms.Button();
+            this.btnTable_7 = new System.Windows.Forms.Button();
+            this.btnTable_6 = new System.Windows.Forms.Button();
+            this.btnTable_3 = new System.Windows.Forms.Button();
+            this.btnTable_8 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
             this.lsvBill = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
@@ -300,140 +300,140 @@
             // panel1
             // 
             this.panel1.BackgroundImage = global::QLCF.Properties.Resources.nenmenu;
-            this.panel1.Controls.Add(this.button13);
-            this.panel1.Controls.Add(this.button12);
-            this.panel1.Controls.Add(this.button11);
-            this.panel1.Controls.Add(this.button9);
-            this.panel1.Controls.Add(this.button8);
-            this.panel1.Controls.Add(this.button7);
-            this.panel1.Controls.Add(this.button6);
-            this.panel1.Controls.Add(this.button4);
-            this.panel1.Controls.Add(this.button10);
-            this.panel1.Controls.Add(this.button5);
+            this.panel1.Controls.Add(this.btnTable_4);
+            this.panel1.Controls.Add(this.btnTable_2);
+            this.panel1.Controls.Add(this.btnTable_1);
+            this.panel1.Controls.Add(this.btnTable_5);
+            this.panel1.Controls.Add(this.btnTable_9);
+            this.panel1.Controls.Add(this.btnTable_10);
+            this.panel1.Controls.Add(this.btnTable_7);
+            this.panel1.Controls.Add(this.btnTable_6);
+            this.panel1.Controls.Add(this.btnTable_3);
+            this.panel1.Controls.Add(this.btnTable_8);
             this.panel1.Location = new System.Drawing.Point(12, 43);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(780, 670);
             this.panel1.TabIndex = 4;
             // 
-            // button13
+            // btnTable_4
             // 
-            this.button13.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button13.BackgroundImage")));
-            this.button13.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button13.ForeColor = System.Drawing.Color.White;
-            this.button13.Location = new System.Drawing.Point(423, 402);
-            this.button13.Name = "button13";
-            this.button13.Size = new System.Drawing.Size(310, 102);
-            this.button13.TabIndex = 14;
-            this.button13.Text = "Bàn số 4";
-            this.button13.UseVisualStyleBackColor = true;
+            this.btnTable_4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_4.BackgroundImage")));
+            this.btnTable_4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_4.ForeColor = System.Drawing.Color.White;
+            this.btnTable_4.Location = new System.Drawing.Point(423, 402);
+            this.btnTable_4.Name = "btnTable_4";
+            this.btnTable_4.Size = new System.Drawing.Size(310, 102);
+            this.btnTable_4.TabIndex = 14;
+            this.btnTable_4.Text = "Bàn số 4";
+            this.btnTable_4.UseVisualStyleBackColor = true;
             // 
-            // button12
+            // btnTable_2
             // 
-            this.button12.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button12.BackgroundImage")));
-            this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button12.ForeColor = System.Drawing.Color.White;
-            this.button12.Location = new System.Drawing.Point(423, 537);
-            this.button12.Name = "button12";
-            this.button12.Size = new System.Drawing.Size(310, 102);
-            this.button12.TabIndex = 13;
-            this.button12.Text = "Bàn số 2";
-            this.button12.UseVisualStyleBackColor = true;
+            this.btnTable_2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_2.BackgroundImage")));
+            this.btnTable_2.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_2.ForeColor = System.Drawing.Color.White;
+            this.btnTable_2.Location = new System.Drawing.Point(423, 537);
+            this.btnTable_2.Name = "btnTable_2";
+            this.btnTable_2.Size = new System.Drawing.Size(310, 102);
+            this.btnTable_2.TabIndex = 13;
+            this.btnTable_2.Text = "Bàn số 2";
+            this.btnTable_2.UseVisualStyleBackColor = true;
             // 
-            // button11
+            // btnTable_1
             // 
-            this.button11.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button11.BackgroundImage")));
-            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button11.ForeColor = System.Drawing.Color.White;
-            this.button11.Location = new System.Drawing.Point(46, 537);
-            this.button11.Name = "button11";
-            this.button11.Size = new System.Drawing.Size(310, 102);
-            this.button11.TabIndex = 12;
-            this.button11.Text = "Bàn số 1";
-            this.button11.UseVisualStyleBackColor = true;
+            this.btnTable_1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_1.BackgroundImage")));
+            this.btnTable_1.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_1.ForeColor = System.Drawing.Color.White;
+            this.btnTable_1.Location = new System.Drawing.Point(46, 537);
+            this.btnTable_1.Name = "btnTable_1";
+            this.btnTable_1.Size = new System.Drawing.Size(310, 102);
+            this.btnTable_1.TabIndex = 12;
+            this.btnTable_1.Text = "Bàn số 1";
+            this.btnTable_1.UseVisualStyleBackColor = true;
             // 
-            // button9
+            // btnTable_5
             // 
-            this.button9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button9.BackgroundImage")));
-            this.button9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button9.ForeColor = System.Drawing.Color.White;
-            this.button9.Location = new System.Drawing.Point(46, 219);
-            this.button9.Name = "button9";
-            this.button9.Size = new System.Drawing.Size(150, 138);
-            this.button9.TabIndex = 11;
-            this.button9.Text = "Bàn số 5";
-            this.button9.UseVisualStyleBackColor = true;
+            this.btnTable_5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_5.BackgroundImage")));
+            this.btnTable_5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_5.ForeColor = System.Drawing.Color.White;
+            this.btnTable_5.Location = new System.Drawing.Point(46, 219);
+            this.btnTable_5.Name = "btnTable_5";
+            this.btnTable_5.Size = new System.Drawing.Size(150, 138);
+            this.btnTable_5.TabIndex = 11;
+            this.btnTable_5.Text = "Bàn số 5";
+            this.btnTable_5.UseVisualStyleBackColor = true;
             // 
-            // button8
+            // btnTable_9
             // 
-            this.button8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button8.BackgroundImage")));
-            this.button8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button8.ForeColor = System.Drawing.Color.White;
-            this.button8.Location = new System.Drawing.Point(323, 41);
-            this.button8.Name = "button8";
-            this.button8.Size = new System.Drawing.Size(150, 138);
-            this.button8.TabIndex = 10;
-            this.button8.Text = "Bàn số 9";
-            this.button8.UseVisualStyleBackColor = true;
+            this.btnTable_9.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_9.BackgroundImage")));
+            this.btnTable_9.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_9.ForeColor = System.Drawing.Color.White;
+            this.btnTable_9.Location = new System.Drawing.Point(323, 41);
+            this.btnTable_9.Name = "btnTable_9";
+            this.btnTable_9.Size = new System.Drawing.Size(150, 138);
+            this.btnTable_9.TabIndex = 10;
+            this.btnTable_9.Text = "Bàn số 9";
+            this.btnTable_9.UseVisualStyleBackColor = true;
             // 
-            // button7
+            // btnTable_10
             // 
-            this.button7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button7.BackgroundImage")));
-            this.button7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button7.ForeColor = System.Drawing.Color.White;
-            this.button7.Location = new System.Drawing.Point(583, 41);
-            this.button7.Name = "button7";
-            this.button7.Size = new System.Drawing.Size(150, 138);
-            this.button7.TabIndex = 9;
-            this.button7.Text = "Bàn số 10";
-            this.button7.UseVisualStyleBackColor = true;
+            this.btnTable_10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_10.BackgroundImage")));
+            this.btnTable_10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_10.ForeColor = System.Drawing.Color.White;
+            this.btnTable_10.Location = new System.Drawing.Point(583, 41);
+            this.btnTable_10.Name = "btnTable_10";
+            this.btnTable_10.Size = new System.Drawing.Size(150, 138);
+            this.btnTable_10.TabIndex = 9;
+            this.btnTable_10.Text = "Bàn số 10";
+            this.btnTable_10.UseVisualStyleBackColor = true;
             // 
-            // button6
+            // btnTable_7
             // 
-            this.button6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button6.BackgroundImage")));
-            this.button6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button6.ForeColor = System.Drawing.Color.White;
-            this.button6.Location = new System.Drawing.Point(583, 219);
-            this.button6.Name = "button6";
-            this.button6.Size = new System.Drawing.Size(150, 138);
-            this.button6.TabIndex = 8;
-            this.button6.Text = "Bàn số 7";
-            this.button6.UseVisualStyleBackColor = true;
+            this.btnTable_7.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_7.BackgroundImage")));
+            this.btnTable_7.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_7.ForeColor = System.Drawing.Color.White;
+            this.btnTable_7.Location = new System.Drawing.Point(583, 219);
+            this.btnTable_7.Name = "btnTable_7";
+            this.btnTable_7.Size = new System.Drawing.Size(150, 138);
+            this.btnTable_7.TabIndex = 8;
+            this.btnTable_7.Text = "Bàn số 7";
+            this.btnTable_7.UseVisualStyleBackColor = true;
             // 
-            // button4
+            // btnTable_6
             // 
-            this.button4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button4.BackgroundImage")));
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(323, 219);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(150, 138);
-            this.button4.TabIndex = 7;
-            this.button4.Text = "Bàn số 6";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnTable_6.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_6.BackgroundImage")));
+            this.btnTable_6.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_6.ForeColor = System.Drawing.Color.White;
+            this.btnTable_6.Location = new System.Drawing.Point(323, 219);
+            this.btnTable_6.Name = "btnTable_6";
+            this.btnTable_6.Size = new System.Drawing.Size(150, 138);
+            this.btnTable_6.TabIndex = 7;
+            this.btnTable_6.Text = "Bàn số 6";
+            this.btnTable_6.UseVisualStyleBackColor = true;
             // 
-            // button10
+            // btnTable_3
             // 
-            this.button10.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button10.BackgroundImage")));
-            this.button10.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button10.ForeColor = System.Drawing.Color.White;
-            this.button10.Location = new System.Drawing.Point(46, 402);
-            this.button10.Name = "button10";
-            this.button10.Size = new System.Drawing.Size(310, 102);
-            this.button10.TabIndex = 6;
-            this.button10.Text = "Bàn số 3";
-            this.button10.UseVisualStyleBackColor = true;
+            this.btnTable_3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_3.BackgroundImage")));
+            this.btnTable_3.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_3.ForeColor = System.Drawing.Color.White;
+            this.btnTable_3.Location = new System.Drawing.Point(46, 402);
+            this.btnTable_3.Name = "btnTable_3";
+            this.btnTable_3.Size = new System.Drawing.Size(310, 102);
+            this.btnTable_3.TabIndex = 6;
+            this.btnTable_3.Text = "Bàn số 3";
+            this.btnTable_3.UseVisualStyleBackColor = true;
             // 
-            // button5
+            // btnTable_8
             // 
-            this.button5.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("button5.BackgroundImage")));
-            this.button5.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
-            this.button5.ForeColor = System.Drawing.Color.White;
-            this.button5.Location = new System.Drawing.Point(46, 41);
-            this.button5.Name = "button5";
-            this.button5.Size = new System.Drawing.Size(150, 138);
-            this.button5.TabIndex = 1;
-            this.button5.Text = "Bàn số 8";
-            this.button5.UseVisualStyleBackColor = true;
+            this.btnTable_8.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("btnTable_8.BackgroundImage")));
+            this.btnTable_8.Font = new System.Drawing.Font("Microsoft Sans Serif", 13F);
+            this.btnTable_8.ForeColor = System.Drawing.Color.White;
+            this.btnTable_8.Location = new System.Drawing.Point(46, 41);
+            this.btnTable_8.Name = "btnTable_8";
+            this.btnTable_8.Size = new System.Drawing.Size(150, 138);
+            this.btnTable_8.TabIndex = 1;
+            this.btnTable_8.Text = "Bàn số 8";
+            this.btnTable_8.UseVisualStyleBackColor = true;
             // 
             // panel2
             // 
@@ -524,16 +524,16 @@
         private System.Windows.Forms.ToolStripMenuItem thôngTinCáNhânToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem đăngXuấtToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button button13;
-        private System.Windows.Forms.Button button12;
-        private System.Windows.Forms.Button button11;
-        private System.Windows.Forms.Button button9;
-        private System.Windows.Forms.Button button8;
-        private System.Windows.Forms.Button button7;
-        private System.Windows.Forms.Button button6;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button10;
-        private System.Windows.Forms.Button button5;
+        private System.Windows.Forms.Button btnTable_4;
+        private System.Windows.Forms.Button btnTable_2;
+        private System.Windows.Forms.Button btnTable_1;
+        private System.Windows.Forms.Button btnTable_5;
+        private System.Windows.Forms.Button btnTable_9;
+        private System.Windows.Forms.Button btnTable_10;
+        private System.Windows.Forms.Button btnTable_7;
+        private System.Windows.Forms.Button btnTable_6;
+        private System.Windows.Forms.Button btnTable_3;
+        private System.Windows.Forms.Button btnTable_8;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.ListView lsvBill;
         private System.Windows.Forms.Panel panel3;
