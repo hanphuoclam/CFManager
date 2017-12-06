@@ -170,6 +170,30 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UI\Product.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Product.Designer.cs">
+      <DependentUpon>Product.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\Receipt.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\Receipt.Designer.cs">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ReceiptPay.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ReceiptPay.Designer.cs">
+      <DependentUpon>ReceiptPay.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\UserManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\UserManager.Designer.cs">
+      <DependentUpon>UserManager.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="UI\AdminManager.resx">
       <DependentUpon>AdminManager.cs</DependentUpon>
     </EmbeddedResource>
@@ -189,6 +213,18 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <SubType>Designer</SubType>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Product.resx">
+      <DependentUpon>Product.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\Receipt.resx">
+      <DependentUpon>Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReceiptPay.resx">
+      <DependentUpon>ReceiptPay.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\UserManager.resx">
+      <DependentUpon>UserManager.cs</DependentUpon>
     </EmbeddedResource>
     <EntityDeploy Include="Domain\EntityModelManagerCF.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
