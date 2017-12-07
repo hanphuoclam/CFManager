@@ -10,5 +10,6 @@ namespace QLCF.Domain
     {
         IEnumerable<TableFood> GetAll();
         void SwitchTable(int idP, int idC);
+        void UpdateStatus_S(TableFood tableFood);
     }
 }

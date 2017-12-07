@@ -12,5 +12,6 @@ namespace QLCF.Domain
         IEnumerable GetListBillInfoByIdBill_S(int idBill);
         bool AddBillInfo_S(B billInfo);
         bool DeleteBillInfoByIdProduct_S(int idProduct);
+        bool UpdateBillInfo_S(BillInfo billInfo);
     }
 }

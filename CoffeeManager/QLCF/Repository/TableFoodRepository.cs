@@ -19,5 +19,13 @@ namespace QLCF.Repository
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateStatus(TableFood tableFood)
+        {
+            TableFood table = db.TableFoods.FirstOrDefault(q => q.id == tableFood.id);
+            tableFood.name = table.name;
+            db.Entry(table).CurrentValues.SetValues(tableFood);
+            db.SaveChanges();
+        }
     }
 }

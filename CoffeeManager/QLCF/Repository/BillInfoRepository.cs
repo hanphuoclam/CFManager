@@ -68,5 +68,19 @@ namespace QLCF.Repository
                     where a.idBill == idBill
                     select a).ToList();
         }
+
+        public bool UpdateBillInfo(BillInfo billInfo)
+        {
+            try
+            {
+                BillInfo originalBillInfo = db.BillInfoes.FirstOrDefault(q => q.id == billInfo.id);
+                db.Entry(originalBillInfo).CurrentValues.SetValues(billInfo);
+                db.SaveChanges();
+            }catch
+            {
+                return false;
+            }
+            return true;
+        }
     }
 }

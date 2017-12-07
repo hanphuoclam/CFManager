@@ -34,5 +34,10 @@ namespace QLCF.Services
         {
             return _repository.GetListBillInfoByIdBill(idBill);
         }
+
+        public bool UpdateBillInfo_S(BillInfo billInfo)
+        {
+            return _repository.UpdateBillInfo(billInfo);
+        }
     }
 }

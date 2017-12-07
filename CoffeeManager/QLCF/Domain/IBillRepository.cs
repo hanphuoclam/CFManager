@@ -13,5 +13,6 @@ namespace QLCF.Domain
         bool AddBill(B bill);
         bool CheckOut(B bill);
         int GetUncheckBillByIdTable(int idtable);
+        int? GetMaxIdBill();
     }
 }

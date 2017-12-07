@@ -64,6 +64,12 @@ namespace QLCF.Repository
         {
             return db.Bills.FirstOrDefault(c => c.id == id);
         }
+
+        public int? GetMaxIdBill()
+        {
+            return db.Bills.Max(q => (int?)q.id);
+        }
+
         /// <summary>
         /// Method to check bill was paid.
         /// Successful is return id of bill. If fail return -1
@@ -77,5 +83,6 @@ namespace QLCF.Repository
                 return item.id;
             return -1;
         }
+        
     }
 }

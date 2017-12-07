@@ -24,5 +24,10 @@ namespace QLCF.Services
         {
             throw new NotImplementedException();
         }
+
+        public void UpdateStatus_S(TableFood tableFood)
+        {
+            _repository.UpdateStatus(tableFood);
+        }
     }
 }

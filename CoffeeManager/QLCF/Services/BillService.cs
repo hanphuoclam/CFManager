@@ -40,6 +40,11 @@ namespace QLCF.Services
             return _repository.GetBillById(id);
         }
 
+        public int? GetMaxIdBill_S()
+        {
+            return _repository.GetMaxIdBill();
+        }
+
         public int GetUncheckBillByIdTable_S(int idtable)
         {
             return _repository.GetUncheckBillByIdTable(idtable);
