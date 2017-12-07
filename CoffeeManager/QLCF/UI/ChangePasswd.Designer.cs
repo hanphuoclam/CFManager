@@ -1,6 +1,6 @@
 ﻿namespace QLCF.UI
 {
-    partial class ChangePasswd
+    partial class ChangePasswdForm
     {
         /// <summary>
         /// Required designer variable.
@@ -163,7 +163,7 @@
             this.button1.Text = "Lưu thay đổi";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // ChangePasswd
+            // ChangePasswdForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -173,7 +173,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.button1);
-            this.Name = "ChangePasswd";
+            this.Name = "ChangePasswdForm";
             this.Text = "Đổi mật khẩu";
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();

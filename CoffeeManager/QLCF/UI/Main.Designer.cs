@@ -41,7 +41,7 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.cmbDiscount = new System.Windows.Forms.ComboBox();
-            this.button2 = new System.Windows.Forms.Button();
+            this.btnCheckOut = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.cmbCategoryProduct = new System.Windows.Forms.ComboBox();
@@ -101,6 +101,7 @@
             this.btnAddProduct.TabIndex = 0;
             this.btnAddProduct.Text = "Thêm Món";
             this.btnAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
             // columnHeader4
             // 
@@ -203,17 +204,18 @@
             this.cmbDiscount.TabIndex = 5;
             this.cmbDiscount.Text = "0";
             // 
-            // button2
+            // btnCheckOut
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(313, 3);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(120, 132);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Thanh Toán";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnCheckOut.BackColor = System.Drawing.Color.Black;
+            this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Location = new System.Drawing.Point(313, 3);
+            this.btnCheckOut.Name = "btnCheckOut";
+            this.btnCheckOut.Size = new System.Drawing.Size(120, 132);
+            this.btnCheckOut.TabIndex = 2;
+            this.btnCheckOut.Text = "Thanh Toán";
+            this.btnCheckOut.UseVisualStyleBackColor = false;
+            this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
             // label1
             // 
@@ -252,7 +254,7 @@
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Controls.Add(this.cmbDiscount);
-            this.panel4.Controls.Add(this.button2);
+            this.panel4.Controls.Add(this.btnCheckOut);
             this.panel4.Controls.Add(this.label1);
             this.panel4.Controls.Add(this.txtTotalPrice);
             this.panel4.Location = new System.Drawing.Point(6, 537);
@@ -289,14 +291,16 @@
             // thôngTinCáNhânToolStripMenuItem
             // 
             this.thôngTinCáNhânToolStripMenuItem.Name = "thôngTinCáNhânToolStripMenuItem";
-            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.thôngTinCáNhânToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.thôngTinCáNhânToolStripMenuItem.Text = "Đổi mật khẩu";
+            this.thôngTinCáNhânToolStripMenuItem.Click += new System.EventHandler(this.thôngTinCáNhânToolStripMenuItem_Click);
             // 
             // đăngXuấtToolStripMenuItem
             // 
             this.đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
-            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(145, 22);
+            this.đăngXuấtToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.đăngXuấtToolStripMenuItem.Text = "Đăng xuất";
+            this.đăngXuấtToolStripMenuItem.Click += new System.EventHandler(this.đăngXuấtToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -514,7 +518,7 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox cmbDiscount;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtTotalPrice;
         private System.Windows.Forms.ComboBox cmbCategoryProduct;

@@ -121,6 +121,7 @@
     <Compile Include="Domain\Validation\IValidationDictionary.cs" />
     <Compile Include="Domain\Validation\ModelStateValidation.cs" />
     <Compile Include="Domain\Validation\ValidationWrapper.cs" />
+    <Compile Include="Infrastructure\MethodsSupport.cs" />
     <Compile Include="Properties\Resources.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

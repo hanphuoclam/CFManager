@@ -12,6 +12,8 @@ using QLCF.Services;
 using QLCF.Repository;
 using System.Collections;
 using System.Globalization;
+using QLCF.Infrastructure;
+//using QLCF.UI;
 
 namespace QLCF
 {
@@ -159,12 +161,49 @@ namespace QLCF
             CultureInfo culture = new CultureInfo("vi-VN");
             txtTotalPrice.Text = totalPriceOfBill.ToString("C", culture);
         }
+        void AddProduct()
+        {
+            TableFood table = lsvBill.Tag as TableFood;
+            if(table == null)
+            {
+                MessageBox.Show("Xin chọn bàn!!");
+                return;
+            }
+            int idBill = _serviceBill.GetUncheckBillByIdTable_S(table.id);
+            int idProduct = (cmbProduct.SelectedItem as Product).id;
+            int count = (int)nmdCount.Value;
+
+            if(idBill == -1) // Bill not exist
+            {
+                if(_serviceBill.AddBill_S(new Bill() { idTable = table.id }))
+                    if(_serviceBillInfo.AddBillInfo_S(new BillInfo()
+                    { idBill = MethodsSupport.Count(_serviceBill.GetAll_S()), idProduct = idProduct, count = count }))
+                    {
+                        //Do something if you want
+                    }
+            }
+            else // Bill đã tồn tại
+            {
+                if (_serviceBillInfo.AddBillInfo_S(new BillInfo()
+                { idBill = idBill, idProduct = idProduct, count = count }))
+                {
+                    //Do something if you want
+                }
+            }
+            ShowBill(table.id);
+            LoadTable();
+        }
+        void CheckOut()
+        {
+
+        }
 
         #endregion
         #region Events
         private void btn_Click(object sender, EventArgs e)
         {
             int idtable = ((sender as Button).Tag as TableFood).id;
+            lsvBill.Tag = (sender as Button).Tag;
             ShowBill(idtable);
         }
         private void cmbCategoryProduct_SelectedIndexChanged(object sender, EventArgs e)
@@ -178,8 +217,28 @@ namespace QLCF
 
             LoadListProductByCategory(idcategory);
         }
-        #endregion
+        private void đăngXuấtToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
 
+        private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            //ChangePasswdForm p = new ChangePasswdForm(AccountLogin);
+            //p.ShowDialog();
+        }
+
+        private void btnAddProduct_Click(object sender, EventArgs e)
+        {
+            AddProduct();
+        }
+
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            CheckOut();
+        }
+
+        #endregion
 
     }
 }
