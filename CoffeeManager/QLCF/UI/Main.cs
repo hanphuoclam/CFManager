@@ -195,7 +195,29 @@ namespace QLCF
         }
         void CheckOut()
         {
+            TableFood table = lsvBill.Tag as TableFood;
+            if (table == null)
+                return;
+            int idBill = _serviceBill.GetUncheckBillByIdTable_S(table.id);
+            int discount = (int)cmbDiscount.SelectedValue;
+            double totalPrice = double.Parse(txtTotalPrice.Text.Split(',')[0]);
+            double finalTotalPrice = totalPrice * (100 - discount) / 100;
 
+            if(idBill != -1)
+            {
+                if(MessageBox.Show(String.Format("Bạn có chắc chắn muốn thanh toán bàn : {0}\nTổng tiền là : {1}\nGiảm giá : {2}\nTổng tiền phải trả là : {3}"
+                    ,table.name,totalPrice,discount,finalTotalPrice)
+                    ,"Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK)
+                {
+                    if(_serviceBill.CheckOut_S(new Bill()
+                    { id=idBill, discount = discount, idTable = table.id, totalPrice = finalTotalPrice, status = 1}))
+                    {
+                        MessageBox.Show("Thanh toán thành công!");
+                    }
+                    ShowBill(table.id);
+                    LoadTable();
+                }
+            }
         }
 
         #endregion
