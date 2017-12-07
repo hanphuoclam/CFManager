@@ -21,6 +21,8 @@ namespace QLCF
         private ITableFoodService _serviceTable;
         private IBillInfoService<BillInfo> _serviceBillInfo;
         private IBillService<Bill> _serviceBill;
+        private IProductCategoryService<ProductCategory> _serviceCategory;
+        private IProductService<Product> _serviceProduct;
 
         public MainForm(Account acc)
         {
@@ -28,6 +30,7 @@ namespace QLCF
             this.AccountLogin = acc;
             InitData();
             LoadTable();
+            LoadCategoryProduct();
         }
 
         public Account AccountLogin
@@ -48,6 +51,8 @@ namespace QLCF
             this._serviceTable = new TableFoodService(new TableFoodRepository());
             this._serviceBillInfo = new BillInfoService(new BillInfoRepository());
             this._serviceBill = new BillService(new BillRepository());
+            this._serviceCategory = new ProductCategoryService(new ProductCategoryRepository());
+            this._serviceProduct = new ProductService(new ProductRepository());
         }
         public void ChangeAccount(int? type)
         {
@@ -107,30 +112,74 @@ namespace QLCF
                 }
             }
         }
-
+        void LoadCategoryProduct()
+        {
+            IEnumerable listCategory = _serviceCategory.GetAll_S();
+            cmbCategoryProduct.DataSource = listCategory;
+            cmbCategoryProduct.DisplayMember = "name";
+        }
+        void LoadListProductByCategory(int idCategory)
+        {
+            IEnumerable listProduct = _serviceProduct.GetProductByIdCategory_S(idCategory);
+            cmbProduct.DataSource = listProduct;
+            cmbProduct.DisplayMember = "name";
+        }
         void ShowBill(int idTable)
         {
             int idBill = _serviceBill.GetUncheckBillByIdTable_S(idTable);
             IEnumerable listBillInfo = _serviceBillInfo.GetListBillInfoByIdBill_S(idBill);
             lsvBill.Items.Clear();
+            double totalPriceOfBill = 0;
             foreach(BillInfo item in listBillInfo)
             {
-                ListViewItem lvItem = new ListViewItem(item.id.ToString());
-                lvItem.SubItems.Add(item.Product.name);
+                ListViewItem lvItem = new ListViewItem(item.Product.name);
                 lvItem.SubItems.Add(item.count.ToString());
+                lvItem.SubItems.Add(item.Product.price.ToString());
+                /*
+                 * Ở đây có các cách convert kiểu Nullable (int? , double?) => ValueType (int,double)
+                 * Ex : int? p1; int p2;
+                 * case 1 : p2 = p1 ?? default(int);
+                 * case 2 : p2 = p1.GetValueOrDefault();
+                 * case 3 : p2 = p1 == null ? default(int) : p1;
+                 * case 4 : if(p1.HasValue) p2 = p1.Value;
+                 */
+                int count = item.count ?? default(int);
+                double price = item.Product.price ?? default(double);
+                double totalpricEachPro = count * price;
+                lvItem.SubItems.Add(totalpricEachPro.ToString());
+                totalPriceOfBill += totalpricEachPro;
 
                 lsvBill.Items.Add(lvItem);
             }
+            /*
+             * Setting lại cái luồng đang chạy thành culture như trên
+             * Thread.CurrentThread.CurrentCulture = culture;
+             * Chỉ chạy culture ở dòng hiện tại mà không ảnh hưởng tới luồng(thread)
+             */
             CultureInfo culture = new CultureInfo("vi-VN");
+            txtTotalPrice.Text = totalPriceOfBill.ToString("C", culture);
         }
 
         #endregion
         #region Events
         private void btn_Click(object sender, EventArgs e)
         {
-            int idtable = (sender as TableFood).id;
+            int idtable = ((sender as Button).Tag as TableFood).id;
             ShowBill(idtable);
         }
+        private void cmbCategoryProduct_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int idcategory = 0;
+            ComboBox cmb = sender as ComboBox;
+            if (cmb.SelectedItem == null)
+                return;
+            ProductCategory category = cmb.SelectedItem as ProductCategory;
+            idcategory = category.id;
+
+            LoadListProductByCategory(idcategory);
+        }
         #endregion
+
+
     }
 }

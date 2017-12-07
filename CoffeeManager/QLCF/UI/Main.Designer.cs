@@ -29,22 +29,22 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MainForm));
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nmdCount = new System.Windows.Forms.NumericUpDown();
+            this.cmbProduct = new System.Windows.Forms.ComboBox();
+            this.btnAddProduct = new System.Windows.Forms.Button();
             this.columnHeader4 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader3 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader2 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeader1 = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.label4 = new System.Windows.Forms.Label();
-            this.button3 = new System.Windows.Forms.Button();
+            this.btnSwitchTable = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.cmbDiscount = new System.Windows.Forms.ComboBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.cmbCategoryProduct = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -65,7 +65,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lsvBill = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmdCount)).BeginInit();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -73,34 +73,34 @@
             this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
-            // numericUpDown1
+            // nmdCount
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.numericUpDown1.Location = new System.Drawing.Point(277, 48);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(47, 40);
-            this.numericUpDown1.TabIndex = 3;
+            this.nmdCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.nmdCount.Location = new System.Drawing.Point(277, 48);
+            this.nmdCount.Name = "nmdCount";
+            this.nmdCount.Size = new System.Drawing.Size(47, 40);
+            this.nmdCount.TabIndex = 3;
             // 
-            // comboBox2
+            // cmbProduct
             // 
-            this.comboBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(3, 86);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(268, 37);
-            this.comboBox2.TabIndex = 2;
+            this.cmbProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbProduct.FormattingEnabled = true;
+            this.cmbProduct.Location = new System.Drawing.Point(3, 86);
+            this.cmbProduct.Name = "cmbProduct";
+            this.cmbProduct.Size = new System.Drawing.Size(268, 37);
+            this.cmbProduct.TabIndex = 2;
             // 
-            // button1
+            // btnAddProduct
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(330, 3);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(106, 134);
-            this.button1.TabIndex = 0;
-            this.button1.Text = "Thêm Món";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnAddProduct.BackColor = System.Drawing.Color.Black;
+            this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnAddProduct.ForeColor = System.Drawing.Color.White;
+            this.btnAddProduct.Location = new System.Drawing.Point(330, 3);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(106, 134);
+            this.btnAddProduct.TabIndex = 0;
+            this.btnAddProduct.Text = "Thêm Món";
+            this.btnAddProduct.UseVisualStyleBackColor = false;
             // 
             // columnHeader4
             // 
@@ -134,17 +134,17 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "đ";
             // 
-            // button3
+            // btnSwitchTable
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(0, 86);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(307, 49);
-            this.button3.TabIndex = 8;
-            this.button3.Text = "Chuyển bàn";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnSwitchTable.BackColor = System.Drawing.Color.Black;
+            this.btnSwitchTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnSwitchTable.ForeColor = System.Drawing.Color.White;
+            this.btnSwitchTable.Location = new System.Drawing.Point(0, 86);
+            this.btnSwitchTable.Name = "btnSwitchTable";
+            this.btnSwitchTable.Size = new System.Drawing.Size(307, 49);
+            this.btnSwitchTable.TabIndex = 8;
+            this.btnSwitchTable.Text = "Chuyển bàn";
+            this.btnSwitchTable.UseVisualStyleBackColor = false;
             // 
             // label3
             // 
@@ -170,11 +170,11 @@
             this.label2.TabIndex = 6;
             this.label2.Text = "Giảm giá :";
             // 
-            // comboBox3
+            // cmbDiscount
             // 
-            this.comboBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Items.AddRange(new object[] {
+            this.cmbDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbDiscount.FormattingEnabled = true;
+            this.cmbDiscount.Items.AddRange(new object[] {
             "0",
             "5",
             "10",
@@ -196,12 +196,12 @@
             "90",
             "95",
             "100"});
-            this.comboBox3.Location = new System.Drawing.Point(128, 3);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
-            this.comboBox3.Size = new System.Drawing.Size(140, 33);
-            this.comboBox3.TabIndex = 5;
-            this.comboBox3.Text = "0";
+            this.cmbDiscount.Location = new System.Drawing.Point(128, 3);
+            this.cmbDiscount.Name = "cmbDiscount";
+            this.cmbDiscount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
+            this.cmbDiscount.Size = new System.Drawing.Size(140, 33);
+            this.cmbDiscount.TabIndex = 5;
+            this.cmbDiscount.Text = "0";
             // 
             // button2
             // 
@@ -227,33 +227,34 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Tổng:";
             // 
-            // textBox1
+            // txtTotalPrice
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
-            this.textBox1.Location = new System.Drawing.Point(82, 42);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(186, 38);
-            this.textBox1.TabIndex = 3;
+            this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
+            this.txtTotalPrice.Location = new System.Drawing.Point(82, 42);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(186, 38);
+            this.txtTotalPrice.TabIndex = 3;
             // 
-            // comboBox1
+            // cmbCategoryProduct
             // 
-            this.comboBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(3, 26);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(268, 37);
-            this.comboBox1.TabIndex = 1;
+            this.cmbCategoryProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbCategoryProduct.FormattingEnabled = true;
+            this.cmbCategoryProduct.Location = new System.Drawing.Point(3, 26);
+            this.cmbCategoryProduct.Name = "cmbCategoryProduct";
+            this.cmbCategoryProduct.Size = new System.Drawing.Size(268, 37);
+            this.cmbCategoryProduct.TabIndex = 1;
+            this.cmbCategoryProduct.SelectedIndexChanged += new System.EventHandler(this.cmbCategoryProduct_SelectedIndexChanged);
             // 
             // panel4
             // 
             this.panel4.Controls.Add(this.label4);
-            this.panel4.Controls.Add(this.button3);
+            this.panel4.Controls.Add(this.btnSwitchTable);
             this.panel4.Controls.Add(this.label3);
             this.panel4.Controls.Add(this.label2);
-            this.panel4.Controls.Add(this.comboBox3);
+            this.panel4.Controls.Add(this.cmbDiscount);
             this.panel4.Controls.Add(this.button2);
             this.panel4.Controls.Add(this.label1);
-            this.panel4.Controls.Add(this.textBox1);
+            this.panel4.Controls.Add(this.txtTotalPrice);
             this.panel4.Location = new System.Drawing.Point(6, 537);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(433, 138);
@@ -465,10 +466,10 @@
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.numericUpDown1);
-            this.panel3.Controls.Add(this.comboBox2);
-            this.panel3.Controls.Add(this.comboBox1);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.nmdCount);
+            this.panel3.Controls.Add(this.cmbProduct);
+            this.panel3.Controls.Add(this.cmbCategoryProduct);
+            this.panel3.Controls.Add(this.btnAddProduct);
             this.panel3.Location = new System.Drawing.Point(3, 3);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(439, 140);
@@ -486,7 +487,7 @@
             this.Name = "MainForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Phần mềm quản lý bán Cà phê";
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmdCount)).EndInit();
             this.panel4.ResumeLayout(false);
             this.panel4.PerformLayout();
             this.menuStrip1.ResumeLayout(false);
@@ -501,22 +502,22 @@
 
         #endregion
 
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.ComboBox comboBox2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.NumericUpDown nmdCount;
+        private System.Windows.Forms.ComboBox cmbProduct;
+        private System.Windows.Forms.Button btnAddProduct;
         private System.Windows.Forms.ColumnHeader columnHeader4;
         private System.Windows.Forms.ColumnHeader columnHeader3;
         private System.Windows.Forms.ColumnHeader columnHeader2;
         private System.Windows.Forms.ColumnHeader columnHeader1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.Button btnSwitchTable;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox cmbDiscount;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.ComboBox cmbCategoryProduct;
         private System.Windows.Forms.Panel panel4;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem adminToolStripMenuItem;
