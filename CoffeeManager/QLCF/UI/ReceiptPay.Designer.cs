@@ -1,6 +1,6 @@
 ﻿namespace QLCF.UI
 {
-    partial class ReceiptPay
+    partial class ReceiptPayForm
     {
         /// <summary>
         /// Required designer variable.
@@ -51,9 +51,9 @@
             // 
             this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Location = new System.Drawing.Point(12, 19);
+            this.panel1.Location = new System.Drawing.Point(12, 27);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(576, 247);
+            this.panel1.Size = new System.Drawing.Size(576, 239);
             this.panel1.TabIndex = 7;
             // 
             // panel2
@@ -64,7 +64,7 @@
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
             this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(3, 3);
+            this.panel2.Location = new System.Drawing.Point(0, 19);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(570, 100);
             this.panel2.TabIndex = 0;
@@ -182,7 +182,7 @@
             this.button1.Text = "Thanh toán";
             this.button1.UseVisualStyleBackColor = false;
             // 
-            // ReceiptPay
+            // ReceiptPayForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -193,7 +193,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.textBox2);
             this.Controls.Add(this.button1);
-            this.Name = "ReceiptPay";
+            this.Name = "ReceiptPayForm";
             this.Text = "Các nhận nhập hàng";
             this.panel1.ResumeLayout(false);
             this.panel2.ResumeLayout(false);

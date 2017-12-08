@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLCF.UI
 {
-    public partial class UserManager : Form
+    public partial class UserManagerForm : Form
     {
-        public UserManager()
+        public UserManagerForm()
         {
             InitializeComponent();
         }

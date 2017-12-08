@@ -1,6 +1,6 @@
 ﻿namespace QLCF.UI
 {
-    partial class Bill
+    partial class BillForm
     {
         /// <summary>
         /// Required designer variable.
@@ -79,9 +79,9 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(6, -56);
+            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
             this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(851, 600);
+            this.dataGridView1.Size = new System.Drawing.Size(854, 541);
             this.dataGridView1.TabIndex = 0;
             // 
             // panel2
@@ -90,9 +90,9 @@
             this.panel2.Controls.Add(this.button1);
             this.panel2.Controls.Add(this.dateTimePicker2);
             this.panel2.Controls.Add(this.dateTimePicker1);
-            this.panel2.Location = new System.Drawing.Point(15, 33);
+            this.panel2.Location = new System.Drawing.Point(12, 33);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(857, 53);
+            this.panel2.Size = new System.Drawing.Size(860, 53);
             this.panel2.TabIndex = 8;
             // 
             // label1
@@ -133,7 +133,7 @@
             this.dateTimePicker1.Size = new System.Drawing.Size(287, 30);
             this.dateTimePicker1.TabIndex = 0;
             // 
-            // Bill
+            // BillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -142,7 +142,8 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
-            this.Name = "Bill";
+            this.Name = "BillForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống kê hóa đơn";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

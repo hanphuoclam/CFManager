@@ -4,6 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using QLCF.Domain;
+using System.Collections;
+using System.Linq.Expressions;
+using System.Data;
 
 namespace QLCF.Repository
 {
@@ -86,6 +89,19 @@ namespace QLCF.Repository
             return (from c in db.Products
                     where c.idCategory == idCategory
                     select c).ToList();
+        }
+
+        public IEnumerable ListProductforShow()
+        {
+            IEnumerable<Product> list = GetAll();
+            //DataTable data;
+            //data.Columns.Add()
+            return GetBy(f => f.id > 0, n => new { n.id, n.name, n.idCategory, n.price, n.inventory });
+            
+        }
+        public IEnumerable<U> GetBy<U>(Expression<Func<Product, bool>> exp, Expression<Func<Product, U>> columns)
+        {
+            return db.Products.Where<Product>(exp).Select<Product, U>(columns);
         }
     }
 }

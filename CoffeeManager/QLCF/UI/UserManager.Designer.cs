@@ -1,6 +1,6 @@
 ﻿namespace QLCF.UI
 {
-    partial class UserManager
+    partial class UserManagerForm
     {
         /// <summary>
         /// Required designer variable.
@@ -180,7 +180,7 @@
             this.thoátToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             // 
-            // UserManager
+            // UserManagerForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -189,7 +189,8 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "UserManager";
+            this.Name = "UserManagerForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí tài khoản";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();

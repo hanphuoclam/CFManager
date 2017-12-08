@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLCF.UI
 {
-    public partial class Bill : Form
+    public partial class BillForm : Form
     {
-        public Bill()
+        public BillForm()
         {
             InitializeComponent();
         }

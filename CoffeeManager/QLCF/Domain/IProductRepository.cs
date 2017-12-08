@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Collections;
 
 namespace QLCF.Domain
 {
@@ -14,5 +15,6 @@ namespace QLCF.Domain
         IEnumerable<P> GetAll();
         IEnumerable<P> GetProductByIdCategory(int idCategory);
         P GetProductById(int id);
+        IEnumerable ListProductforShow();
     }
 }

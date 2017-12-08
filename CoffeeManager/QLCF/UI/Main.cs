@@ -13,7 +13,7 @@ using QLCF.Repository;
 using System.Collections;
 using System.Globalization;
 using QLCF.Infrastructure;
-//using QLCF.UI;
+using QLCF.UI;
 
 namespace QLCF
 {
@@ -315,8 +315,8 @@ namespace QLCF
 
         private void thôngTinCáNhânToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //ChangePasswdForm p = new ChangePasswdForm(AccountLogin);
-            //p.ShowDialog();
+            ChangePasswdForm p = new ChangePasswdForm(AccountLogin);
+            p.ShowDialog();
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)

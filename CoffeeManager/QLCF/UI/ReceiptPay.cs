@@ -10,9 +10,9 @@ using System.Windows.Forms;
 
 namespace QLCF.UI
 {
-    public partial class ReceiptPay : Form
+    public partial class ReceiptPayForm : Form
     {
-        public ReceiptPay()
+        public ReceiptPayForm()
         {
             InitializeComponent();
         }

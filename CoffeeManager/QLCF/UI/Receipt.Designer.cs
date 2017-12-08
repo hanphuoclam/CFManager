@@ -1,6 +1,6 @@
 ﻿namespace QLCF.UI
 {
-    partial class Receipt
+    partial class ReceiptForm
     {
         /// <summary>
         /// Required designer variable.
@@ -232,7 +232,7 @@
             this.dataGridView1.Size = new System.Drawing.Size(533, 544);
             this.dataGridView1.TabIndex = 0;
             // 
-            // Receipt
+            // ReceiptForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -241,7 +241,8 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
-            this.Name = "Receipt";
+            this.Name = "ReceiptForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập hàng";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();

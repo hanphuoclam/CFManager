@@ -51,5 +51,10 @@ namespace QLCF.Services
         {
             return _repository.GetProductById(id);
         }
+
+        public IEnumerable ListProductforShow_S()
+        {
+            return _repository.ListProductforShow();
+        }
     }
 }

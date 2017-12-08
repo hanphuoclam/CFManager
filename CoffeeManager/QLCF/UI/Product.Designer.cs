@@ -1,6 +1,6 @@
 ﻿namespace QLCF.UI
 {
-    partial class Product
+    partial class ProductForm
     {
         /// <summary>
         /// Required designer variable.
@@ -32,26 +32,26 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtInventory = new System.Windows.Forms.TextBox();
+            this.txtNameProduct = new System.Windows.Forms.TextBox();
             this.button4 = new System.Windows.Forms.Button();
             this.button3 = new System.Windows.Forms.Button();
             this.button2 = new System.Windows.Forms.Button();
             this.button1 = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPriceProduct = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.dgvListProduct = new System.Windows.Forms.DataGridView();
+            this.cmbListCategory = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListProduct)).BeginInit();
             this.SuspendLayout();
             // 
             // label4
@@ -98,32 +98,24 @@
             this.label1.TabIndex = 4;
             this.label1.Text = "Tên :";
             // 
-            // textBox4
+            // txtInventory
             // 
-            this.textBox4.BackColor = System.Drawing.Color.White;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(72, 288);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(245, 35);
-            this.textBox4.TabIndex = 3;
+            this.txtInventory.BackColor = System.Drawing.Color.White;
+            this.txtInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtInventory.Location = new System.Drawing.Point(72, 288);
+            this.txtInventory.Name = "txtInventory";
+            this.txtInventory.Size = new System.Drawing.Size(245, 35);
+            this.txtInventory.TabIndex = 3;
             // 
-            // textBox3
+            // txtNameProduct
             // 
-            this.textBox3.BackColor = System.Drawing.Color.White;
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox3.Location = new System.Drawing.Point(72, 208);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(245, 35);
-            this.textBox3.TabIndex = 2;
-            // 
-            // textBox1
-            // 
-            this.textBox1.BackColor = System.Drawing.Color.White;
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox1.Location = new System.Drawing.Point(72, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(245, 35);
-            this.textBox1.TabIndex = 0;
+            this.txtNameProduct.BackColor = System.Drawing.Color.White;
+            this.txtNameProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtNameProduct.Location = new System.Drawing.Point(72, 51);
+            this.txtNameProduct.Name = "txtNameProduct";
+            this.txtNameProduct.Size = new System.Drawing.Size(245, 35);
+            this.txtNameProduct.TabIndex = 0;
+            this.txtNameProduct.TextChanged += new System.EventHandler(this.txtNameProduct_TextChanged);
             // 
             // button4
             // 
@@ -187,44 +179,36 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.cmbListCategory);
             this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.textBox4);
-            this.panel2.Controls.Add(this.textBox3);
-            this.panel2.Controls.Add(this.textBox2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtInventory);
+            this.panel2.Controls.Add(this.txtPriceProduct);
+            this.panel2.Controls.Add(this.txtNameProduct);
             this.panel2.Location = new System.Drawing.Point(508, 33);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(344, 592);
             this.panel2.TabIndex = 6;
             // 
-            // textBox2
+            // txtPriceProduct
             // 
-            this.textBox2.BackColor = System.Drawing.Color.White;
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox2.Location = new System.Drawing.Point(72, 130);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(245, 35);
-            this.textBox2.TabIndex = 1;
+            this.txtPriceProduct.BackColor = System.Drawing.Color.White;
+            this.txtPriceProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtPriceProduct.Location = new System.Drawing.Point(72, 130);
+            this.txtPriceProduct.Name = "txtPriceProduct";
+            this.txtPriceProduct.Size = new System.Drawing.Size(245, 35);
+            this.txtPriceProduct.TabIndex = 1;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvListProduct);
             this.panel1.Location = new System.Drawing.Point(12, 33);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(490, 592);
             this.panel1.TabIndex = 5;
-            // 
-            // dataGridView1
-            // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(484, 586);
-            this.dataGridView1.TabIndex = 0;
             // 
             // thoátToolStripMenuItem
             // 
@@ -250,7 +234,24 @@
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // Product
+            // dgvListProduct
+            // 
+            this.dgvListProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListProduct.Location = new System.Drawing.Point(3, 3);
+            this.dgvListProduct.Name = "dgvListProduct";
+            this.dgvListProduct.Size = new System.Drawing.Size(484, 586);
+            this.dgvListProduct.TabIndex = 0;
+            // 
+            // cmbListCategory
+            // 
+            this.cmbListCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbListCategory.FormattingEnabled = true;
+            this.cmbListCategory.Location = new System.Drawing.Point(72, 208);
+            this.cmbListCategory.Name = "cmbListCategory";
+            this.cmbListCategory.Size = new System.Drawing.Size(245, 37);
+            this.cmbListCategory.TabIndex = 10;
+            // 
+            // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
@@ -259,15 +260,16 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
-            this.Name = "Product";
+            this.Name = "ProductForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh mục thức ăn & thức uống";
             this.panel3.ResumeLayout(false);
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -279,20 +281,20 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtInventory;
+        private System.Windows.Forms.TextBox txtNameProduct;
         private System.Windows.Forms.Button button4;
         private System.Windows.Forms.Button button3;
         private System.Windows.Forms.Button button2;
         private System.Windows.Forms.Button button1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPriceProduct;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem productToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
+        private System.Windows.Forms.DataGridView dgvListProduct;
+        private System.Windows.Forms.ComboBox cmbListCategory;
     }
 }
