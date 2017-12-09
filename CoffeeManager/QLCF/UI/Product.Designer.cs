@@ -28,30 +28,32 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.txtInventory = new System.Windows.Forms.TextBox();
             this.txtNameProduct = new System.Windows.Forms.TextBox();
-            this.button4 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnAddProduct = new System.Windows.Forms.Button();
+            this.btnDeleteProduct = new System.Windows.Forms.Button();
+            this.btnEditProduct = new System.Windows.Forms.Button();
+            this.btnShowProduct = new System.Windows.Forms.Button();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.cmbListCategory = new System.Windows.Forms.ComboBox();
             this.txtPriceProduct = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.dgvListProduct = new System.Windows.Forms.DataGridView();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.dgvListProduct = new System.Windows.Forms.DataGridView();
-            this.cmbListCategory = new System.Windows.Forms.ComboBox();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProduct)).BeginInit();
+            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -115,62 +117,65 @@
             this.txtNameProduct.Name = "txtNameProduct";
             this.txtNameProduct.Size = new System.Drawing.Size(245, 35);
             this.txtNameProduct.TabIndex = 0;
-            this.txtNameProduct.TextChanged += new System.EventHandler(this.txtNameProduct_TextChanged);
             // 
-            // button4
+            // btnAddProduct
             // 
-            this.button4.BackColor = System.Drawing.Color.Black;
-            this.button4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.White;
-            this.button4.Location = new System.Drawing.Point(184, 48);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(127, 45);
-            this.button4.TabIndex = 11;
-            this.button4.Text = "Thêm";
-            this.button4.UseVisualStyleBackColor = false;
+            this.btnAddProduct.BackColor = System.Drawing.Color.Black;
+            this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAddProduct.ForeColor = System.Drawing.Color.White;
+            this.btnAddProduct.Location = new System.Drawing.Point(184, 48);
+            this.btnAddProduct.Name = "btnAddProduct";
+            this.btnAddProduct.Size = new System.Drawing.Size(127, 45);
+            this.btnAddProduct.TabIndex = 11;
+            this.btnAddProduct.Text = "Thêm";
+            this.btnAddProduct.UseVisualStyleBackColor = false;
+            this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
-            // button3
+            // btnDeleteProduct
             // 
-            this.button3.BackColor = System.Drawing.Color.Black;
-            this.button3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button3.ForeColor = System.Drawing.Color.White;
-            this.button3.Location = new System.Drawing.Point(23, 117);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(127, 45);
-            this.button3.TabIndex = 10;
-            this.button3.Text = "Xóa";
-            this.button3.UseVisualStyleBackColor = false;
+            this.btnDeleteProduct.BackColor = System.Drawing.Color.Black;
+            this.btnDeleteProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnDeleteProduct.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteProduct.Location = new System.Drawing.Point(23, 117);
+            this.btnDeleteProduct.Name = "btnDeleteProduct";
+            this.btnDeleteProduct.Size = new System.Drawing.Size(127, 45);
+            this.btnDeleteProduct.TabIndex = 10;
+            this.btnDeleteProduct.Text = "Xóa";
+            this.btnDeleteProduct.UseVisualStyleBackColor = false;
+            this.btnDeleteProduct.Click += new System.EventHandler(this.btnDeleteProduct_Click);
             // 
-            // button2
+            // btnEditProduct
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(184, 117);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(127, 45);
-            this.button2.TabIndex = 9;
-            this.button2.Text = "Sửa";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnEditProduct.BackColor = System.Drawing.Color.Black;
+            this.btnEditProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEditProduct.ForeColor = System.Drawing.Color.White;
+            this.btnEditProduct.Location = new System.Drawing.Point(184, 117);
+            this.btnEditProduct.Name = "btnEditProduct";
+            this.btnEditProduct.Size = new System.Drawing.Size(127, 45);
+            this.btnEditProduct.TabIndex = 9;
+            this.btnEditProduct.Text = "Sửa";
+            this.btnEditProduct.UseVisualStyleBackColor = false;
+            this.btnEditProduct.Click += new System.EventHandler(this.btnEditProduct_Click);
             // 
-            // button1
+            // btnShowProduct
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(23, 48);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(127, 45);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Xem";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnShowProduct.BackColor = System.Drawing.Color.Black;
+            this.btnShowProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShowProduct.ForeColor = System.Drawing.Color.White;
+            this.btnShowProduct.Location = new System.Drawing.Point(23, 48);
+            this.btnShowProduct.Name = "btnShowProduct";
+            this.btnShowProduct.Size = new System.Drawing.Size(127, 45);
+            this.btnShowProduct.TabIndex = 8;
+            this.btnShowProduct.Text = "Xem";
+            this.btnShowProduct.UseVisualStyleBackColor = false;
+            this.btnShowProduct.Click += new System.EventHandler(this.btnShowProduct_Click);
             // 
             // panel3
             // 
-            this.panel3.Controls.Add(this.button4);
-            this.panel3.Controls.Add(this.button3);
-            this.panel3.Controls.Add(this.button2);
-            this.panel3.Controls.Add(this.button1);
+            this.panel3.Controls.Add(this.btnAddProduct);
+            this.panel3.Controls.Add(this.btnDeleteProduct);
+            this.panel3.Controls.Add(this.btnEditProduct);
+            this.panel3.Controls.Add(this.btnShowProduct);
             this.panel3.Location = new System.Drawing.Point(6, 413);
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(338, 176);
@@ -193,6 +198,15 @@
             this.panel2.Size = new System.Drawing.Size(344, 592);
             this.panel2.TabIndex = 6;
             // 
+            // cmbListCategory
+            // 
+            this.cmbListCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbListCategory.FormattingEnabled = true;
+            this.cmbListCategory.Location = new System.Drawing.Point(72, 208);
+            this.cmbListCategory.Name = "cmbListCategory";
+            this.cmbListCategory.Size = new System.Drawing.Size(245, 37);
+            this.cmbListCategory.TabIndex = 10;
+            // 
             // txtPriceProduct
             // 
             this.txtPriceProduct.BackColor = System.Drawing.Color.White;
@@ -209,6 +223,31 @@
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(490, 592);
             this.panel1.TabIndex = 5;
+            // 
+            // dgvListProduct
+            // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListProduct.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListProduct.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListProduct.Location = new System.Drawing.Point(3, 3);
+            this.dgvListProduct.Name = "dgvListProduct";
+            this.dgvListProduct.Size = new System.Drawing.Size(484, 586);
+            this.dgvListProduct.TabIndex = 0;
+            this.dgvListProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListProduct_CellClick);
             // 
             // thoátToolStripMenuItem
             // 
@@ -234,23 +273,6 @@
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
-            // dgvListProduct
-            // 
-            this.dgvListProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListProduct.Location = new System.Drawing.Point(3, 3);
-            this.dgvListProduct.Name = "dgvListProduct";
-            this.dgvListProduct.Size = new System.Drawing.Size(484, 586);
-            this.dgvListProduct.TabIndex = 0;
-            // 
-            // cmbListCategory
-            // 
-            this.cmbListCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cmbListCategory.FormattingEnabled = true;
-            this.cmbListCategory.Location = new System.Drawing.Point(72, 208);
-            this.cmbListCategory.Name = "cmbListCategory";
-            this.cmbListCategory.Size = new System.Drawing.Size(245, 37);
-            this.cmbListCategory.TabIndex = 10;
-            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -267,9 +289,9 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListProduct)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListProduct)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -283,10 +305,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.TextBox txtInventory;
         private System.Windows.Forms.TextBox txtNameProduct;
-        private System.Windows.Forms.Button button4;
-        private System.Windows.Forms.Button button3;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnAddProduct;
+        private System.Windows.Forms.Button btnDeleteProduct;
+        private System.Windows.Forms.Button btnEditProduct;
+        private System.Windows.Forms.Button btnShowProduct;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.TextBox txtPriceProduct;

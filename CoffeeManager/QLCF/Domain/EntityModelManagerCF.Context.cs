@@ -17,7 +17,7 @@ namespace QLCF.Domain
     
     public partial class CFMEntities : DbContext
     {
-        private CFMEntities()
+        public CFMEntities()
             : base("name=CFMEntities")
         {
         }
@@ -34,6 +34,7 @@ namespace QLCF.Domain
             private set => instance = value;
         }
 
+
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();
@@ -48,7 +49,7 @@ namespace QLCF.Domain
         public virtual DbSet<ReceiptInfo> ReceiptInfoes { get; set; }
         public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TableFood> TableFoods { get; set; }
-
+    
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)
         {
             var diagramnameParameter = diagramname != null ?
