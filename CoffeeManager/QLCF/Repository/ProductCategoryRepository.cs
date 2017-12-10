@@ -22,7 +22,7 @@ namespace QLCF.Repository
         //    private set => instance = value;
         //}
         #endregion
-        private Domain.CFMEntities db = CFMEntities.Instance;
+        private CFMEntities db = CFMEntities.Instance;
         public bool AddProductCategory(ProductCategory ProCategory)
         {
             try

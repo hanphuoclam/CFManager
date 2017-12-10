@@ -22,7 +22,7 @@ namespace QLCF.Repository
         //    private set => instace = value;
         //}
         #endregion
-        private CFMEntities db = Domain.CFMEntities.Instance;
+        private CFMEntities db =  CFMEntities.Instance;
         public bool AddAccount(Account acc)
         {
             try

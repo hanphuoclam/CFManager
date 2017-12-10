@@ -25,7 +25,7 @@ namespace QLCF.Repository
         //    }
         //}
         #endregion
-        private Domain.CFMEntities db = CFMEntities.Instance;
+        private CFMEntities db = CFMEntities.Instance;
         public bool AddBill(Bill bill)
         {
             try

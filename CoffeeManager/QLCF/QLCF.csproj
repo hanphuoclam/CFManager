@@ -63,6 +63,7 @@
     <Compile Include="Domain\BillInfo.cs">
       <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
     </Compile>
+    <Compile Include="Repository\CFMEntities.cs" />
     <Compile Include="Domain\EntityModelManagerCF.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>

@@ -9,7 +9,7 @@ namespace QLCF.Repository
 {
     public class TableFoodRepository : ITableFoodRepository
     {
-        CFMEntities db = CFMEntities.Instance;
+        private CFMEntities db = CFMEntities.Instance;
         public IEnumerable<TableFood> GetAll()
         {
             return db.TableFoods.ToList();

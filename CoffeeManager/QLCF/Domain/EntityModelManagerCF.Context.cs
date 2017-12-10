@@ -21,20 +21,7 @@ namespace QLCF.Domain
             : base("name=CFMEntities")
         {
         }
-
-        private static CFMEntities instance;
-        public static CFMEntities Instance
-        {
-            get
-            {
-                if (instance == null)
-                    instance = new CFMEntities();
-                return instance;
-            }
-            private set => instance = value;
-        }
-
-
+    
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
             throw new UnintentionalCodeFirstException();

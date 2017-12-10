@@ -23,7 +23,7 @@ namespace QLCF.Repository
         //    private set => instance = value;
         //}
         #endregion
-        private Domain.CFMEntities db = CFMEntities.Instance;
+        private CFMEntities db = CFMEntities.Instance;
         public bool AddReceiptInfo(ReceiptInfo receiptInfo)
         {
             try
