@@ -28,52 +28,43 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.button1 = new System.Windows.Forms.Button();
-            this.label7 = new System.Windows.Forms.Label();
+            this.btnChoose = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.textBox4 = new System.Windows.Forms.TextBox();
+            this.txtCount = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
+            this.txtInventoryPro = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.textBox2 = new System.Windows.Forms.TextBox();
+            this.txtPricePro = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtNamePro = new System.Windows.Forms.TextBox();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.nhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvProductSuggest = new System.Windows.Forms.DataGridView();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.btnBuy = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductSuggest)).BeginInit();
             this.SuspendLayout();
             // 
-            // button1
+            // btnChoose
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(17, 534);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(262, 42);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Chọn";
-            this.button1.UseVisualStyleBackColor = false;
-            // 
-            // label7
-            // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label7.ForeColor = System.Drawing.Color.White;
-            this.label7.Location = new System.Drawing.Point(234, 207);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(45, 29);
-            this.label7.TabIndex = 9;
-            this.label7.Text = "0.0";
+            this.btnChoose.BackColor = System.Drawing.Color.Black;
+            this.btnChoose.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnChoose.ForeColor = System.Drawing.Color.White;
+            this.btnChoose.Location = new System.Drawing.Point(144, 270);
+            this.btnChoose.Name = "btnChoose";
+            this.btnChoose.Size = new System.Drawing.Size(201, 42);
+            this.btnChoose.TabIndex = 10;
+            this.btnChoose.Text = "Thêm vào giỏ";
+            this.btnChoose.UseVisualStyleBackColor = false;
+            this.btnChoose.Click += new System.EventHandler(this.btnChoose_Click);
             // 
             // label6
             // 
@@ -97,13 +88,13 @@
             this.label5.TabIndex = 7;
             this.label5.Text = "Số lượng:";
             // 
-            // textBox4
+            // txtCount
             // 
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.textBox4.Location = new System.Drawing.Point(126, 160);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(166, 35);
-            this.textBox4.TabIndex = 6;
+            this.txtCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtCount.Location = new System.Drawing.Point(126, 160);
+            this.txtCount.Name = "txtCount";
+            this.txtCount.Size = new System.Drawing.Size(240, 35);
+            this.txtCount.TabIndex = 6;
             // 
             // label4
             // 
@@ -116,13 +107,13 @@
             this.label4.TabIndex = 5;
             this.label4.Text = "SL Tồn:";
             // 
-            // textBox3
+            // txtInventoryPro
             // 
-            this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.textBox3.Location = new System.Drawing.Point(126, 112);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(166, 35);
-            this.textBox3.TabIndex = 4;
+            this.txtInventoryPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtInventoryPro.Location = new System.Drawing.Point(126, 112);
+            this.txtInventoryPro.Name = "txtInventoryPro";
+            this.txtInventoryPro.Size = new System.Drawing.Size(240, 35);
+            this.txtInventoryPro.TabIndex = 4;
             // 
             // label3
             // 
@@ -135,13 +126,13 @@
             this.label3.TabIndex = 3;
             this.label3.Text = "Đơn giá:";
             // 
-            // textBox2
+            // txtPricePro
             // 
-            this.textBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.textBox2.Location = new System.Drawing.Point(126, 63);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(166, 35);
-            this.textBox2.TabIndex = 2;
+            this.txtPricePro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtPricePro.Location = new System.Drawing.Point(126, 63);
+            this.txtPricePro.Name = "txtPricePro";
+            this.txtPricePro.Size = new System.Drawing.Size(240, 35);
+            this.txtPricePro.TabIndex = 2;
             // 
             // label2
             // 
@@ -154,13 +145,13 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên:";
             // 
-            // textBox1
+            // txtNamePro
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.textBox1.Location = new System.Drawing.Point(126, 16);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(166, 35);
-            this.textBox1.TabIndex = 0;
+            this.txtNamePro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtNamePro.Location = new System.Drawing.Point(126, 16);
+            this.txtNamePro.Name = "txtNamePro";
+            this.txtNamePro.Size = new System.Drawing.Size(240, 35);
+            this.txtNamePro.TabIndex = 0;
             // 
             // thoátToolStripMenuItem
             // 
@@ -190,7 +181,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.label1.Location = new System.Drawing.Point(78, 550);
+            this.label1.Location = new System.Drawing.Point(35, 550);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(382, 29);
             this.label1.TabIndex = 1;
@@ -199,38 +190,60 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.label7);
+            this.panel2.Controls.Add(this.btnBuy);
+            this.panel2.Controls.Add(this.txtTotalPrice);
+            this.panel2.Controls.Add(this.btnChoose);
             this.panel2.Controls.Add(this.label6);
             this.panel2.Controls.Add(this.label5);
-            this.panel2.Controls.Add(this.textBox4);
+            this.panel2.Controls.Add(this.txtCount);
             this.panel2.Controls.Add(this.label4);
-            this.panel2.Controls.Add(this.textBox3);
+            this.panel2.Controls.Add(this.txtInventoryPro);
             this.panel2.Controls.Add(this.label3);
-            this.panel2.Controls.Add(this.textBox2);
+            this.panel2.Controls.Add(this.txtPricePro);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox1);
-            this.panel2.Location = new System.Drawing.Point(557, 36);
+            this.panel2.Controls.Add(this.txtNamePro);
+            this.panel2.Location = new System.Drawing.Point(483, 36);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(295, 589);
+            this.panel2.Size = new System.Drawing.Size(369, 589);
             this.panel2.TabIndex = 6;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvProductSuggest);
             this.panel1.Location = new System.Drawing.Point(12, 33);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(539, 592);
+            this.panel1.Size = new System.Drawing.Size(465, 592);
             this.panel1.TabIndex = 4;
             // 
-            // dataGridView1
+            // dgvProductSuggest
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(533, 544);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvProductSuggest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductSuggest.Location = new System.Drawing.Point(3, 3);
+            this.dgvProductSuggest.Name = "dgvProductSuggest";
+            this.dgvProductSuggest.Size = new System.Drawing.Size(457, 544);
+            this.dgvProductSuggest.TabIndex = 0;
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtTotalPrice.Location = new System.Drawing.Point(126, 204);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(240, 35);
+            this.txtTotalPrice.TabIndex = 11;
+            // 
+            // btnBuy
+            // 
+            this.btnBuy.BackColor = System.Drawing.Color.Black;
+            this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnBuy.ForeColor = System.Drawing.Color.White;
+            this.btnBuy.Location = new System.Drawing.Point(29, 544);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(328, 42);
+            this.btnBuy.TabIndex = 12;
+            this.btnBuy.Text = "Thanh toán";
+            this.btnBuy.UseVisualStyleBackColor = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // ReceiptForm
             // 
@@ -250,7 +263,7 @@
             this.panel2.PerformLayout();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvProductSuggest)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -258,23 +271,24 @@
 
         #endregion
 
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.Button btnChoose;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.TextBox txtCount;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.TextBox textBox3;
+        private System.Windows.Forms.TextBox txtInventoryPro;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.TextBox textBox2;
+        private System.Windows.Forms.TextBox txtPricePro;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtNamePro;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem nhậpHàngToolStripMenuItem;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvProductSuggest;
+        private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.Button btnBuy;
     }
 }

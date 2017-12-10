@@ -7,14 +7,110 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Collections;
+using QLCF.Domain;
+using QLCF.Services;
+using QLCF.Repository;
+using QLCF.UI;
 
 namespace QLCF.UI
 {
     public partial class ReceiptForm : Form
     {
+        private IProductService<Product> _serviceProduct;
+        List<Product> listProBeChoose;
+        Dictionary<int, int> dictionaryCountPro;
         public ReceiptForm()
         {
             InitializeComponent();
+            InitData();
+            LoadListProductSuggest();
+            //AddBinding();
         }
+
+        #region Methods
+        void InitData()
+        {
+            this._serviceProduct = new ProductService(new ProductRepository());
+            this.listProBeChoose = new List<Product>();
+            this.dictionaryCountPro = new Dictionary<int, int>();
+        }
+        void LoadListProductSuggest()
+        {
+            IEnumerable listProduct = _serviceProduct.GetAll_S();
+            DataTable data = new DataTable();
+            data.Columns.Add("ID");
+            data.Columns.Add("Tên sản phẩm");
+            data.Columns.Add("Đơn giá");
+            data.Columns.Add("SL Tồn");
+            foreach (Product item in listProduct)
+            {
+                bool check = true;
+                foreach(Product i in listProBeChoose)
+                {
+                    if (i.id == item.id)
+                        check = false;
+                }
+                if(item.inventory < 30 && check)
+                {
+                    DataRow row = data.NewRow();
+                    row["ID"] = item.id;
+                    row["Tên sản phẩm"] = item.name;
+                    row["Đơn giá"] = item.price;
+                    row["SL Tồn"] = item.inventory;
+                    data.Rows.Add(row);
+                }
+            }
+            dgvProductSuggest.DataSource = data;
+
+            AddBinding();
+        }
+
+        void AddBinding()
+        {
+            txtNamePro.DataBindings.Clear();
+            txtPricePro.DataBindings.Clear();
+            txtInventoryPro.DataBindings.Clear();
+            txtNamePro.DataBindings.Add(new Binding("Text", dgvProductSuggest.DataSource, "Tên sản phẩm", true, DataSourceUpdateMode.Never));
+            txtPricePro.DataBindings.Add(new Binding("Text", dgvProductSuggest.DataSource, "Đơn giá", true, DataSourceUpdateMode.Never));
+            txtInventoryPro.DataBindings.Add(new Binding("Text", dgvProductSuggest.DataSource, "SL Tồn", true, DataSourceUpdateMode.Never));
+            txtCount.Text = "";
+        }
+        void ChooseProduct()
+        {
+            int idPro = Convert.ToInt32(dgvProductSuggest.SelectedCells[0].OwningRow.Cells["ID"].Value.ToString());
+            
+            if(MessageBox.Show("Bạn có muốn sản phẩm này vào giỏ hàng??","Thông báo",MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                int Count = 1;
+                if (txtCount.Text.Length != 0)
+                    Count = Convert.ToInt32(txtCount.Text);
+                Product product = _serviceProduct.GetProductById_S(idPro);
+                listProBeChoose.Add(product);
+                dictionaryCountPro.Add(idPro, Count);
+            }
+            LoadListProductSuggest();
+        }
+        void BuyProduct()
+        {
+            ReceiptPayForm r = new ReceiptPayForm(listProBeChoose,dictionaryCountPro);
+            this.Hide();
+            r.ShowDialog();
+            this.Show();
+            LoadListProductSuggest();
+        }
+#endregion
+
+        #region Events
+        private void btnBuy_Click(object sender, EventArgs e)
+        {
+            BuyProduct();
+        }
+
+        private void btnChoose_Click(object sender, EventArgs e)
+        {
+            ChooseProduct();
+        }
+#endregion
     }
 }
