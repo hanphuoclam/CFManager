@@ -21,9 +21,14 @@ namespace QLCF.Services
             return false;
         }
 
-        public bool Pay_S(Receipt receipt)
+        public int? GetMaxIdReceipt_S()
         {
-            return _repository.Pay(receipt);
+            return _repository.GetMaxIdReceipt();
+        }
+
+        public void Pay_S(Receipt receipt)
+        {
+            _repository.Pay(receipt);
         }
     }
 }

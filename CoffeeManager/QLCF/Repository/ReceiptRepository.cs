@@ -38,7 +38,12 @@ namespace QLCF.Repository
             return true;
         }
 
-        public bool Pay(Receipt receipt)
+        public int? GetMaxIdReceipt()
+        {
+            return db.Receipts.Max(q => (int?)q.id);
+        }
+
+        public void Pay(Receipt receipt)
         {
             try
             {
@@ -48,9 +53,7 @@ namespace QLCF.Repository
             }
             catch
             {
-                return false;
             }
-            return true;
         }
     }
 }

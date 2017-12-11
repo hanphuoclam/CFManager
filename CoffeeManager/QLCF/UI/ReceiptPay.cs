@@ -8,6 +8,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLCF.Repository;
+using QLCF.Services;
 
 namespace QLCF.UI
 {
@@ -15,14 +17,27 @@ namespace QLCF.UI
     {
         private List<Product> listPro;
         private Dictionary<int, int> dictionaryCountPro;
+
+        private IReceiptInfoService<ReceiptInfo> _serviceReceiptInfo;
+        private IReceiptService<Receipt> _serviceReceipt;
+        private IProductService<Product> _serviceProduct;
+
         public ReceiptPayForm(List<Product> listPro, Dictionary<int, int> dictionaryCountPro)
         {
             this.listPro = listPro;
             this.dictionaryCountPro = dictionaryCountPro;
             InitializeComponent();
+            InitData();
             LoadListProductReceipt();
         }
 
+#region Methods
+        void InitData()
+        {
+            this._serviceReceipt = new ReceiptService(new ReceiptRepository());
+            this._serviceReceiptInfo = new ReceiptInfoService(new ReceiptInfoRepository());
+            this._serviceProduct = new ProductService(new ProductRepository());
+        }
         void LoadListProductReceipt()
         {
             if (listPro.Count <= 0)
@@ -65,11 +80,52 @@ namespace QLCF.UI
         {
             dictionaryCountPro[idPro] = count;
         }
-#region Events
+
+        void Buy()
+        {
+            if(MessageBox.Show("Bạn có chắc chắn mua các sản phẩm này không!", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
+            {
+                bool check = false;
+                if(_serviceReceipt.AddReceipt_S(new Receipt()
+                { dateReceipt = DateTime.Now, totalPrice = 0}))
+                {
+                    int idReceiptCurrent = _serviceReceipt.GetMaxIdReceipt_S().GetValueOrDefault();
+                    foreach(Product item in listPro)
+                    {
+                        if(_serviceReceiptInfo.AddReceiptInfo_S(new ReceiptInfo()
+                        { idReceipt = idReceiptCurrent, idProduct = item.id, count = dictionaryCountPro[item.id]}))
+                        {
+                            if (_serviceProduct.EditProduc_St(new Product()
+                            {
+                                id = item.id,
+                                idCategory = item.idCategory,
+                                name = item.name,
+                                price = item.price,
+                                inventory = item.inventory + dictionaryCountPro[item.id]
+                            }))
+                            {
+
+                                check = true;
+                            }
+                        }
+                    }
+                    _serviceReceipt.Pay_S(new Receipt() { id = idReceiptCurrent, dateReceipt = DateTime.Now, totalPrice = Convert.ToInt32(txtTotalPrice.Text) });
+                }
+                if (check)
+                {
+                    MessageBox.Show("Mua thành công!");
+                    listPro.Clear();
+                    dictionaryCountPro.Clear();
+                    this.Close();
+                }
+            }
+        }
+#endregion
+        #region Events
 
         private void btnBuy_Click(object sender, EventArgs e)
         {
-
+            Buy();
         }
 
         private void dgvListProductReceipt_EditingControlShowing(object sender, DataGridViewEditingControlShowingEventArgs e)

@@ -9,7 +9,7 @@ namespace QLCF.Domain
     public interface IReceiptRepository <R> where R : Receipt
     {
         bool AddReceipt(R receipt);
-        bool Pay(R receipt);
-
+        void Pay(R receipt);
+        int? GetMaxIdReceipt();
     }
 }

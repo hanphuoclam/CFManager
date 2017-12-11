@@ -202,6 +202,7 @@
             this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.btnBuy);
             this.Name = "ReceiptPayForm";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Các nhận nhập hàng";
             this.panel1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProductReceipt)).EndInit();
