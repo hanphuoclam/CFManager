@@ -31,6 +31,7 @@
             this.btnProductManager = new System.Windows.Forms.Button();
             this.btnBillManager = new System.Windows.Forms.Button();
             this.btnReceiptManager = new System.Windows.Forms.Button();
+            this.btnUserManager = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProductManager
@@ -66,12 +67,24 @@
             this.btnReceiptManager.UseVisualStyleBackColor = true;
             this.btnReceiptManager.Click += new System.EventHandler(this.btnReceiptManager_Click);
             // 
+            // btnUserManager
+            // 
+            this.btnUserManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnUserManager.Location = new System.Drawing.Point(223, 404);
+            this.btnUserManager.Name = "btnUserManager";
+            this.btnUserManager.Size = new System.Drawing.Size(220, 142);
+            this.btnUserManager.TabIndex = 3;
+            this.btnUserManager.Text = "Quản lí tài khoản";
+            this.btnUserManager.UseVisualStyleBackColor = true;
+            this.btnUserManager.Click += new System.EventHandler(this.btnUserManager_Click);
+            // 
             // AdminManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLCF.Properties.Resources.backgroundCFMresized;
             this.ClientSize = new System.Drawing.Size(1264, 722);
+            this.Controls.Add(this.btnUserManager);
             this.Controls.Add(this.btnReceiptManager);
             this.Controls.Add(this.btnBillManager);
             this.Controls.Add(this.btnProductManager);
@@ -87,5 +100,6 @@
         private System.Windows.Forms.Button btnProductManager;
         private System.Windows.Forms.Button btnBillManager;
         private System.Windows.Forms.Button btnReceiptManager;
+        private System.Windows.Forms.Button btnUserManager;
     }
 }

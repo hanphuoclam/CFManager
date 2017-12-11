@@ -7,11 +7,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using QLCF.Domain;
 
 namespace QLCF.UI
 {
     public partial class AdminManager : Form
     {
+        private Account accountLogin;
         public AdminManager()
         {
             InitializeComponent();
@@ -38,6 +40,14 @@ namespace QLCF.UI
             ReceiptForm r = new ReceiptForm();
             this.Hide();
             r.ShowDialog();
+            this.Show();
+        }
+
+        private void btnUserManager_Click(object sender, EventArgs e)
+        {
+            UserManagerForm u = new UserManagerForm(accountLogin);
+            this.Hide();
+            u.ShowDialog();
             this.Show();
         }
     }

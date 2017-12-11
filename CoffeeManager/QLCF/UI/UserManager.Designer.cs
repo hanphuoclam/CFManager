@@ -28,76 +28,110 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.button2 = new System.Windows.Forms.Button();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnDelete = new System.Windows.Forms.Button();
+            this.btnAdd = new System.Windows.Forms.Button();
+            this.btnSave = new System.Windows.Forms.Button();
+            this.nmdType = new System.Windows.Forms.NumericUpDown();
+            this.btnRSPass = new System.Windows.Forms.Button();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.txtUserName = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListUser = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.nhậpHàngToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmdType)).BeginInit();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListUser)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
-            this.panel2.Controls.Add(this.button2);
-            this.panel2.Controls.Add(this.numericUpDown1);
-            this.panel2.Controls.Add(this.button1);
+            this.panel2.Controls.Add(this.btnDelete);
+            this.panel2.Controls.Add(this.btnAdd);
+            this.panel2.Controls.Add(this.btnSave);
+            this.panel2.Controls.Add(this.nmdType);
+            this.panel2.Controls.Add(this.btnRSPass);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
-            this.panel2.Controls.Add(this.textBox1);
+            this.panel2.Controls.Add(this.txtUserName);
             this.panel2.Location = new System.Drawing.Point(557, 39);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(295, 589);
             this.panel2.TabIndex = 9;
             // 
-            // button2
+            // btnDelete
             // 
-            this.button2.BackColor = System.Drawing.Color.Black;
-            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button2.ForeColor = System.Drawing.Color.White;
-            this.button2.Location = new System.Drawing.Point(8, 534);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(271, 42);
-            this.button2.TabIndex = 12;
-            this.button2.Text = "Lưu thay đổi";
-            this.button2.UseVisualStyleBackColor = false;
+            this.btnDelete.BackColor = System.Drawing.Color.Black;
+            this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Location = new System.Drawing.Point(8, 486);
+            this.btnDelete.Name = "btnDelete";
+            this.btnDelete.Size = new System.Drawing.Size(271, 42);
+            this.btnDelete.TabIndex = 14;
+            this.btnDelete.Text = "Xóa";
+            this.btnDelete.UseVisualStyleBackColor = false;
+            this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
             // 
-            // numericUpDown1
+            // btnAdd
             // 
-            this.numericUpDown1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.numericUpDown1.Location = new System.Drawing.Point(176, 100);
-            this.numericUpDown1.Maximum = new decimal(new int[] {
+            this.btnAdd.BackColor = System.Drawing.Color.Black;
+            this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Location = new System.Drawing.Point(8, 438);
+            this.btnAdd.Name = "btnAdd";
+            this.btnAdd.Size = new System.Drawing.Size(271, 42);
+            this.btnAdd.TabIndex = 13;
+            this.btnAdd.Text = "Thêm";
+            this.btnAdd.UseVisualStyleBackColor = false;
+            this.btnAdd.Click += new System.EventHandler(this.btnAdd_Click);
+            // 
+            // btnSave
+            // 
+            this.btnSave.BackColor = System.Drawing.Color.Black;
+            this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Location = new System.Drawing.Point(8, 534);
+            this.btnSave.Name = "btnSave";
+            this.btnSave.Size = new System.Drawing.Size(271, 42);
+            this.btnSave.TabIndex = 12;
+            this.btnSave.Text = "Lưu thay đổi";
+            this.btnSave.UseVisualStyleBackColor = false;
+            this.btnSave.Click += new System.EventHandler(this.btnSave_Click);
+            // 
+            // nmdType
+            // 
+            this.nmdType.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.nmdType.Location = new System.Drawing.Point(136, 100);
+            this.nmdType.Maximum = new decimal(new int[] {
             1,
             0,
             0,
             0});
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(42, 35);
-            this.numericUpDown1.TabIndex = 11;
+            this.nmdType.Name = "nmdType";
+            this.nmdType.Size = new System.Drawing.Size(42, 35);
+            this.nmdType.TabIndex = 11;
             // 
-            // button1
+            // btnRSPass
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(8, 480);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(271, 42);
-            this.button1.TabIndex = 10;
-            this.button1.Text = "Reset Password";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnRSPass.BackColor = System.Drawing.Color.Black;
+            this.btnRSPass.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnRSPass.ForeColor = System.Drawing.Color.White;
+            this.btnRSPass.Location = new System.Drawing.Point(8, 390);
+            this.btnRSPass.Name = "btnRSPass";
+            this.btnRSPass.Size = new System.Drawing.Size(271, 42);
+            this.btnRSPass.TabIndex = 10;
+            this.btnRSPass.Text = "Reset Password";
+            this.btnRSPass.UseVisualStyleBackColor = false;
+            this.btnRSPass.Click += new System.EventHandler(this.btnRSPass_Click);
             // 
             // label3
             // 
@@ -121,18 +155,18 @@
             this.label2.TabIndex = 1;
             this.label2.Text = "Tên đăng nhập";
             // 
-            // textBox1
+            // txtUserName
             // 
-            this.textBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.textBox1.Location = new System.Drawing.Point(8, 51);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(271, 35);
-            this.textBox1.TabIndex = 0;
+            this.txtUserName.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtUserName.Location = new System.Drawing.Point(8, 51);
+            this.txtUserName.Name = "txtUserName";
+            this.txtUserName.Size = new System.Drawing.Size(271, 35);
+            this.txtUserName.TabIndex = 0;
             // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvListUser);
             this.panel1.Location = new System.Drawing.Point(12, 36);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(539, 592);
@@ -148,13 +182,30 @@
             this.label1.TabIndex = 1;
             this.label1.Text = "Danh sách tài khoản";
             // 
-            // dataGridView1
+            // dgvListUser
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(533, 544);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvListUser.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListUser.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListUser.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListUser.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListUser.Location = new System.Drawing.Point(3, 3);
+            this.dgvListUser.Name = "dgvListUser";
+            this.dgvListUser.Size = new System.Drawing.Size(533, 544);
+            this.dgvListUser.TabIndex = 0;
             // 
             // menuStrip1
             // 
@@ -194,10 +245,10 @@
             this.Text = "Quản lí tài khoản";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.nmdType)).EndInit();
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListUser)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
@@ -208,17 +259,19 @@
         #endregion
 
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnSave;
+        private System.Windows.Forms.NumericUpDown nmdType;
+        private System.Windows.Forms.Button btnRSPass;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtUserName;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListUser;
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.ToolStripMenuItem nhậpHàngToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
+        private System.Windows.Forms.Button btnDelete;
+        private System.Windows.Forms.Button btnAdd;
     }
 }

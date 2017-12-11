@@ -35,17 +35,8 @@ namespace QLCF.UI
 
         void loadListCategory()
         {
-            //IEnumerable<ProductCategory> list = _serviceProdutCategory.GetAll_S();
             dgvListCategory.DataSource = _serviceProdutCategory.GetAll_S();
             dgvListCategory.Columns["Products"].Visible = false;
-           
-            //DataTable data = new DataTable();
-            //foreach (ProductCategory item in list)
-            //{
-            //    DataRow row = data.NewRow();
-            //    row["ID"] = item.id;
-            //    row["Tên sản phẩm"] = item.name;
-            //}
         }
 
         void addBindingCategory()

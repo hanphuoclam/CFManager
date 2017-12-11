@@ -97,6 +97,9 @@ namespace QLCF.UI
                     int idPro = Convert.ToInt32(dgvListProductReceipt.SelectedCells[0].OwningRow.Cells["ColID"].Value.ToString());
                     DeleteProduct(idPro);
                 }
+                dgvListProductReceipt.Rows.Clear();
+                dgvListProductReceipt.Refresh();
+                LoadListProductReceipt();
             }
             else if (e.ColumnIndex == dgvListProductReceipt.Columns["ColSave"].Index && e.RowIndex >= 0)
             {
@@ -112,10 +115,11 @@ namespace QLCF.UI
                 }
 
                 UpdateProduct(idPro, Count);
+                dgvListProductReceipt.Rows.Clear();
+                dgvListProductReceipt.Refresh();
+                LoadListProductReceipt();
             }
-            dgvListProductReceipt.Rows.Clear();
-            dgvListProductReceipt.Refresh();
-            LoadListProductReceipt();
+            
         }
     }
     #endregion

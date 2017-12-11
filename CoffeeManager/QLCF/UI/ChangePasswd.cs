@@ -26,7 +26,7 @@ namespace QLCF.UI
         }
 
         public Account AccountLogin { get => accountLogin; set => accountLogin = value; }
-        #region methords
+        #region methods
         void IntData()
         {
             _modelState = new ModelStateValidation();
@@ -47,13 +47,23 @@ namespace QLCF.UI
             if (pass == "") MessageBox.Show("Bạn chưa nhập mật khẩu cũ!!!");
             else if (newpass == "") MessageBox.Show("Bạn chưa nhập mật khẩu mới!!!");
             else if (cfpass == "") MessageBox.Show("Bạn chưa nhập xác nhận mật khẩu!!!");
-            else if (newpass != cfpass) MessageBox.Show("xác nhận mật khẩu không đúng!!!");
-            else if (pass != accountLogin.passWord) MessageBox.Show("Mật khẩu cũ không đúng!!!");
+            else if (newpass != cfpass)
+            {
+                MessageBox.Show("xác nhận mật khẩu không đúng!!!");
+                txtConfrimPass.ResetText();
+                txtNewPass.ResetText();
+            }
+            else if (pass != accountLogin.passWord)
+            {
+                MessageBox.Show("Mật khẩu cũ không đúng!!!");
+                txtPass.ResetText();
+            }
             else
             {
                 string username = accountLogin.userName;
-                if(_serviceAcc.EditAccount_S(new Account() { userName = username, passWord = newpass }))
+                if (_serviceAcc.EditAccount_S(new Account() { userName = username, passWord = newpass , type = accountLogin.type }))
                     MessageBox.Show("Đổi mật khẩu thành công!!!");
+                Remove();
             }
         }
         #endregion
