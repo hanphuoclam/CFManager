@@ -30,9 +30,19 @@ namespace QLCF.Services
             return false;
         }
 
+        public void DeleteBillById_S(int id)
+        {
+            _repository.DeleteBillById(id);
+        }
+
         public IEnumerable GetAll_S()
         {
             return _repository.GetAll();
+        }
+
+        public IEnumerable GetBillByDate_S(DateTime dateFrom, DateTime dateTo)
+        {
+            return _repository.GetBillByDate(dateFrom, dateTo);
         }
 
         public Bill GetBillById_S(int id)

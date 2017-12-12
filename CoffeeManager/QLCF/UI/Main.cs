@@ -219,7 +219,7 @@ namespace QLCF
                     ,"Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     if(_serviceBill.CheckOut_S(new Bill()
-                    { id=idBill, discount = discount, idTable = table.id, totalPrice = finalTotalPrice, status = 1}))
+                    { id=idBill, discount = discount, dateCheckIn = DateTime.Now, idTable = table.id, totalPrice = finalTotalPrice, status = 1}))
                     {
                         MessageBox.Show("Thanh toán thành công!");
                         _serviceTable.UpdateStatus_S(new TableFood() { id = table.id, name = table.name, status = "Trống" });
@@ -274,8 +274,8 @@ namespace QLCF
                     }
                 }
             }
-
-            if(check)
+            _serviceBill.DeleteBillById_S(idBillBeSwitch);
+            if (check)
             {
                 _serviceTable.UpdateStatus_S(new TableFood() { id = table.id, status = "Trống" });
                 if (idBillSwitchTo == -1)

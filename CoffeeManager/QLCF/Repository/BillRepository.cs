@@ -55,9 +55,29 @@ namespace QLCF.Repository
             return true;
         }
 
+        public void DeleteBillById(int id)
+        {
+            try
+            {
+                db.Bills.Remove(GetBillById(id));
+                db.SaveChanges();
+            }
+            catch
+            {
+
+            }
+        }
+
         public IEnumerable<Bill> GetAll()
         {
-            return db.Bills.ToList();
+            return db.Bills.Where(q => q.status == 1).ToList();
+        }
+
+        public IEnumerable<Bill> GetBillByDate(DateTime dateFrom, DateTime dateTo)
+        {
+            return (from c in db.Bills
+                    where c.dateCheckIn >= dateFrom && c.dateCheckIn <= dateTo && c.status == 1
+                    select c).ToList();
         }
 
         public Bill GetBillById(int id)

@@ -28,19 +28,22 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.hóaĐơnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.dataGridView1 = new System.Windows.Forms.DataGridView();
+            this.dgvListBill = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.dateTimePicker2 = new System.Windows.Forms.DateTimePicker();
-            this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
+            this.btnViewList = new System.Windows.Forms.Button();
+            this.dpkDateTo = new System.Windows.Forms.DateTimePicker();
+            this.dpkDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.ColDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListBill)).BeginInit();
             this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -70,26 +73,46 @@
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dataGridView1);
+            this.panel1.Controls.Add(this.dgvListBill);
             this.panel1.Location = new System.Drawing.Point(12, 89);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(860, 547);
             this.panel1.TabIndex = 7;
             // 
-            // dataGridView1
+            // dgvListBill
             // 
-            this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(3, 3);
-            this.dataGridView1.Name = "dataGridView1";
-            this.dataGridView1.Size = new System.Drawing.Size(854, 541);
-            this.dataGridView1.TabIndex = 0;
+            this.dgvListBill.AllowUserToAddRows = false;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListBill.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            this.dgvListBill.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListBill.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.ColDetail});
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListBill.DefaultCellStyle = dataGridViewCellStyle2;
+            this.dgvListBill.Location = new System.Drawing.Point(3, 3);
+            this.dgvListBill.Name = "dgvListBill";
+            this.dgvListBill.Size = new System.Drawing.Size(854, 541);
+            this.dgvListBill.TabIndex = 0;
+            this.dgvListBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListBill_CellClick);
             // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
-            this.panel2.Controls.Add(this.button1);
-            this.panel2.Controls.Add(this.dateTimePicker2);
-            this.panel2.Controls.Add(this.dateTimePicker1);
+            this.panel2.Controls.Add(this.btnViewList);
+            this.panel2.Controls.Add(this.dpkDateTo);
+            this.panel2.Controls.Add(this.dpkDateFrom);
             this.panel2.Location = new System.Drawing.Point(12, 33);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(860, 53);
@@ -105,33 +128,49 @@
             this.label1.TabIndex = 3;
             this.label1.Text = "Đến";
             // 
-            // button1
+            // btnViewList
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(676, 8);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(162, 38);
-            this.button1.TabIndex = 2;
-            this.button1.Text = "Thống kê";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnViewList.BackColor = System.Drawing.Color.Black;
+            this.btnViewList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnViewList.ForeColor = System.Drawing.Color.White;
+            this.btnViewList.Location = new System.Drawing.Point(676, 8);
+            this.btnViewList.Name = "btnViewList";
+            this.btnViewList.Size = new System.Drawing.Size(162, 38);
+            this.btnViewList.TabIndex = 2;
+            this.btnViewList.Text = "Thống kê";
+            this.btnViewList.UseVisualStyleBackColor = false;
+            this.btnViewList.Click += new System.EventHandler(this.btnViewList_Click);
             // 
-            // dateTimePicker2
+            // dpkDateTo
             // 
-            this.dateTimePicker2.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.dateTimePicker2.Location = new System.Drawing.Point(371, 11);
-            this.dateTimePicker2.Name = "dateTimePicker2";
-            this.dateTimePicker2.Size = new System.Drawing.Size(287, 30);
-            this.dateTimePicker2.TabIndex = 1;
+            this.dpkDateTo.CustomFormat = "dd/MM/yyyy";
+            this.dpkDateTo.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.dpkDateTo.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpkDateTo.Location = new System.Drawing.Point(371, 11);
+            this.dpkDateTo.Name = "dpkDateTo";
+            this.dpkDateTo.Size = new System.Drawing.Size(287, 30);
+            this.dpkDateTo.TabIndex = 1;
             // 
-            // dateTimePicker1
+            // dpkDateFrom
             // 
-            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
-            this.dateTimePicker1.Location = new System.Drawing.Point(13, 11);
-            this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(287, 30);
-            this.dateTimePicker1.TabIndex = 0;
+            this.dpkDateFrom.CustomFormat = "dd/MM/yyyy";
+            this.dpkDateFrom.Font = new System.Drawing.Font("Microsoft Sans Serif", 15F);
+            this.dpkDateFrom.Format = System.Windows.Forms.DateTimePickerFormat.Custom;
+            this.dpkDateFrom.Location = new System.Drawing.Point(13, 11);
+            this.dpkDateFrom.Name = "dpkDateFrom";
+            this.dpkDateFrom.Size = new System.Drawing.Size(287, 30);
+            this.dpkDateFrom.TabIndex = 0;
+            // 
+            // ColDetail
+            // 
+            this.ColDetail.HeaderText = "Chi tiết";
+            this.ColDetail.Name = "ColDetail";
+            this.ColDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColDetail.Text = "Chi tiết";
+            this.ColDetail.ToolTipText = "Chi tiết";
+            this.ColDetail.UseColumnTextForButtonValue = true;
+            this.ColDetail.Width = 70;
             // 
             // BillForm
             // 
@@ -148,7 +187,7 @@
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
             this.panel1.ResumeLayout(false);
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListBill)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.ResumeLayout(false);
@@ -162,11 +201,12 @@
         private System.Windows.Forms.ToolStripMenuItem hóaĐơnToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem thoátToolStripMenuItem;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.DataGridView dataGridView1;
+        private System.Windows.Forms.DataGridView dgvListBill;
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.DateTimePicker dateTimePicker2;
-        private System.Windows.Forms.DateTimePicker dateTimePicker1;
+        private System.Windows.Forms.Button btnViewList;
+        private System.Windows.Forms.DateTimePicker dpkDateTo;
+        private System.Windows.Forms.DateTimePicker dpkDateFrom;
+        private System.Windows.Forms.DataGridViewButtonColumn ColDetail;
     }
 }

@@ -14,5 +14,7 @@ namespace QLCF.Domain
         bool CheckOut(B bill);
         int GetUncheckBillByIdTable(int idtable);
         int? GetMaxIdBill();
+        IEnumerable<B> GetBillByDate(DateTime dateFrom, DateTime dateTo);
+        void DeleteBillById(int id);
     }
 }
