@@ -200,6 +200,18 @@
     <Compile Include="UI\Receipt.Designer.cs">
       <DependentUpon>Receipt.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\ReceiptInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ReceiptInfo.Designer.cs">
+      <DependentUpon>ReceiptInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="UI\ReceiptManager.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\ReceiptManager.Designer.cs">
+      <DependentUpon>ReceiptManager.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\ReceiptPay.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -243,6 +255,12 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Receipt.resx">
       <DependentUpon>Receipt.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReceiptInfo.resx">
+      <DependentUpon>ReceiptInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\ReceiptManager.resx">
+      <DependentUpon>ReceiptManager.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ReceiptPay.resx">
       <DependentUpon>ReceiptPay.cs</DependentUpon>

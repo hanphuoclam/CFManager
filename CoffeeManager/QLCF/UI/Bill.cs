@@ -49,7 +49,7 @@ namespace QLCF.UI
         {
             DateTime today = DateTime.Now;
             dpkDateFrom.Value = new DateTime(today.Year, today.Month, 1);
-            dpkDateFrom.Value = dpkDateFrom.Value.AddMonths(1).AddDays(-1);
+            dpkDateTo.Value = dpkDateFrom.Value.AddMonths(1).AddDays(-1);
         }
         void LoadListBillByDate(DateTime dateFrom, DateTime dateTo)
         {

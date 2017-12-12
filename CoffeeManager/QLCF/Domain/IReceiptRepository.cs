@@ -11,5 +11,7 @@ namespace QLCF.Domain
         bool AddReceipt(R receipt);
         void Pay(R receipt);
         int? GetMaxIdReceipt();
+        IEnumerable<R> GetAll();
+        IEnumerable<R> GetReceiptByDate(DateTime dateFrom, DateTime dateTo);
     }
 }

@@ -38,9 +38,21 @@ namespace QLCF.Repository
             return true;
         }
 
+        public IEnumerable<Receipt> GetAll()
+        {
+            return db.Receipts.ToList();
+        }
+
         public int? GetMaxIdReceipt()
         {
             return db.Receipts.Max(q => (int?)q.id);
+        }
+
+        public IEnumerable<Receipt> GetReceiptByDate(DateTime dateFrom, DateTime dateTo)
+        {
+            return (from q in db.Receipts
+                    where q.dateReceipt >= dateFrom && q.dateReceipt <= dateTo
+                    select q).ToList();
         }
 
         public void Pay(Receipt receipt)

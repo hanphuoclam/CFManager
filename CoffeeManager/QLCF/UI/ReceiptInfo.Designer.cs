@@ -1,6 +1,6 @@
 ﻿namespace QLCF.UI
 {
-    partial class BillInfoForm
+    partial class ReceiptInfoForm
     {
         /// <summary>
         /// Required designer variable.
@@ -28,48 +28,46 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.dgvListBillInfo = new System.Windows.Forms.DataGridView();
             this.panel1 = new System.Windows.Forms.Panel();
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListBillInfo)).BeginInit();
+            this.dgvListReceiptForm = new System.Windows.Forms.DataGridView();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListReceiptForm)).BeginInit();
             this.SuspendLayout();
-            // 
-            // dgvListBillInfo
-            // 
-            this.dgvListBillInfo.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvListBillInfo.Location = new System.Drawing.Point(3, 3);
-            this.dgvListBillInfo.Name = "dgvListBillInfo";
-            this.dgvListBillInfo.Size = new System.Drawing.Size(714, 496);
-            this.dgvListBillInfo.TabIndex = 0;
             // 
             // panel1
             // 
-            this.panel1.Controls.Add(this.dgvListBillInfo);
+            this.panel1.Controls.Add(this.dgvListReceiptForm);
             this.panel1.Location = new System.Drawing.Point(12, 12);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(720, 502);
-            this.panel1.TabIndex = 1;
+            this.panel1.TabIndex = 2;
             // 
-            // BillInfoForm
+            // dgvListReceiptForm
+            // 
+            this.dgvListReceiptForm.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListReceiptForm.Location = new System.Drawing.Point(3, 3);
+            this.dgvListReceiptForm.Name = "dgvListReceiptForm";
+            this.dgvListReceiptForm.Size = new System.Drawing.Size(714, 496);
+            this.dgvListReceiptForm.TabIndex = 0;
+            // 
+            // ReceiptInfoForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(744, 527);
             this.Controls.Add(this.panel1);
-            this.MaximizeBox = false;
-            this.MinimizeBox = false;
-            this.Name = "BillInfoForm";
+            this.Name = "ReceiptInfoForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
-            this.Text = "Chi tiết hóa đơn";
-            ((System.ComponentModel.ISupportInitialize)(this.dgvListBillInfo)).EndInit();
+            this.Text = "Chi tiết hóa đơn nhập hàng";
             this.panel1.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.dgvListReceiptForm)).EndInit();
             this.ResumeLayout(false);
 
         }
 
         #endregion
 
-        private System.Windows.Forms.DataGridView dgvListBillInfo;
         private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.DataGridView dgvListReceiptForm;
     }
 }

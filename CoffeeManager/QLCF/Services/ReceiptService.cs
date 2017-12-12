@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -21,9 +22,19 @@ namespace QLCF.Services
             return false;
         }
 
+        public IEnumerable GetAll_S()
+        {
+            return _repository.GetAll();
+        }
+
         public int? GetMaxIdReceipt_S()
         {
             return _repository.GetMaxIdReceipt();
+        }
+
+        public IEnumerable GetReceiptByDate_S(DateTime dateFrom, DateTime dateTo)
+        {
+            return _repository.GetReceiptByDate(dateFrom, dateTo);
         }
 
         public void Pay_S(Receipt receipt)

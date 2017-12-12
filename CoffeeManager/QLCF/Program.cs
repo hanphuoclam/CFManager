@@ -17,7 +17,7 @@ namespace QLCF
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new BillForm());
+            Application.Run(new ReceiptManagerForm());
         }
     }
 }

@@ -32,6 +32,8 @@
             this.btnBillManager = new System.Windows.Forms.Button();
             this.btnReceiptManager = new System.Windows.Forms.Button();
             this.btnUserManager = new System.Windows.Forms.Button();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // btnProductManager
@@ -48,7 +50,7 @@
             // btnBillManager
             // 
             this.btnBillManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnBillManager.Location = new System.Drawing.Point(509, 218);
+            this.btnBillManager.Location = new System.Drawing.Point(514, 218);
             this.btnBillManager.Name = "btnBillManager";
             this.btnBillManager.Size = new System.Drawing.Size(220, 142);
             this.btnBillManager.TabIndex = 1;
@@ -63,14 +65,14 @@
             this.btnReceiptManager.Name = "btnReceiptManager";
             this.btnReceiptManager.Size = new System.Drawing.Size(220, 142);
             this.btnReceiptManager.TabIndex = 2;
-            this.btnReceiptManager.Text = "Quản lí nhập hàng";
+            this.btnReceiptManager.Text = "Nhập hàng";
             this.btnReceiptManager.UseVisualStyleBackColor = true;
             this.btnReceiptManager.Click += new System.EventHandler(this.btnReceiptManager_Click);
             // 
             // btnUserManager
             // 
             this.btnUserManager.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.btnUserManager.Location = new System.Drawing.Point(223, 404);
+            this.btnUserManager.Location = new System.Drawing.Point(514, 395);
             this.btnUserManager.Name = "btnUserManager";
             this.btnUserManager.Size = new System.Drawing.Size(220, 142);
             this.btnUserManager.TabIndex = 3;
@@ -78,12 +80,34 @@
             this.btnUserManager.UseVisualStyleBackColor = true;
             this.btnUserManager.Click += new System.EventHandler(this.btnUserManager_Click);
             // 
+            // button1
+            // 
+            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button1.Location = new System.Drawing.Point(798, 395);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(220, 142);
+            this.button1.TabIndex = 4;
+            this.button1.Text = "Quản lí nhập hàng";
+            this.button1.UseVisualStyleBackColor = true;
+            // 
+            // button2
+            // 
+            this.button2.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.button2.Location = new System.Drawing.Point(223, 386);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(220, 142);
+            this.button2.TabIndex = 5;
+            this.button2.Text = "Quản lí danh mục sản phẩm";
+            this.button2.UseVisualStyleBackColor = true;
+            // 
             // AdminManager
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLCF.Properties.Resources.backgroundCFMresized;
             this.ClientSize = new System.Drawing.Size(1264, 722);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(this.btnUserManager);
             this.Controls.Add(this.btnReceiptManager);
             this.Controls.Add(this.btnBillManager);
@@ -101,5 +125,7 @@
         private System.Windows.Forms.Button btnBillManager;
         private System.Windows.Forms.Button btnReceiptManager;
         private System.Windows.Forms.Button btnUserManager;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
     }
 }
