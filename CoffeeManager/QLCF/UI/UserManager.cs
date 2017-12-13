@@ -25,7 +25,6 @@ namespace QLCF.UI
             this.accountLogin = acc;
             IntData();
             loadListUser();
-            editDgv();
             addBindingUser();
 
         }
@@ -38,12 +37,6 @@ namespace QLCF.UI
             _serviceAcc = new AccountService(new ValidationWrapper(_modelState));
         }
 
-        void editDgv()
-        {
-            dgvListUser.Columns[0].Width = 80;
-            dgvListUser.Columns[1].Width = 230;
-            dgvListUser.Columns[2].Width = 190;
-        }
         void loadListUser()
         {
             IEnumerable listAcc = _serviceAcc.GetAll_S();
@@ -68,11 +61,12 @@ namespace QLCF.UI
                 i++;
             }
             dgvListUser.DataSource = data;
+            //dgvListUser.DataSource = _serviceAcc.GetAll_S();
         }
 
         void addBindingUser()
         {
-            txtUserName.DataBindings.Add(new Binding("Text",dgvListUser.DataSource,"Tên đăng nhập", true,DataSourceUpdateMode.Never));
+            //txtUserName.DataBindings.Add(new Binding("Text",dgvListUser,"userName", true,DataSourceUpdateMode.Never));
         }
 
         void ResetPass()
@@ -115,10 +109,11 @@ namespace QLCF.UI
 
         void Delete()
         {
-            string item = accountLogin.userName;
+            //string item = accountLogin.userName;
             string username = dgvListUser.SelectedCells[0].OwningRow.Cells["Tên đăng nhập"].Value.ToString();
-            if (username == accountLogin.userName) MessageBox.Show("Bạn không thể xóa tài khoản đang đăng nhập!!!");
-            else if (_serviceAcc.DeleteAccount_S(username))
+            //if (username == accountLogin.userName) MessageBox.Show("Bạn không thể xóa tài khoản đang đăng nhập!!!");
+            //else 
+            if (_serviceAcc.DeleteAccount_S(username))
             {
                 MessageBox.Show("Xóa thành công!!!");
             }

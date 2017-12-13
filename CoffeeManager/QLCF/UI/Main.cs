@@ -236,6 +236,8 @@ namespace QLCF
                 return;
             int idBillBeSwitch = _serviceBill.GetUncheckBillByIdTable_S(table.id);
             int idTableSwitchTo = (cmbTableFood.SelectedItem as TableFood).id;
+            if (idTableSwitchTo == table.id)
+                return;
             int idBillSwitchTo = _serviceBill.GetUncheckBillByIdTable_S(idTableSwitchTo);
             IEnumerable listBillInfo_TableBeSwitch = _serviceBillInfo.GetListBillInfoByIdBill_S(idBillBeSwitch);
             bool check = false;
@@ -334,13 +336,6 @@ namespace QLCF
             SwitchTable();
         }
         #endregion
-
-        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
-        {
-            AdminManager ad = new AdminManager(accountLogin);
-            this.Hide();
-            ad.ShowDialog();
-            this.Show();
-        }
+        
     }
 }
