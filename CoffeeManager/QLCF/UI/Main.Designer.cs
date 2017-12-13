@@ -130,7 +130,7 @@
             this.btnSwitchTable.ForeColor = System.Drawing.Color.White;
             this.btnSwitchTable.Location = new System.Drawing.Point(0, 86);
             this.btnSwitchTable.Name = "btnSwitchTable";
-            this.btnSwitchTable.Size = new System.Drawing.Size(216, 49);
+            this.btnSwitchTable.Size = new System.Drawing.Size(242, 49);
             this.btnSwitchTable.TabIndex = 8;
             this.btnSwitchTable.Text = "Chuyển bàn";
             this.btnSwitchTable.UseVisualStyleBackColor = false;
@@ -165,22 +165,27 @@
             this.cmbDiscount.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbDiscount.FormattingEnabled = true;
             this.cmbDiscount.Items.AddRange(new object[] {
-            "75",
-            "70",
-            "65",
-            "60",
-            "55",
-            "50",
-            "45",
-            "40",
-            "35",
-            "30",
-            "25",
-            "20",
-            "15",
-            "10",
+            "0",
             "5",
-            "0"});
+            "10",
+            "15",
+            "20",
+            "25",
+            "30",
+            "35",
+            "40",
+            "45",
+            "50",
+            "55",
+            "60",
+            "65",
+            "70",
+            "75",
+            "80",
+            "85",
+            "90",
+            "95",
+            "100"});
             this.cmbDiscount.Location = new System.Drawing.Point(128, 3);
             this.cmbDiscount.Name = "cmbDiscount";
             this.cmbDiscount.RightToLeft = System.Windows.Forms.RightToLeft.Yes;
@@ -248,11 +253,11 @@
             // 
             // cmbTableFood
             // 
-            this.cmbTableFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbTableFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.cmbTableFood.FormattingEnabled = true;
-            this.cmbTableFood.Location = new System.Drawing.Point(222, 96);
+            this.cmbTableFood.Location = new System.Drawing.Point(248, 89);
             this.cmbTableFood.Name = "cmbTableFood";
-            this.cmbTableFood.Size = new System.Drawing.Size(82, 33);
+            this.cmbTableFood.Size = new System.Drawing.Size(56, 41);
             this.cmbTableFood.TabIndex = 9;
             // 
             // menuStrip1
@@ -271,7 +276,6 @@
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
-            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
