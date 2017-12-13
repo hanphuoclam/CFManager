@@ -14,8 +14,9 @@ namespace QLCF.UI
     public partial class AdminManager : Form
     {
         private Account accountLogin;
-        public AdminManager()
+        public AdminManager(Account acc)
         {
+            this.accountLogin = acc;
             InitializeComponent();
         }
 
