@@ -103,11 +103,14 @@
             this.btnExit.BackColor = System.Drawing.Color.Black;
             this.btnExit.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnExit.ForeColor = System.Drawing.Color.White;
-            this.btnExit.Location = new System.Drawing.Point(569, 313);
+            this.btnExit.Image = global::QLCF.Properties.Resources.exit;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnExit.Location = new System.Drawing.Point(572, 313);
             this.btnExit.Name = "btnExit";
-            this.btnExit.Size = new System.Drawing.Size(150, 54);
+            this.btnExit.Size = new System.Drawing.Size(147, 64);
             this.btnExit.TabIndex = 4;
             this.btnExit.Text = "Thoát";
+            this.btnExit.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnExit.UseVisualStyleBackColor = false;
             this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
@@ -116,11 +119,14 @@
             this.btnLogin.BackColor = System.Drawing.Color.Black;
             this.btnLogin.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnLogin.ForeColor = System.Drawing.Color.White;
-            this.btnLogin.Location = new System.Drawing.Point(383, 313);
+            this.btnLogin.Image = global::QLCF.Properties.Resources.tick;
+            this.btnLogin.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.btnLogin.Location = new System.Drawing.Point(404, 313);
             this.btnLogin.Name = "btnLogin";
-            this.btnLogin.Size = new System.Drawing.Size(152, 54);
+            this.btnLogin.Size = new System.Drawing.Size(149, 64);
             this.btnLogin.TabIndex = 3;
             this.btnLogin.Text = "Đăng Nhập";
+            this.btnLogin.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnLogin.UseVisualStyleBackColor = false;
             this.btnLogin.Click += new System.EventHandler(this.btnLogin_Click);
             // 

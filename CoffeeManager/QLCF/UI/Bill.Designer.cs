@@ -35,12 +35,12 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListBill = new System.Windows.Forms.DataGridView();
+            this.ColDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.panel2 = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
             this.btnViewList = new System.Windows.Forms.Button();
             this.dpkDateTo = new System.Windows.Forms.DateTimePicker();
             this.dpkDateFrom = new System.Windows.Forms.DateTimePicker();
-            this.ColDetail = new System.Windows.Forms.DataGridViewButtonColumn();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListBill)).BeginInit();
@@ -107,6 +107,17 @@
             this.dgvListBill.TabIndex = 0;
             this.dgvListBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListBill_CellClick);
             // 
+            // ColDetail
+            // 
+            this.ColDetail.HeaderText = "Chi tiết";
+            this.ColDetail.Name = "ColDetail";
+            this.ColDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
+            this.ColDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
+            this.ColDetail.Text = "Chi tiết";
+            this.ColDetail.ToolTipText = "Chi tiết";
+            this.ColDetail.UseColumnTextForButtonValue = true;
+            this.ColDetail.Width = 70;
+            // 
             // panel2
             // 
             this.panel2.Controls.Add(this.label1);
@@ -133,6 +144,8 @@
             this.btnViewList.BackColor = System.Drawing.Color.Black;
             this.btnViewList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnViewList.ForeColor = System.Drawing.Color.White;
+            this.btnViewList.Image = global::QLCF.Properties.Resources.viewlist1;
+            this.btnViewList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewList.Location = new System.Drawing.Point(676, 8);
             this.btnViewList.Name = "btnViewList";
             this.btnViewList.Size = new System.Drawing.Size(162, 38);
@@ -160,17 +173,6 @@
             this.dpkDateFrom.Name = "dpkDateFrom";
             this.dpkDateFrom.Size = new System.Drawing.Size(287, 30);
             this.dpkDateFrom.TabIndex = 0;
-            // 
-            // ColDetail
-            // 
-            this.ColDetail.HeaderText = "Chi tiết";
-            this.ColDetail.Name = "ColDetail";
-            this.ColDetail.Resizable = System.Windows.Forms.DataGridViewTriState.True;
-            this.ColDetail.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
-            this.ColDetail.Text = "Chi tiết";
-            this.ColDetail.ToolTipText = "Chi tiết";
-            this.ColDetail.UseColumnTextForButtonValue = true;
-            this.ColDetail.Width = 70;
             // 
             // BillForm
             // 

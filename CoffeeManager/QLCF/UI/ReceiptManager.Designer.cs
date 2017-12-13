@@ -144,9 +144,11 @@
             this.btnViewList.BackColor = System.Drawing.Color.Black;
             this.btnViewList.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnViewList.ForeColor = System.Drawing.Color.White;
+            this.btnViewList.Image = global::QLCF.Properties.Resources.viewlist1;
+            this.btnViewList.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnViewList.Location = new System.Drawing.Point(676, 8);
             this.btnViewList.Name = "btnViewList";
-            this.btnViewList.Size = new System.Drawing.Size(162, 38);
+            this.btnViewList.Size = new System.Drawing.Size(168, 38);
             this.btnViewList.TabIndex = 2;
             this.btnViewList.Text = "Thống kê";
             this.btnViewList.UseVisualStyleBackColor = false;

@@ -43,10 +43,10 @@
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.label1 = new System.Windows.Forms.Label();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnBuy = new System.Windows.Forms.Button();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvProductSuggest = new System.Windows.Forms.DataGridView();
-            this.txtTotalPrice = new System.Windows.Forms.TextBox();
-            this.btnBuy = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -58,9 +58,11 @@
             this.btnChoose.BackColor = System.Drawing.Color.Black;
             this.btnChoose.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnChoose.ForeColor = System.Drawing.Color.White;
-            this.btnChoose.Location = new System.Drawing.Point(144, 270);
+            this.btnChoose.Image = global::QLCF.Properties.Resources.cart;
+            this.btnChoose.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnChoose.Location = new System.Drawing.Point(138, 270);
             this.btnChoose.Name = "btnChoose";
-            this.btnChoose.Size = new System.Drawing.Size(201, 42);
+            this.btnChoose.Size = new System.Drawing.Size(219, 42);
             this.btnChoose.TabIndex = 10;
             this.btnChoose.Text = "Thêm vào giỏ";
             this.btnChoose.UseVisualStyleBackColor = false;
@@ -207,6 +209,29 @@
             this.panel2.Size = new System.Drawing.Size(369, 589);
             this.panel2.TabIndex = 6;
             // 
+            // btnBuy
+            // 
+            this.btnBuy.BackColor = System.Drawing.Color.Black;
+            this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnBuy.ForeColor = System.Drawing.Color.White;
+            this.btnBuy.Image = global::QLCF.Properties.Resources.tick;
+            this.btnBuy.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnBuy.Location = new System.Drawing.Point(29, 544);
+            this.btnBuy.Name = "btnBuy";
+            this.btnBuy.Size = new System.Drawing.Size(328, 42);
+            this.btnBuy.TabIndex = 12;
+            this.btnBuy.Text = "Thanh toán";
+            this.btnBuy.UseVisualStyleBackColor = false;
+            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtTotalPrice.Location = new System.Drawing.Point(126, 204);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(240, 35);
+            this.txtTotalPrice.TabIndex = 11;
+            // 
             // panel1
             // 
             this.panel1.Controls.Add(this.label1);
@@ -223,27 +248,6 @@
             this.dgvProductSuggest.Name = "dgvProductSuggest";
             this.dgvProductSuggest.Size = new System.Drawing.Size(457, 544);
             this.dgvProductSuggest.TabIndex = 0;
-            // 
-            // txtTotalPrice
-            // 
-            this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txtTotalPrice.Location = new System.Drawing.Point(126, 204);
-            this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(240, 35);
-            this.txtTotalPrice.TabIndex = 11;
-            // 
-            // btnBuy
-            // 
-            this.btnBuy.BackColor = System.Drawing.Color.Black;
-            this.btnBuy.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.btnBuy.ForeColor = System.Drawing.Color.White;
-            this.btnBuy.Location = new System.Drawing.Point(29, 544);
-            this.btnBuy.Name = "btnBuy";
-            this.btnBuy.Size = new System.Drawing.Size(328, 42);
-            this.btnBuy.TabIndex = 12;
-            this.btnBuy.Text = "Thanh toán";
-            this.btnBuy.UseVisualStyleBackColor = false;
-            this.btnBuy.Click += new System.EventHandler(this.btnBuy_Click);
             // 
             // ReceiptForm
             // 

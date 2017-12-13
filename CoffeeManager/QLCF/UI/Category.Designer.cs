@@ -28,20 +28,20 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.dgvListCategory = new System.Windows.Forms.DataGridView();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.fileToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label1 = new System.Windows.Forms.Label();
+            this.txtNameCategory = new System.Windows.Forms.TextBox();
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.btnDeleteCategory = new System.Windows.Forms.Button();
             this.btnEditCategory = new System.Windows.Forms.Button();
             this.btnShowCategory = new System.Windows.Forms.Button();
-            this.txtNameCategory = new System.Windows.Forms.TextBox();
-            this.label1 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListCategory)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -50,23 +50,23 @@
             // 
             // dgvListCategory
             // 
-            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvListCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvListCategory.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvListCategory.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle4.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle4.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle4.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle4.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvListCategory.DefaultCellStyle = dataGridViewCellStyle4;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvListCategory.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListCategory.Location = new System.Drawing.Point(3, 3);
             this.dgvListCategory.Name = "dgvListCategory";
             this.dgvListCategory.Size = new System.Drawing.Size(336, 290);
@@ -93,7 +93,7 @@
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             // 
             // panel1
@@ -118,66 +118,6 @@
             this.panel2.Size = new System.Drawing.Size(228, 290);
             this.panel2.TabIndex = 3;
             // 
-            // btnAddCategory
-            // 
-            this.btnAddCategory.BackColor = System.Drawing.Color.Black;
-            this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAddCategory.ForeColor = System.Drawing.Color.White;
-            this.btnAddCategory.Location = new System.Drawing.Point(131, 196);
-            this.btnAddCategory.Name = "btnAddCategory";
-            this.btnAddCategory.Size = new System.Drawing.Size(94, 39);
-            this.btnAddCategory.TabIndex = 15;
-            this.btnAddCategory.Text = "Thêm";
-            this.btnAddCategory.UseVisualStyleBackColor = false;
-            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
-            // 
-            // btnDeleteCategory
-            // 
-            this.btnDeleteCategory.BackColor = System.Drawing.Color.Black;
-            this.btnDeleteCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDeleteCategory.ForeColor = System.Drawing.Color.White;
-            this.btnDeleteCategory.Location = new System.Drawing.Point(13, 241);
-            this.btnDeleteCategory.Name = "btnDeleteCategory";
-            this.btnDeleteCategory.Size = new System.Drawing.Size(94, 39);
-            this.btnDeleteCategory.TabIndex = 14;
-            this.btnDeleteCategory.Text = "Xóa";
-            this.btnDeleteCategory.UseVisualStyleBackColor = false;
-            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
-            // 
-            // btnEditCategory
-            // 
-            this.btnEditCategory.BackColor = System.Drawing.Color.Black;
-            this.btnEditCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnEditCategory.ForeColor = System.Drawing.Color.White;
-            this.btnEditCategory.Location = new System.Drawing.Point(131, 241);
-            this.btnEditCategory.Name = "btnEditCategory";
-            this.btnEditCategory.Size = new System.Drawing.Size(94, 39);
-            this.btnEditCategory.TabIndex = 13;
-            this.btnEditCategory.Text = "Sửa";
-            this.btnEditCategory.UseVisualStyleBackColor = false;
-            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
-            // 
-            // btnShowCategory
-            // 
-            this.btnShowCategory.BackColor = System.Drawing.Color.Black;
-            this.btnShowCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnShowCategory.ForeColor = System.Drawing.Color.White;
-            this.btnShowCategory.Location = new System.Drawing.Point(13, 196);
-            this.btnShowCategory.Name = "btnShowCategory";
-            this.btnShowCategory.Size = new System.Drawing.Size(94, 39);
-            this.btnShowCategory.TabIndex = 12;
-            this.btnShowCategory.Text = "Xem";
-            this.btnShowCategory.UseVisualStyleBackColor = false;
-            this.btnShowCategory.Click += new System.EventHandler(this.btnShowCategory_Click);
-            // 
-            // txtNameCategory
-            // 
-            this.txtNameCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.txtNameCategory.Location = new System.Drawing.Point(13, 49);
-            this.txtNameCategory.Name = "txtNameCategory";
-            this.txtNameCategory.Size = new System.Drawing.Size(212, 35);
-            this.txtNameCategory.TabIndex = 16;
-            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -188,6 +128,74 @@
             this.label1.Size = new System.Drawing.Size(172, 29);
             this.label1.TabIndex = 17;
             this.label1.Text = "Tên danh mục:";
+            // 
+            // txtNameCategory
+            // 
+            this.txtNameCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtNameCategory.Location = new System.Drawing.Point(13, 49);
+            this.txtNameCategory.Name = "txtNameCategory";
+            this.txtNameCategory.Size = new System.Drawing.Size(212, 35);
+            this.txtNameCategory.TabIndex = 16;
+            // 
+            // btnAddCategory
+            // 
+            this.btnAddCategory.BackColor = System.Drawing.Color.Black;
+            this.btnAddCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnAddCategory.ForeColor = System.Drawing.Color.White;
+            this.btnAddCategory.Image = global::QLCF.Properties.Resources._new;
+            this.btnAddCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnAddCategory.Location = new System.Drawing.Point(119, 199);
+            this.btnAddCategory.Name = "btnAddCategory";
+            this.btnAddCategory.Size = new System.Drawing.Size(109, 39);
+            this.btnAddCategory.TabIndex = 15;
+            this.btnAddCategory.Text = "Thêm";
+            this.btnAddCategory.UseVisualStyleBackColor = false;
+            this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
+            // 
+            // btnDeleteCategory
+            // 
+            this.btnDeleteCategory.BackColor = System.Drawing.Color.Black;
+            this.btnDeleteCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnDeleteCategory.ForeColor = System.Drawing.Color.White;
+            this.btnDeleteCategory.Image = global::QLCF.Properties.Resources.delete;
+            this.btnDeleteCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnDeleteCategory.Location = new System.Drawing.Point(3, 244);
+            this.btnDeleteCategory.Name = "btnDeleteCategory";
+            this.btnDeleteCategory.Size = new System.Drawing.Size(109, 39);
+            this.btnDeleteCategory.TabIndex = 14;
+            this.btnDeleteCategory.Text = "Xóa";
+            this.btnDeleteCategory.UseVisualStyleBackColor = false;
+            this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
+            // 
+            // btnEditCategory
+            // 
+            this.btnEditCategory.BackColor = System.Drawing.Color.Black;
+            this.btnEditCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnEditCategory.ForeColor = System.Drawing.Color.White;
+            this.btnEditCategory.Image = global::QLCF.Properties.Resources.edit;
+            this.btnEditCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnEditCategory.Location = new System.Drawing.Point(119, 244);
+            this.btnEditCategory.Name = "btnEditCategory";
+            this.btnEditCategory.Size = new System.Drawing.Size(109, 39);
+            this.btnEditCategory.TabIndex = 13;
+            this.btnEditCategory.Text = "Sửa";
+            this.btnEditCategory.UseVisualStyleBackColor = false;
+            this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
+            // 
+            // btnShowCategory
+            // 
+            this.btnShowCategory.BackColor = System.Drawing.Color.Black;
+            this.btnShowCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnShowCategory.ForeColor = System.Drawing.Color.White;
+            this.btnShowCategory.Image = global::QLCF.Properties.Resources.view;
+            this.btnShowCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnShowCategory.Location = new System.Drawing.Point(3, 199);
+            this.btnShowCategory.Name = "btnShowCategory";
+            this.btnShowCategory.Size = new System.Drawing.Size(109, 39);
+            this.btnShowCategory.TabIndex = 12;
+            this.btnShowCategory.Text = "Xem";
+            this.btnShowCategory.UseVisualStyleBackColor = false;
+            this.btnShowCategory.Click += new System.EventHandler(this.btnShowCategory_Click);
             // 
             // FormCategory
             // 

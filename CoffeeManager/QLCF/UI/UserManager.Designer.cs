@@ -73,6 +73,8 @@
             this.btnDelete.BackColor = System.Drawing.Color.Black;
             this.btnDelete.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnDelete.ForeColor = System.Drawing.Color.White;
+            this.btnDelete.Image = global::QLCF.Properties.Resources.delete;
+            this.btnDelete.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnDelete.Location = new System.Drawing.Point(8, 486);
             this.btnDelete.Name = "btnDelete";
             this.btnDelete.Size = new System.Drawing.Size(271, 42);
@@ -86,6 +88,8 @@
             this.btnAdd.BackColor = System.Drawing.Color.Black;
             this.btnAdd.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnAdd.ForeColor = System.Drawing.Color.White;
+            this.btnAdd.Image = global::QLCF.Properties.Resources._new;
+            this.btnAdd.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnAdd.Location = new System.Drawing.Point(8, 438);
             this.btnAdd.Name = "btnAdd";
             this.btnAdd.Size = new System.Drawing.Size(271, 42);
@@ -99,6 +103,8 @@
             this.btnSave.BackColor = System.Drawing.Color.Black;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
+            this.btnSave.Image = global::QLCF.Properties.Resources.tick;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSave.Location = new System.Drawing.Point(8, 534);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(271, 42);

@@ -147,9 +147,11 @@
             this.btnRemove.BackColor = System.Drawing.Color.Black;
             this.btnRemove.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnRemove.ForeColor = System.Drawing.Color.White;
-            this.btnRemove.Location = new System.Drawing.Point(196, 264);
+            this.btnRemove.Image = global::QLCF.Properties.Resources.remove;
+            this.btnRemove.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnRemove.Location = new System.Drawing.Point(152, 264);
             this.btnRemove.Name = "btnRemove";
-            this.btnRemove.Size = new System.Drawing.Size(152, 42);
+            this.btnRemove.Size = new System.Drawing.Size(187, 42);
             this.btnRemove.TabIndex = 6;
             this.btnRemove.Text = "Nhập lại";
             this.btnRemove.UseVisualStyleBackColor = false;
@@ -160,9 +162,11 @@
             this.btnSave.BackColor = System.Drawing.Color.Black;
             this.btnSave.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.btnSave.ForeColor = System.Drawing.Color.White;
-            this.btnSave.Location = new System.Drawing.Point(381, 264);
+            this.btnSave.Image = global::QLCF.Properties.Resources.tick;
+            this.btnSave.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSave.Location = new System.Drawing.Point(345, 264);
             this.btnSave.Name = "btnSave";
-            this.btnSave.Size = new System.Drawing.Size(152, 42);
+            this.btnSave.Size = new System.Drawing.Size(188, 42);
             this.btnSave.TabIndex = 5;
             this.btnSave.Text = "Lưu thay đổi";
             this.btnSave.UseVisualStyleBackColor = false;

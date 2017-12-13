@@ -304,6 +304,18 @@
       <DependentUpon>EntityModelManagerCF.edmx</DependentUpon>
       <LastGenOutput>EntityModelManagerCF.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\cart.png" />
+    <None Include="Resources\S.png" />
+    <None Include="Resources\add.png" />
+    <None Include="Resources\swap.png" />
+    <None Include="Resources\exit.png" />
+    <None Include="Resources\tick.png" />
+    <None Include="Resources\remove.png" />
+    <None Include="Resources\view.png" />
+    <None Include="Resources\delete.png" />
+    <None Include="Resources\edit.png" />
+    <None Include="Resources\new.png" />
+    <None Include="Resources\viewlist1.png" />
     <None Include="Resources\nenmenu.png" />
     <None Include="Resources\banvuongn.png" />
     <None Include="Resources\bandain.png" />

@@ -72,7 +72,7 @@ namespace QLCF.UI
 
         void addBindingUser()
         {
-            txtUserName.DataBindings.Add(new Binding("Text",dgvListUser.DataSource,"userName", true,DataSourceUpdateMode.Never));
+            txtUserName.DataBindings.Add(new Binding("Text",dgvListUser.DataSource,"Tên đăng nhập", true,DataSourceUpdateMode.Never));
         }
 
         void ResetPass()
@@ -92,7 +92,7 @@ namespace QLCF.UI
         void Save()
         {
             string username = dgvListUser.SelectedCells[0].OwningRow.Cells["Tên đăng nhập"].Value.ToString();
-            if (_serviceAcc.EditAccount_S(new Account(){userName = username, type = Convert.ToInt32(nmdType.Value)}))
+            if (_serviceAcc.EditAccount_S(new Account(){userName = username, passWord = "1", type = Convert.ToInt32(nmdType.Value)}))
             {
                 MessageBox.Show("lưu thành công!!!");
             }

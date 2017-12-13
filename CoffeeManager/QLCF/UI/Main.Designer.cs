@@ -95,11 +95,14 @@
             this.btnAddProduct.BackColor = System.Drawing.Color.Black;
             this.btnAddProduct.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnAddProduct.ForeColor = System.Drawing.Color.White;
-            this.btnAddProduct.Location = new System.Drawing.Point(330, 3);
+            this.btnAddProduct.Image = global::QLCF.Properties.Resources.add;
+            this.btnAddProduct.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.btnAddProduct.Location = new System.Drawing.Point(330, 13);
             this.btnAddProduct.Name = "btnAddProduct";
-            this.btnAddProduct.Size = new System.Drawing.Size(106, 134);
+            this.btnAddProduct.Size = new System.Drawing.Size(106, 110);
             this.btnAddProduct.TabIndex = 0;
             this.btnAddProduct.Text = "Thêm Món";
+            this.btnAddProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnAddProduct.UseVisualStyleBackColor = false;
             this.btnAddProduct.Click += new System.EventHandler(this.btnAddProduct_Click);
             // 
@@ -128,6 +131,8 @@
             this.btnSwitchTable.BackColor = System.Drawing.Color.Black;
             this.btnSwitchTable.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnSwitchTable.ForeColor = System.Drawing.Color.White;
+            this.btnSwitchTable.Image = global::QLCF.Properties.Resources.swap;
+            this.btnSwitchTable.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnSwitchTable.Location = new System.Drawing.Point(0, 86);
             this.btnSwitchTable.Name = "btnSwitchTable";
             this.btnSwitchTable.Size = new System.Drawing.Size(218, 49);
@@ -193,11 +198,14 @@
             this.btnCheckOut.BackColor = System.Drawing.Color.Black;
             this.btnCheckOut.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.btnCheckOut.ForeColor = System.Drawing.Color.White;
+            this.btnCheckOut.Image = global::QLCF.Properties.Resources.S;
+            this.btnCheckOut.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnCheckOut.Location = new System.Drawing.Point(313, 3);
             this.btnCheckOut.Name = "btnCheckOut";
             this.btnCheckOut.Size = new System.Drawing.Size(120, 132);
             this.btnCheckOut.TabIndex = 2;
             this.btnCheckOut.Text = "Thanh Toán";
+            this.btnCheckOut.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             this.btnCheckOut.UseVisualStyleBackColor = false;
             this.btnCheckOut.Click += new System.EventHandler(this.btnCheckOut_Click);
             // 
@@ -271,6 +279,7 @@
             this.adminToolStripMenuItem.Name = "adminToolStripMenuItem";
             this.adminToolStripMenuItem.Size = new System.Drawing.Size(55, 20);
             this.adminToolStripMenuItem.Text = "Admin";
+            this.adminToolStripMenuItem.Click += new System.EventHandler(this.adminToolStripMenuItem_Click_1);
             // 
             // thôngTinTàiKhoảnToolStripMenuItem
             // 
