@@ -69,7 +69,9 @@ namespace QLCF.UI
             }
             dgvListUser.DataSource = data;
         }
-
+        /// <summary>
+        /// Binding for user name
+        /// </summary>
         void addBindingUser()
         {
             txtUserName.DataBindings.Add(new Binding("Text",dgvListUser.DataSource,"Tên đăng nhập", true,DataSourceUpdateMode.Never));
