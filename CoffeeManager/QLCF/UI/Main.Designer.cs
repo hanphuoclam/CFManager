@@ -130,7 +130,7 @@
             this.btnSwitchTable.ForeColor = System.Drawing.Color.White;
             this.btnSwitchTable.Location = new System.Drawing.Point(0, 86);
             this.btnSwitchTable.Name = "btnSwitchTable";
-            this.btnSwitchTable.Size = new System.Drawing.Size(242, 49);
+            this.btnSwitchTable.Size = new System.Drawing.Size(224, 49);
             this.btnSwitchTable.TabIndex = 8;
             this.btnSwitchTable.Text = "Chuyển bàn";
             this.btnSwitchTable.UseVisualStyleBackColor = false;
