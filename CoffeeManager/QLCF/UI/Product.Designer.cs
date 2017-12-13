@@ -106,6 +106,7 @@
             this.txtInventory.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.txtInventory.Location = new System.Drawing.Point(72, 288);
             this.txtInventory.Name = "txtInventory";
+            this.txtInventory.ReadOnly = true;
             this.txtInventory.Size = new System.Drawing.Size(245, 35);
             this.txtInventory.TabIndex = 3;
             // 
@@ -223,6 +224,7 @@
             this.txtPriceProduct.Name = "txtPriceProduct";
             this.txtPriceProduct.Size = new System.Drawing.Size(245, 35);
             this.txtPriceProduct.TabIndex = 1;
+            this.txtPriceProduct.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtPriceProduct_KeyPress);
             // 
             // panel1
             // 
@@ -234,9 +236,10 @@
             // 
             // dgvListProduct
             // 
+            this.dgvListProduct.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -245,7 +248,7 @@
             this.dgvListProduct.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -253,6 +256,7 @@
             this.dgvListProduct.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListProduct.Location = new System.Drawing.Point(3, 3);
             this.dgvListProduct.Name = "dgvListProduct";
+            this.dgvListProduct.RowHeadersVisible = false;
             this.dgvListProduct.Size = new System.Drawing.Size(484, 586);
             this.dgvListProduct.TabIndex = 0;
             this.dgvListProduct.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListProduct_CellClick);
@@ -290,6 +294,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.MaximizeBox = false;
             this.Name = "ProductForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Danh mục thức ăn & thức uống";

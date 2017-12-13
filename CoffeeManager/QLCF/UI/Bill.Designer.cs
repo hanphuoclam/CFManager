@@ -41,10 +41,14 @@
             this.btnViewList = new System.Windows.Forms.Button();
             this.dpkDateTo = new System.Windows.Forms.DateTimePicker();
             this.dpkDateFrom = new System.Windows.Forms.DateTimePicker();
+            this.panel3 = new System.Windows.Forms.Panel();
+            this.txtTotalRevenue = new System.Windows.Forms.TextBox();
+            this.btnTotalRevenue = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListBill)).BeginInit();
             this.panel2.SuspendLayout();
+            this.panel3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -76,7 +80,7 @@
             this.panel1.Controls.Add(this.dgvListBill);
             this.panel1.Location = new System.Drawing.Point(12, 89);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(860, 547);
+            this.panel1.Size = new System.Drawing.Size(554, 547);
             this.panel1.TabIndex = 7;
             // 
             // dgvListBill
@@ -84,7 +88,7 @@
             this.dgvListBill.AllowUserToAddRows = false;
             dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -95,7 +99,7 @@
             this.ColDetail});
             dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
             dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
             dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
             dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
             dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
@@ -103,7 +107,8 @@
             this.dgvListBill.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListBill.Location = new System.Drawing.Point(3, 3);
             this.dgvListBill.Name = "dgvListBill";
-            this.dgvListBill.Size = new System.Drawing.Size(854, 541);
+            this.dgvListBill.RowHeadersVisible = false;
+            this.dgvListBill.Size = new System.Drawing.Size(548, 541);
             this.dgvListBill.TabIndex = 0;
             this.dgvListBill.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvListBill_CellClick);
             // 
@@ -174,15 +179,49 @@
             this.dpkDateFrom.Size = new System.Drawing.Size(287, 30);
             this.dpkDateFrom.TabIndex = 0;
             // 
+            // panel3
+            // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.txtTotalRevenue);
+            this.panel3.Controls.Add(this.btnTotalRevenue);
+            this.panel3.Location = new System.Drawing.Point(572, 89);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(300, 547);
+            this.panel3.TabIndex = 13;
+            // 
+            // txtTotalRevenue
+            // 
+            this.txtTotalRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.txtTotalRevenue.Location = new System.Drawing.Point(23, 35);
+            this.txtTotalRevenue.Name = "txtTotalRevenue";
+            this.txtTotalRevenue.Size = new System.Drawing.Size(261, 35);
+            this.txtTotalRevenue.TabIndex = 5;
+            // 
+            // btnTotalRevenue
+            // 
+            this.btnTotalRevenue.BackColor = System.Drawing.Color.Black;
+            this.btnTotalRevenue.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
+            this.btnTotalRevenue.ForeColor = System.Drawing.Color.White;
+            this.btnTotalRevenue.Image = global::QLCF.Properties.Resources.viewlist1;
+            this.btnTotalRevenue.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnTotalRevenue.Location = new System.Drawing.Point(68, 97);
+            this.btnTotalRevenue.Name = "btnTotalRevenue";
+            this.btnTotalRevenue.Size = new System.Drawing.Size(216, 38);
+            this.btnTotalRevenue.TabIndex = 4;
+            this.btnTotalRevenue.Text = "Tính doanh thu";
+            this.btnTotalRevenue.UseVisualStyleBackColor = false;
+            // 
             // BillForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLCF.Properties.Resources._880x670;
             this.ClientSize = new System.Drawing.Size(884, 642);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.panel2);
+            this.MaximizeBox = false;
             this.Name = "BillForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Thống kê hóa đơn";
@@ -192,6 +231,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListBill)).EndInit();
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
+            this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -210,5 +251,8 @@
         private System.Windows.Forms.DateTimePicker dpkDateTo;
         private System.Windows.Forms.DateTimePicker dpkDateFrom;
         private System.Windows.Forms.DataGridViewButtonColumn ColDetail;
+        private System.Windows.Forms.Panel panel3;
+        private System.Windows.Forms.TextBox txtTotalRevenue;
+        private System.Windows.Forms.Button btnTotalRevenue;
     }
 }

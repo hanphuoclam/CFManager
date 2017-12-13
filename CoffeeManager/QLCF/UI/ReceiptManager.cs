@@ -23,11 +23,19 @@ namespace QLCF.UI
             InitData();
             LoadListReceipt();
             LoadDateTimePicker();
+            PaintDGV();
         }
         #region Methods
         void InitData()
         {
             this._serviceReceipt = new ReceiptService(new ReceiptRepository());
+        }
+        void PaintDGV()
+        {//width = 548
+            dgvListReceipt.Columns[0].Width = 100;
+            dgvListReceipt.Columns[1].Width = 50;
+            dgvListReceipt.Columns[2].Width = 248;
+            dgvListReceipt.Columns[3].Width = 150;
         }
         void LoadListReceipt()
         {

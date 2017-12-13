@@ -23,6 +23,14 @@ namespace QLCF.UI
             this.IDBill = idBill;
             InitializeComponent();
             LoadListBillInfo(IDBill);
+            PaintDGV();
+        }
+        void PaintDGV()
+        {//width = 549
+            dgvListBillInfo.Columns[0].Width = 70;
+            dgvListBillInfo.Columns[1].Width = 120;
+            dgvListBillInfo.Columns[2].Width = 209;
+            dgvListBillInfo.Columns[3].Width = 150;
         }
         void LoadListBillInfo(int idBill)
         {

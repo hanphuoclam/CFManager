@@ -22,7 +22,8 @@ namespace QLCF.UI
             InitializeComponent();
             IntData();
             loadListCategory();
-            addBindingCategory();
+            //addBindingCategory();
+            PaintDGV();
         }
 
 
@@ -32,15 +33,23 @@ namespace QLCF.UI
             _serviceProdutCategory = new ProductCategoryService(new ProductCategoryRepository());
 
         }
-
+        void PaintDGV()
+        {//width = 336
+            dgvListCategory.Columns[0].HeaderText = "ID";
+            dgvListCategory.Columns[1].HeaderText = "Tên danh mục";
+            dgvListCategory.Columns[0].Width = 100;
+            dgvListCategory.Columns[1].Width = 236;
+        }
         void loadListCategory()
         {
             dgvListCategory.DataSource = _serviceProdutCategory.GetAll_S();
             dgvListCategory.Columns["Products"].Visible = false;
+            addBindingCategory();
         }
 
         void addBindingCategory()
         {
+            txtNameCategory.Clear();
             txtNameCategory.DataBindings.Add(new Binding("Text", dgvListCategory.DataSource, "Name", true, DataSourceUpdateMode.Never));
         }
         void addCategory()

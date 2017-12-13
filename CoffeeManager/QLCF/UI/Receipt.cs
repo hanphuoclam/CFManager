@@ -26,6 +26,7 @@ namespace QLCF.UI
             InitData();
             LoadListProductSuggest();
             //AddBinding();
+            PaintDGV();
         }
 
         #region Methods
@@ -34,6 +35,13 @@ namespace QLCF.UI
             this._serviceProduct = new ProductService(new ProductRepository());
             this.listProBeChoose = new List<Product>();
             this.dictionaryCountPro = new Dictionary<int, int>();
+        }
+        void PaintDGV()
+        {//width = 457
+            dgvProductSuggest.Columns[0].Width = 40;
+            dgvProductSuggest.Columns[1].Width = 227;
+            dgvProductSuggest.Columns[2].Width = 120;
+            dgvProductSuggest.Columns[3].Width = 70;
         }
         void LoadListProductSuggest()
         {
@@ -65,7 +73,6 @@ namespace QLCF.UI
 
             AddBinding();
         }
-
         void AddBinding()
         {
             txtNamePro.DataBindings.Clear();
@@ -75,6 +82,7 @@ namespace QLCF.UI
             txtPricePro.DataBindings.Add(new Binding("Text", dgvProductSuggest.DataSource, "Đơn giá", true, DataSourceUpdateMode.Never));
             txtInventoryPro.DataBindings.Add(new Binding("Text", dgvProductSuggest.DataSource, "SL Tồn", true, DataSourceUpdateMode.Never));
             txtCount.Text = "";
+            txtTotalPrice.Text = "";
         }
         void ChooseProduct()
         {
@@ -111,6 +119,29 @@ namespace QLCF.UI
         {
             ChooseProduct();
         }
-#endregion
+        private void txtCount_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar)))
+            {
+                e.Handled = true;
+            }
+        }
+        private void txtCount_TextChanged(object sender, EventArgs e)
+        {
+            int Price = Convert.ToInt32(txtPricePro.Text);
+            try
+            {
+                int count = Convert.ToInt32(txtCount.Text);
+                txtTotalPrice.Text = (Price * count).ToString();
+            }
+            catch
+            {
+
+            }
+        }
+
+        #endregion
+
+
     }
 }

@@ -28,6 +28,8 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnChoose = new System.Windows.Forms.Button();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
@@ -97,6 +99,8 @@
             this.txtCount.Name = "txtCount";
             this.txtCount.Size = new System.Drawing.Size(240, 35);
             this.txtCount.TabIndex = 6;
+            this.txtCount.TextChanged += new System.EventHandler(this.txtCount_TextChanged);
+            this.txtCount.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtCount_KeyPress);
             // 
             // label4
             // 
@@ -114,6 +118,7 @@
             this.txtInventoryPro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.txtInventoryPro.Location = new System.Drawing.Point(126, 112);
             this.txtInventoryPro.Name = "txtInventoryPro";
+            this.txtInventoryPro.ReadOnly = true;
             this.txtInventoryPro.Size = new System.Drawing.Size(240, 35);
             this.txtInventoryPro.TabIndex = 4;
             // 
@@ -133,6 +138,7 @@
             this.txtPricePro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.txtPricePro.Location = new System.Drawing.Point(126, 63);
             this.txtPricePro.Name = "txtPricePro";
+            this.txtPricePro.ReadOnly = true;
             this.txtPricePro.Size = new System.Drawing.Size(240, 35);
             this.txtPricePro.TabIndex = 2;
             // 
@@ -152,6 +158,7 @@
             this.txtNamePro.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.txtNamePro.Location = new System.Drawing.Point(126, 16);
             this.txtNamePro.Name = "txtNamePro";
+            this.txtNamePro.ReadOnly = true;
             this.txtNamePro.Size = new System.Drawing.Size(240, 35);
             this.txtNamePro.TabIndex = 0;
             // 
@@ -229,6 +236,7 @@
             this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.txtTotalPrice.Location = new System.Drawing.Point(126, 204);
             this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(240, 35);
             this.txtTotalPrice.TabIndex = 11;
             // 
@@ -243,9 +251,26 @@
             // 
             // dgvProductSuggest
             // 
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Control;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvProductSuggest.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.dgvProductSuggest.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvProductSuggest.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvProductSuggest.Location = new System.Drawing.Point(3, 3);
             this.dgvProductSuggest.Name = "dgvProductSuggest";
+            this.dgvProductSuggest.RowHeadersVisible = false;
             this.dgvProductSuggest.Size = new System.Drawing.Size(457, 544);
             this.dgvProductSuggest.TabIndex = 0;
             // 
@@ -258,6 +283,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
+            this.MaximizeBox = false;
             this.Name = "ReceiptForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Nhập hàng";

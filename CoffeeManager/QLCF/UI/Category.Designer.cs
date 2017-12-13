@@ -69,6 +69,7 @@
             this.dgvListCategory.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListCategory.Location = new System.Drawing.Point(3, 3);
             this.dgvListCategory.Name = "dgvListCategory";
+            this.dgvListCategory.RowHeadersVisible = false;
             this.dgvListCategory.Size = new System.Drawing.Size(336, 290);
             this.dgvListCategory.TabIndex = 0;
             // 
@@ -207,7 +208,9 @@
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.MainMenuStrip = this.menuStrip1;
+            this.MaximizeBox = false;
             this.Name = "FormCategory";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí danh mục";
             ((System.ComponentModel.ISupportInitialize)(this.dgvListCategory)).EndInit();
             this.menuStrip1.ResumeLayout(false);

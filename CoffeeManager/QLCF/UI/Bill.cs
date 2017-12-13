@@ -24,12 +24,21 @@ namespace QLCF.UI
             InitData();
             LoadDateTimePicker();
             LoadListBill();
+            PaintDGV();
         }
 #region Methods
         void InitData()
         {
             this._serviceBill = new BillService(new BillRepository());
             this._serviceBillInfo = new BillInfoService(new BillInfoRepository());
+        }
+        void PaintDGV()
+        {//width = 548
+            dgvListBill.Columns[0].Width = 70;
+            dgvListBill.Columns[1].Width = 50;
+            dgvListBill.Columns[2].Width = 150;
+            dgvListBill.Columns[3].Width = 120;
+            dgvListBill.Columns[4].Width = 158;
         }
         void LoadListBill()
         {

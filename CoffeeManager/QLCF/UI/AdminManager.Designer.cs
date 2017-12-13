@@ -32,7 +32,7 @@
             this.btnBillManager = new System.Windows.Forms.Button();
             this.btnReceiptManager = new System.Windows.Forms.Button();
             this.btnUserManager = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btnManagerReceipt = new System.Windows.Forms.Button();
             this.btnCategoryManager = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -88,17 +88,18 @@
             this.btnUserManager.UseVisualStyleBackColor = false;
             this.btnUserManager.Click += new System.EventHandler(this.btnUserManager_Click);
             // 
-            // button1
+            // btnManagerReceipt
             // 
-            this.button1.BackColor = System.Drawing.Color.Black;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.button1.ForeColor = System.Drawing.Color.White;
-            this.button1.Location = new System.Drawing.Point(800, 287);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(220, 142);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Quản lí nhập hàng";
-            this.button1.UseVisualStyleBackColor = false;
+            this.btnManagerReceipt.BackColor = System.Drawing.Color.Black;
+            this.btnManagerReceipt.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnManagerReceipt.ForeColor = System.Drawing.Color.White;
+            this.btnManagerReceipt.Location = new System.Drawing.Point(800, 287);
+            this.btnManagerReceipt.Name = "btnManagerReceipt";
+            this.btnManagerReceipt.Size = new System.Drawing.Size(220, 142);
+            this.btnManagerReceipt.TabIndex = 4;
+            this.btnManagerReceipt.Text = "Quản lí nhập hàng";
+            this.btnManagerReceipt.UseVisualStyleBackColor = false;
+            this.btnManagerReceipt.Click += new System.EventHandler(this.btnManagerReceipt_Click);
             // 
             // btnCategoryManager
             // 
@@ -111,6 +112,7 @@
             this.btnCategoryManager.TabIndex = 5;
             this.btnCategoryManager.Text = "Quản lí danh mục sản phẩm";
             this.btnCategoryManager.UseVisualStyleBackColor = false;
+            this.btnCategoryManager.Click += new System.EventHandler(this.btnCategoryManager_Click);
             // 
             // AdminManager
             // 
@@ -119,7 +121,7 @@
             this.BackgroundImage = global::QLCF.Properties.Resources.backgroundCFMresized;
             this.ClientSize = new System.Drawing.Size(1264, 722);
             this.Controls.Add(this.btnCategoryManager);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btnManagerReceipt);
             this.Controls.Add(this.btnUserManager);
             this.Controls.Add(this.btnReceiptManager);
             this.Controls.Add(this.btnBillManager);
@@ -137,7 +139,7 @@
         private System.Windows.Forms.Button btnBillManager;
         private System.Windows.Forms.Button btnReceiptManager;
         private System.Windows.Forms.Button btnUserManager;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btnManagerReceipt;
         private System.Windows.Forms.Button btnCategoryManager;
     }
 }

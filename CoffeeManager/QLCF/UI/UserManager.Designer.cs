@@ -116,7 +116,7 @@
             // nmdType
             // 
             this.nmdType.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
-            this.nmdType.Location = new System.Drawing.Point(136, 100);
+            this.nmdType.Location = new System.Drawing.Point(176, 96);
             this.nmdType.Maximum = new decimal(new int[] {
             1,
             0,
@@ -210,6 +210,7 @@
             this.dgvListUser.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvListUser.Location = new System.Drawing.Point(3, 3);
             this.dgvListUser.Name = "dgvListUser";
+            this.dgvListUser.RowHeadersVisible = false;
             this.dgvListUser.Size = new System.Drawing.Size(533, 544);
             this.dgvListUser.TabIndex = 0;
             // 
@@ -246,6 +247,7 @@
             this.Controls.Add(this.panel2);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
+            this.MaximizeBox = false;
             this.Name = "UserManagerForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Quản lí tài khoản";

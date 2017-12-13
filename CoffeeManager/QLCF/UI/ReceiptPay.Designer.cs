@@ -174,7 +174,8 @@
             this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F);
             this.txtTotalPrice.Location = new System.Drawing.Point(151, 281);
             this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(174, 35);
+            this.txtTotalPrice.ReadOnly = true;
+            this.txtTotalPrice.Size = new System.Drawing.Size(223, 35);
             this.txtTotalPrice.TabIndex = 9;
             // 
             // btnBuy
@@ -201,6 +202,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.btnBuy);
+            this.MaximizeBox = false;
             this.Name = "ReceiptPayForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Các nhận nhập hàng";

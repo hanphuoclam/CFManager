@@ -51,5 +51,21 @@ namespace QLCF.UI
             u.ShowDialog();
             this.Show();
         }
+
+        private void btnCategoryManager_Click(object sender, EventArgs e)
+        {
+            FormCategory c = new FormCategory();
+            this.Hide();
+            c.ShowDialog();
+            this.Show();
+        }
+
+        private void btnManagerReceipt_Click(object sender, EventArgs e)
+        {
+            ReceiptManagerForm r = new ReceiptManagerForm();
+            this.Hide();
+            r.ShowDialog();
+            this.Show();
+        }
     }
 }

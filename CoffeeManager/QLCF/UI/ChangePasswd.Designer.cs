@@ -182,6 +182,7 @@
             this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.btnRemove);
             this.Controls.Add(this.btnSave);
+            this.MaximizeBox = false;
             this.Name = "ChangePasswdForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Đổi mật khẩu";

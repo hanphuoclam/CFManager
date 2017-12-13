@@ -24,7 +24,7 @@ namespace QLCF.UI
             InitData();
             LoadListFood();
             LoadListCategory();
-            AddBindingFood();
+            PaintDGV();
         }
 
         #region Methods
@@ -32,6 +32,14 @@ namespace QLCF.UI
         {
             this._serviceProduct = new ProductService(new ProductRepository());
             this._serviceCategory = new ProductCategoryService(new ProductCategoryRepository());
+        }
+        void PaintDGV()
+        {//width = 484
+            dgvListProduct.Columns[0].Width = 50;
+            dgvListProduct.Columns[1].Width = 130;
+            dgvListProduct.Columns[2].Width = 134;
+            dgvListProduct.Columns[3].Width = 100;
+            dgvListProduct.Columns[4].Width = 70;
         }
         void LoadListCategory()
         {
@@ -60,9 +68,13 @@ namespace QLCF.UI
 
             dgvListProduct.DataSource = data;
             //dgvListProduct.Columns["ID"].Visible = false;
+            AddBindingFood();
         }
         void AddBindingFood()
         {
+            txtNameProduct.Clear();
+            txtPriceProduct.Clear();
+            txtInventory.Clear();
             txtNameProduct.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "Tên sản phẩm",true,DataSourceUpdateMode.Never));
             txtPriceProduct.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "Đơn giá", true, DataSourceUpdateMode.Never));
             txtInventory.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "SL Tồn", true, DataSourceUpdateMode.Never));
@@ -154,9 +166,16 @@ namespace QLCF.UI
         {
             EditProduct();
         }
+
+        private void txtPriceProduct_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
         #endregion
 
-        
-        
+
     }
 }

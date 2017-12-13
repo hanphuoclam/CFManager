@@ -80,6 +80,11 @@
             this.nmdCount.Name = "nmdCount";
             this.nmdCount.Size = new System.Drawing.Size(47, 40);
             this.nmdCount.TabIndex = 3;
+            this.nmdCount.Value = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             // 
             // cmbProduct
             // 
@@ -226,6 +231,7 @@
             this.txtTotalPrice.Font = new System.Drawing.Font("Microsoft Sans Serif", 20F, System.Drawing.FontStyle.Bold);
             this.txtTotalPrice.Location = new System.Drawing.Point(82, 42);
             this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.ReadOnly = true;
             this.txtTotalPrice.Size = new System.Drawing.Size(222, 38);
             this.txtTotalPrice.TabIndex = 3;
             // 
