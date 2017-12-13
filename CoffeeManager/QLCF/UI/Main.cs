@@ -336,6 +336,13 @@ namespace QLCF
             SwitchTable();
         }
         #endregion
-        
+
+        private void adminToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            AdminManager ad = new AdminManager(accountLogin);
+            this.Hide();
+            ad.ShowDialog();
+            this.Show();
+        }
     }
 }
