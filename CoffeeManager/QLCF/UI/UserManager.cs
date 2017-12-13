@@ -29,7 +29,7 @@ namespace QLCF.UI
             addBindingUser();
 
         }
-
+        //shd
         #region methods
         public Account AccountLogin { get => accountLogin; set => accountLogin = value; }
         void IntData()
