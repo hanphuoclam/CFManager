@@ -45,6 +45,7 @@
             this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.cmbCategoryProduct = new System.Windows.Forms.ComboBox();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.cmbTableFood = new System.Windows.Forms.ComboBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.adminToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.thôngTinTàiKhoảnToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,7 +65,6 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lsvBill = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.cmbTableFood = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.nmdCount)).BeginInit();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -251,6 +251,15 @@
             this.panel4.Size = new System.Drawing.Size(433, 138);
             this.panel4.TabIndex = 5;
             // 
+            // cmbTableFood
+            // 
+            this.cmbTableFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.cmbTableFood.FormattingEnabled = true;
+            this.cmbTableFood.Location = new System.Drawing.Point(248, 89);
+            this.cmbTableFood.Name = "cmbTableFood";
+            this.cmbTableFood.Size = new System.Drawing.Size(56, 41);
+            this.cmbTableFood.TabIndex = 9;
+            // 
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
@@ -293,7 +302,7 @@
             // 
             // panel1
             // 
-            this.panel1.BackgroundImage = global::QLCF.Properties.Resources.nenmenu;
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.Controls.Add(this.btnTable_4);
             this.panel1.Controls.Add(this.btnTable_2);
             this.panel1.Controls.Add(this.btnTable_1);
@@ -467,15 +476,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(439, 140);
             this.panel3.TabIndex = 0;
-            // 
-            // cmbTableFood
-            // 
-            this.cmbTableFood.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
-            this.cmbTableFood.FormattingEnabled = true;
-            this.cmbTableFood.Location = new System.Drawing.Point(248, 89);
-            this.cmbTableFood.Name = "cmbTableFood";
-            this.cmbTableFood.Size = new System.Drawing.Size(56, 41);
-            this.cmbTableFood.TabIndex = 9;
             // 
             // MainForm
             // 
