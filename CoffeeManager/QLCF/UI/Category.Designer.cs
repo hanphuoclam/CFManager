@@ -41,7 +41,7 @@
             this.btnAddCategory = new System.Windows.Forms.Button();
             this.btnDeleteCategory = new System.Windows.Forms.Button();
             this.btnEditCategory = new System.Windows.Forms.Button();
-            this.btnShowCategory = new System.Windows.Forms.Button();
+            this.btnExit = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListCategory)).BeginInit();
             this.menuStrip1.SuspendLayout();
             this.panel1.SuspendLayout();
@@ -94,8 +94,10 @@
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -113,7 +115,7 @@
             this.panel2.Controls.Add(this.btnAddCategory);
             this.panel2.Controls.Add(this.btnDeleteCategory);
             this.panel2.Controls.Add(this.btnEditCategory);
-            this.panel2.Controls.Add(this.btnShowCategory);
+            this.panel2.Controls.Add(this.btnExit);
             this.panel2.Location = new System.Drawing.Point(360, 30);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(228, 290);
@@ -136,7 +138,7 @@
             this.txtNameCategory.Location = new System.Drawing.Point(13, 49);
             this.txtNameCategory.Name = "txtNameCategory";
             this.txtNameCategory.Size = new System.Drawing.Size(212, 35);
-            this.txtNameCategory.TabIndex = 16;
+            this.txtNameCategory.TabIndex = 1;
             // 
             // btnAddCategory
             // 
@@ -145,10 +147,10 @@
             this.btnAddCategory.ForeColor = System.Drawing.Color.White;
             this.btnAddCategory.Image = global::QLCF.Properties.Resources._new;
             this.btnAddCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddCategory.Location = new System.Drawing.Point(119, 199);
+            this.btnAddCategory.Location = new System.Drawing.Point(3, 199);
             this.btnAddCategory.Name = "btnAddCategory";
             this.btnAddCategory.Size = new System.Drawing.Size(109, 39);
-            this.btnAddCategory.TabIndex = 15;
+            this.btnAddCategory.TabIndex = 2;
             this.btnAddCategory.Text = "Thêm";
             this.btnAddCategory.UseVisualStyleBackColor = false;
             this.btnAddCategory.Click += new System.EventHandler(this.btnAddCategory_Click);
@@ -163,7 +165,7 @@
             this.btnDeleteCategory.Location = new System.Drawing.Point(3, 244);
             this.btnDeleteCategory.Name = "btnDeleteCategory";
             this.btnDeleteCategory.Size = new System.Drawing.Size(109, 39);
-            this.btnDeleteCategory.TabIndex = 14;
+            this.btnDeleteCategory.TabIndex = 4;
             this.btnDeleteCategory.Text = "Xóa";
             this.btnDeleteCategory.UseVisualStyleBackColor = false;
             this.btnDeleteCategory.Click += new System.EventHandler(this.btnDeleteCategory_Click);
@@ -175,28 +177,28 @@
             this.btnEditCategory.ForeColor = System.Drawing.Color.White;
             this.btnEditCategory.Image = global::QLCF.Properties.Resources.edit;
             this.btnEditCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditCategory.Location = new System.Drawing.Point(119, 244);
+            this.btnEditCategory.Location = new System.Drawing.Point(116, 199);
             this.btnEditCategory.Name = "btnEditCategory";
             this.btnEditCategory.Size = new System.Drawing.Size(109, 39);
-            this.btnEditCategory.TabIndex = 13;
+            this.btnEditCategory.TabIndex = 3;
             this.btnEditCategory.Text = "Sửa";
             this.btnEditCategory.UseVisualStyleBackColor = false;
             this.btnEditCategory.Click += new System.EventHandler(this.btnEditCategory_Click);
             // 
-            // btnShowCategory
+            // btnExit
             // 
-            this.btnShowCategory.BackColor = System.Drawing.Color.Black;
-            this.btnShowCategory.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
-            this.btnShowCategory.ForeColor = System.Drawing.Color.White;
-            this.btnShowCategory.Image = global::QLCF.Properties.Resources.view;
-            this.btnShowCategory.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnShowCategory.Location = new System.Drawing.Point(3, 199);
-            this.btnShowCategory.Name = "btnShowCategory";
-            this.btnShowCategory.Size = new System.Drawing.Size(109, 39);
-            this.btnShowCategory.TabIndex = 12;
-            this.btnShowCategory.Text = "Xem";
-            this.btnShowCategory.UseVisualStyleBackColor = false;
-            this.btnShowCategory.Click += new System.EventHandler(this.btnShowCategory_Click);
+            this.btnExit.BackColor = System.Drawing.Color.Black;
+            this.btnExit.Font = new System.Drawing.Font("Microsoft Sans Serif", 16F);
+            this.btnExit.ForeColor = System.Drawing.Color.White;
+            this.btnExit.Image = global::QLCF.Properties.Resources.exit;
+            this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnExit.Location = new System.Drawing.Point(119, 244);
+            this.btnExit.Name = "btnExit";
+            this.btnExit.Size = new System.Drawing.Size(109, 39);
+            this.btnExit.TabIndex = 5;
+            this.btnExit.Text = "Thoát";
+            this.btnExit.UseVisualStyleBackColor = false;
+            this.btnExit.Click += new System.EventHandler(this.btnExit_Click);
             // 
             // FormCategory
             // 
@@ -236,6 +238,6 @@
         private System.Windows.Forms.Button btnAddCategory;
         private System.Windows.Forms.Button btnDeleteCategory;
         private System.Windows.Forms.Button btnEditCategory;
-        private System.Windows.Forms.Button btnShowCategory;
+        private System.Windows.Forms.Button btnExit;
     }
 }

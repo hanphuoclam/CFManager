@@ -72,8 +72,10 @@
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // panel1
             // 
@@ -210,6 +212,7 @@
             this.btnTotalRevenue.TabIndex = 4;
             this.btnTotalRevenue.Text = "Tính doanh thu";
             this.btnTotalRevenue.UseVisualStyleBackColor = false;
+            this.btnTotalRevenue.Click += new System.EventHandler(this.btnTotalRevenue_Click);
             // 
             // BillForm
             // 

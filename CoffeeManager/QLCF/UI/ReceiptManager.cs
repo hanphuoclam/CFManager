@@ -11,6 +11,7 @@ using QLCF.Domain;
 using QLCF.Repository;
 using QLCF.Services;
 using System.Collections;
+using System.Globalization;
 
 namespace QLCF.UI
 {
@@ -34,8 +35,11 @@ namespace QLCF.UI
         {//width = 548
             dgvListReceipt.Columns[0].Width = 100;
             dgvListReceipt.Columns[1].Width = 50;
+            dgvListReceipt.Columns[1].ReadOnly = true;
             dgvListReceipt.Columns[2].Width = 248;
+            dgvListReceipt.Columns[2].ReadOnly = true;
             dgvListReceipt.Columns[3].Width = 150;
+            dgvListReceipt.Columns[3].ReadOnly = true;
         }
         void LoadListReceipt()
         {
@@ -91,6 +95,26 @@ namespace QLCF.UI
                 LoadListReceiptInfo(idReceipt);
             }
         }
-#endregion
+        private void btnTotalMoney_Click(object sender, EventArgs e)
+        {
+            double total = 0;
+            DateTime dateFrom = dpkDateFrom.Value;
+            DateTime dateTo = dpkDateTo.Value;
+            LoadListReceiptByDate(dateFrom, dateTo);
+            IEnumerable listReceipt = _serviceReceipt.GetReceiptByDate_S(dateFrom, dateTo);
+            foreach (Receipt item in listReceipt)
+            {
+                total += item.totalPrice.GetValueOrDefault();
+            }
+            CultureInfo culture = new CultureInfo("vi-VN");
+            txtTotalMoney.Text = total.ToString("C", culture);
+        }
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+
     }
 }

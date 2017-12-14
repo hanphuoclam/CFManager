@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QLCF.Domain;
 using QLCF.Services;
 using QLCF.Domain.Validation;
+using QLCF.Infrastructure;
 
 namespace QLCF.UI
 {
@@ -53,7 +54,7 @@ namespace QLCF.UI
                 txtConfrimPass.ResetText();
                 txtNewPass.ResetText();
             }
-            else if (pass != accountLogin.passWord)
+            else if (Infrastructure.MethodsSupport.HasPass(pass) != accountLogin.passWord)
             {
                 MessageBox.Show("Mật khẩu cũ không đúng!!!");
                 txtPass.ResetText();
@@ -61,7 +62,7 @@ namespace QLCF.UI
             else
             {
                 string username = accountLogin.userName;
-                if (_serviceAcc.EditAccount_S(new Account() { userName = username, passWord = newpass , type = accountLogin.type }))
+                if (_serviceAcc.EditAccount_S(new Account() { userName = username, passWord = Infrastructure.MethodsSupport.HasPass(newpass) , type = accountLogin.type }))
                     MessageBox.Show("Đổi mật khẩu thành công!!!");
                 Remove();
             }
@@ -77,6 +78,12 @@ namespace QLCF.UI
         {
             ChangePasswd();
         }
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
+
+
     }
 }

@@ -24,7 +24,6 @@ namespace QLCF.UI
             InitData();
             LoadListFood();
             LoadListCategory();
-            PaintDGV();
         }
 
         #region Methods
@@ -36,10 +35,15 @@ namespace QLCF.UI
         void PaintDGV()
         {//width = 484
             dgvListProduct.Columns[0].Width = 50;
+            dgvListProduct.Columns[0].ReadOnly = true;
             dgvListProduct.Columns[1].Width = 130;
+            dgvListProduct.Columns[1].ReadOnly = true;
             dgvListProduct.Columns[2].Width = 134;
+            dgvListProduct.Columns[2].ReadOnly = true;
             dgvListProduct.Columns[3].Width = 100;
+            dgvListProduct.Columns[3].ReadOnly = true;
             dgvListProduct.Columns[4].Width = 70;
+            dgvListProduct.Columns[4].ReadOnly = true;
         }
         void LoadListCategory()
         {
@@ -69,6 +73,7 @@ namespace QLCF.UI
             dgvListProduct.DataSource = data;
             //dgvListProduct.Columns["ID"].Visible = false;
             AddBindingFood();
+            PaintDGV();
         }
         void AddBindingFood()
         {
@@ -83,10 +88,15 @@ namespace QLCF.UI
         
         void AddProduct()
         {
+            int idProduct = Convert.ToInt32(dgvListProduct.SelectedCells[0].OwningRow.Cells["ID"].Value.ToString());
             string nameProduct = txtNameProduct.Text;
             double priceProduct = double.Parse(txtPriceProduct.Text);
             int idCategory = (cmbListCategory.SelectedItem as ProductCategory).id;
-            if(_serviceProduct.AddProduct_S(new Product()
+            Product temp = _serviceProduct.GetProductById_S(idProduct);
+            if(temp != null)
+                if (temp.idCategory == idCategory && temp.price == priceProduct && temp.name == nameProduct)
+                    return;
+            if (_serviceProduct.AddProduct_S(new Product()
             { idCategory = idCategory, name = nameProduct, price = priceProduct, inventory = 0}))
             {
                 MessageBox.Show("Thêm thành công!!!");
@@ -99,6 +109,9 @@ namespace QLCF.UI
             string nameProduct = txtNameProduct.Text;
             double priceProduct = double.Parse(txtPriceProduct.Text);
             int idCategory = (cmbListCategory.SelectedItem as ProductCategory).id;
+            Product temp = _serviceProduct.GetProductById_S(idProduct);
+            if (temp.idCategory == idCategory && temp.price == priceProduct && temp.name == nameProduct)
+                return;
             if (_serviceProduct.EditProduc_St(new Product()
             { id = idProduct ,idCategory = idCategory, name = nameProduct, price = priceProduct, inventory = 0 }))
             {
@@ -109,6 +122,9 @@ namespace QLCF.UI
         void DeleteProduct()
         {
             int idProduct = Convert.ToInt32(dgvListProduct.SelectedCells[0].OwningRow.Cells["ID"].Value.ToString());
+            Product temp = _serviceProduct.GetProductById_S(idProduct);
+            if (MessageBox.Show(String.Format("Bạn có chắc chắn muốn xóa sản phẩm '{0}'", temp.name), "Thông báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
             if (_serviceProduct.DeleteProduct_S(idProduct))
             {
                 MessageBox.Show("Xóa thành công!!!");
@@ -147,11 +163,6 @@ namespace QLCF.UI
             }
         }
 
-        private void btnShowProduct_Click(object sender, EventArgs e)
-        {
-            LoadListFood();
-        }
-
         private void btnAddProduct_Click(object sender, EventArgs e)
         {
             AddProduct();
@@ -173,6 +184,15 @@ namespace QLCF.UI
             {
                 e.Handled = true;
             }
+        }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         #endregion
 

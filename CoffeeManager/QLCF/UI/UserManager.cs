@@ -25,8 +25,7 @@ namespace QLCF.UI
             this.accountLogin = acc;
             IntData();
             loadListUser();
-            editDgv();
-            addBindingUser();
+            //addBindingUser();
 
         }
         #region methods
@@ -40,8 +39,11 @@ namespace QLCF.UI
         void editDgv()
         {
             dgvListUser.Columns[0].Width = 80;
+            dgvListUser.Columns[0].ReadOnly = true;
             dgvListUser.Columns[1].Width = 230;
+            dgvListUser.Columns[1].ReadOnly = true;
             dgvListUser.Columns[2].Width = 190;
+            dgvListUser.Columns[2].ReadOnly = true;
         }
 
         void loadListUser()
@@ -68,10 +70,14 @@ namespace QLCF.UI
                 i++;
             }
             dgvListUser.DataSource = data;
+            addBindingUser();
+            editDgv();
         }
 
         void addBindingUser()
         {
+            txtUserName.Clear();
+            dgvListUser.Refresh();
             txtUserName.DataBindings.Add(new Binding("Text",dgvListUser.DataSource,"Tên đăng nhập", true,DataSourceUpdateMode.Never));
         }
 
@@ -82,7 +88,9 @@ namespace QLCF.UI
             if (type != "Nhân Viên")
                 type = "1";
             else type = "0";
-            if (_serviceAcc.EditAccount_S(new Account() { userName = username, passWord = "1", type = Convert.ToInt32(type)}))
+            if (MessageBox.Show(String.Format("Bạn có muốn reset lại mật khẩu của tài khoản '{0}' không ?", username), "Thông báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
+            if (_serviceAcc.EditAccount_S(new Account() { userName = username, passWord = "1962026656160185351301320480154111117132155", type = Convert.ToInt32(type)}))
             {
                 MessageBox.Show("Reset mật khẩu thành công!!!");
             }
@@ -92,9 +100,12 @@ namespace QLCF.UI
         void Save()
         {
             string username = dgvListUser.SelectedCells[0].OwningRow.Cells["Tên đăng nhập"].Value.ToString();
-            if (_serviceAcc.EditAccount_S(new Account(){userName = username, passWord = "1", type = Convert.ToInt32(nmdType.Value)}))
+            Account acc = _serviceAcc.GetAccountByUsername_S(username);
+            if ((acc.type == (int)nmdType.Value) || (acc.type == 1 && (int)nmdType.Value == 0))
+                return;
+            if (_serviceAcc.EditAccount_S(new Account(){userName = username, passWord = acc.passWord, type = Convert.ToInt32(nmdType.Value)}))
             {
-                MessageBox.Show("lưu thành công!!!");
+                MessageBox.Show("Lưu thay đổi thành công!!!");
             }
             loadListUser();
         }
@@ -103,20 +114,40 @@ namespace QLCF.UI
         {
             string user = txtUserName.Text;
             int type = Convert.ToInt32(nmdType.Value);
-            if (user == "") MessageBox.Show("Chưa nhập tên đăng nhập!!!");
-            else if(!_serviceAcc.CheckUser_S(new Account() {userName = user }))
+            Account temp = _serviceAcc.GetAccountByUsername_S(user);
+            IEnumerable listAcc = _serviceAcc.GetAll_S();
+            if (temp != null)
             {
-                if(_serviceAcc.AddAccount_S(new Account() { userName = user, passWord = "1", type = type }))
-                    MessageBox.Show("Thêm thành công!!!");
-                loadListUser();
+                if(user == temp.userName)
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại!!!");
+                    return;
+                }
             }
-            else MessageBox.Show("Tài khoản đã tồn tại!!!");
+            else if (user == "")
+            {
+                MessageBox.Show("Chưa nhập tên đăng nhập!!!");
+                return;
+            }
+            foreach (Account item in listAcc)
+            {
+                if (item.userName.CompareTo(user) == 1)
+                {
+                    MessageBox.Show("Tài khoản đã tồn tại!!!");
+                    return;
+                }
+            }
+            if(_serviceAcc.AddAccount_S(new Account() { userName = user, passWord = "1962026656160185351301320480154111117132155", type = type }))
+                MessageBox.Show("Thêm thành công!!!");
+            loadListUser();
         }
 
         void Delete()
         {
             string item = accountLogin.userName;
             string username = dgvListUser.SelectedCells[0].OwningRow.Cells["Tên đăng nhập"].Value.ToString();
+            if (MessageBox.Show(String.Format("Bạn có muốn xóa tài khoản '{0}' không ?", username), "Thông báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
             if (username == accountLogin.userName) MessageBox.Show("Bạn không thể xóa tài khoản đang đăng nhập!!!");
             else if (_serviceAcc.DeleteAccount_S(username))
             {
@@ -145,6 +176,12 @@ namespace QLCF.UI
         {
             Delete();
         }
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
         #endregion
+
+
     }
 }

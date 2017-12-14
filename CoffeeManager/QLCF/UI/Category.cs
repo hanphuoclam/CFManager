@@ -23,7 +23,6 @@ namespace QLCF.UI
             IntData();
             loadListCategory();
             //addBindingCategory();
-            PaintDGV();
         }
 
 
@@ -38,13 +37,16 @@ namespace QLCF.UI
             dgvListCategory.Columns[0].HeaderText = "ID";
             dgvListCategory.Columns[1].HeaderText = "Tên danh mục";
             dgvListCategory.Columns[0].Width = 100;
+            dgvListCategory.Columns[0].ReadOnly = true;
             dgvListCategory.Columns[1].Width = 236;
+            dgvListCategory.Columns[1].ReadOnly = true;
         }
         void loadListCategory()
         {
             dgvListCategory.DataSource = _serviceProdutCategory.GetAll_S();
             dgvListCategory.Columns["Products"].Visible = false;
             addBindingCategory();
+            PaintDGV();
         }
 
         void addBindingCategory()
@@ -55,6 +57,11 @@ namespace QLCF.UI
         void addCategory()
         {
             string nameCategory = txtNameCategory.Text;
+            int idProductCategory = Convert.ToInt32(dgvListCategory.SelectedCells[0].OwningRow.Cells["ID"].Value.ToString());
+            ProductCategory temp = _serviceProdutCategory.GetCategoryById_S(idProductCategory);
+            if(temp != null)
+                if (temp.name == nameCategory)
+                    return;
             if (_serviceProdutCategory.AddProductCategory_S(new ProductCategory(){ name = nameCategory }))
             {
                 MessageBox.Show("Thêm thành công!!!");
@@ -65,6 +72,9 @@ namespace QLCF.UI
         {
             string nameCategory = txtNameCategory.Text;
             int idProductCategory = Convert.ToInt32(dgvListCategory.SelectedCells[0].OwningRow.Cells["ID"].Value.ToString());
+            ProductCategory temp = _serviceProdutCategory.GetCategoryById_S(idProductCategory);
+            if (temp.name == nameCategory)
+                return;
             if (_serviceProdutCategory.EditProductCategory_S(new ProductCategory(){id = idProductCategory , name = nameCategory }))
             {
                 MessageBox.Show("Sửa thành công!!!");
@@ -75,6 +85,9 @@ namespace QLCF.UI
         void deleteCategory()
         {
             int idProductCategory = Convert.ToInt32(dgvListCategory.SelectedCells[0].OwningRow.Cells["ID"].Value.ToString());
+            ProductCategory temp = _serviceProdutCategory.GetCategoryById_S(idProductCategory);
+            if (MessageBox.Show(String.Format("Bạn có chắc chắn muốn xóa danh mục '{0}' ?", temp.name), "Thông báo", MessageBoxButtons.YesNo) != DialogResult.Yes)
+                return;
             if (_serviceProdutCategory.DeleteProductCategory_S(idProductCategory))
             {
                 MessageBox.Show("Xóa thành công!!!");
@@ -84,10 +97,6 @@ namespace QLCF.UI
         }
         #endregion 
         #region events
-        private void btnShowCategory_Click(object sender, EventArgs e)
-        {
-            loadListCategory();
-        }
 
         private void btnAddCategory_Click(object sender, EventArgs e)
         {
@@ -103,6 +112,17 @@ namespace QLCF.UI
         {
             deleteCategory();
         }
-        #endregion 
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+        #endregion
+
+
     }
 }

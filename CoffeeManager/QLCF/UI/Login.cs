@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using QLCF.Domain.Validation;
 using QLCF.Domain;
 using QLCF.Services;
+using QLCF.Infrastructure;
 
 namespace QLCF.UI
 {
@@ -35,7 +36,7 @@ namespace QLCF.UI
         }
         void login()
         {
-            Account acc = new Account() { userName = txtUserName.Text, passWord = txtPassword.Text };
+            Account acc = new Account() { userName = txtUserName.Text, passWord = Infrastructure.MethodsSupport.HasPass(txtPassword.Text) };
             if(_accService.CheckUser_S(acc))
             {
                 Account accountLogin = _accService.GetAccountByUsername_S(acc.userName);

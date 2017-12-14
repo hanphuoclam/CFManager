@@ -11,6 +11,7 @@ using QLCF.Domain;
 using QLCF.Repository;
 using QLCF.Services;
 using System.Collections;
+using System.Globalization;
 
 namespace QLCF.UI
 {
@@ -24,7 +25,6 @@ namespace QLCF.UI
             InitData();
             LoadDateTimePicker();
             LoadListBill();
-            PaintDGV();
         }
 #region Methods
         void InitData()
@@ -36,9 +36,13 @@ namespace QLCF.UI
         {//width = 548
             dgvListBill.Columns[0].Width = 70;
             dgvListBill.Columns[1].Width = 50;
+            dgvListBill.Columns[1].ReadOnly = true;
             dgvListBill.Columns[2].Width = 150;
+            dgvListBill.Columns[2].ReadOnly = true;
             dgvListBill.Columns[3].Width = 120;
+            dgvListBill.Columns[3].ReadOnly = true;
             dgvListBill.Columns[4].Width = 158;
+            dgvListBill.Columns[4].ReadOnly = true;
         }
         void LoadListBill()
         {
@@ -53,6 +57,7 @@ namespace QLCF.UI
                 data.Rows.Add(item.id, item.dateCheckIn.ToShortDateString(), item.discount, item.totalPrice);
             }
             dgvListBill.DataSource = data;
+            PaintDGV();
         }
         void LoadDateTimePicker()
         {
@@ -94,6 +99,24 @@ namespace QLCF.UI
                 int idBill = Convert.ToInt32(dgvListBill.SelectedCells[0].OwningRow.Cells["ID"].Value.ToString());
                 LoadListBillInfo(idBill);
             }
+        }
+        private void btnTotalRevenue_Click(object sender, EventArgs e)
+        {
+            double total = 0;
+            DateTime dateFrom = dpkDateFrom.Value;
+            DateTime dateTo = dpkDateTo.Value;
+            LoadListBillByDate(dateFrom, dateTo);
+            IEnumerable listBill = _serviceBill.GetBillByDate_S(dateFrom, dateTo);
+            foreach(Bill item in listBill)
+            {
+                total += item.totalPrice.GetValueOrDefault();
+            }
+            CultureInfo culture = new CultureInfo("vi-VN");
+            txtTotalRevenue.Text = total.ToString("C", culture);
+        }
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
         #endregion
 

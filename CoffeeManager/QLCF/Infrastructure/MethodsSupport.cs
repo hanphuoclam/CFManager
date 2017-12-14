@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Collections;
+using System.Security.Cryptography;
 
 namespace QLCF.Infrastructure
 {
@@ -37,6 +38,18 @@ namespace QLCF.Infrastructure
             });
 
             return c;
+        }
+
+        public static string HasPass(string str)
+        {
+            byte[] temp = ASCIIEncoding.ASCII.GetBytes(str);
+            byte[] hasData = new MD5CryptoServiceProvider().ComputeHash(temp);
+            string result = "";
+            foreach(var item in hasData)
+            {
+                result += item;
+            }
+            return result;
         }
         
     }

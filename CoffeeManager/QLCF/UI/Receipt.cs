@@ -26,7 +26,6 @@ namespace QLCF.UI
             InitData();
             LoadListProductSuggest();
             //AddBinding();
-            PaintDGV();
         }
 
         #region Methods
@@ -39,9 +38,13 @@ namespace QLCF.UI
         void PaintDGV()
         {//width = 457
             dgvProductSuggest.Columns[0].Width = 40;
+            dgvProductSuggest.Columns[0].ReadOnly = true;
             dgvProductSuggest.Columns[1].Width = 227;
+            dgvProductSuggest.Columns[1].ReadOnly = true;
             dgvProductSuggest.Columns[2].Width = 120;
+            dgvProductSuggest.Columns[2].ReadOnly = true;
             dgvProductSuggest.Columns[3].Width = 70;
+            dgvProductSuggest.Columns[3].ReadOnly = true;
         }
         void LoadListProductSuggest()
         {
@@ -72,6 +75,8 @@ namespace QLCF.UI
             dgvProductSuggest.DataSource = data;
 
             AddBinding();
+
+            PaintDGV();
         }
         void AddBinding()
         {
@@ -138,6 +143,10 @@ namespace QLCF.UI
             {
 
             }
+        }
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
 
         #endregion

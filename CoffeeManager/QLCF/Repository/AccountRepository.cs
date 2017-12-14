@@ -98,7 +98,7 @@ namespace QLCF.Repository
             Account account = GetAccountByUsername(username);
             try
             {
-                account.passWord = "1";
+                account.passWord = "1962026656160185351301320480154111117132155";
                 db.Entry(originalAccount).CurrentValues.SetValues(account);
                 db.SaveChanges();
             }

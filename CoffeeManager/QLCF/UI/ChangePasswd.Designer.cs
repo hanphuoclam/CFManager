@@ -97,7 +97,7 @@
             this.txtConfrimPass.Location = new System.Drawing.Point(234, 132);
             this.txtConfrimPass.Name = "txtConfrimPass";
             this.txtConfrimPass.Size = new System.Drawing.Size(268, 35);
-            this.txtConfrimPass.TabIndex = 2;
+            this.txtConfrimPass.TabIndex = 3;
             this.txtConfrimPass.UseSystemPasswordChar = true;
             // 
             // txtNewPass
@@ -106,7 +106,7 @@
             this.txtNewPass.Location = new System.Drawing.Point(234, 89);
             this.txtNewPass.Name = "txtNewPass";
             this.txtNewPass.Size = new System.Drawing.Size(268, 35);
-            this.txtNewPass.TabIndex = 1;
+            this.txtNewPass.TabIndex = 2;
             this.txtNewPass.UseSystemPasswordChar = true;
             // 
             // txtPass
@@ -115,7 +115,7 @@
             this.txtPass.Location = new System.Drawing.Point(234, 44);
             this.txtPass.Name = "txtPass";
             this.txtPass.Size = new System.Drawing.Size(268, 35);
-            this.txtPass.TabIndex = 0;
+            this.txtPass.TabIndex = 1;
             this.txtPass.UseSystemPasswordChar = true;
             // 
             // menuStrip1
@@ -139,8 +139,10 @@
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
+            this.thoátToolStripMenuItem.ShortcutKeys = ((System.Windows.Forms.Keys)((System.Windows.Forms.Keys.Control | System.Windows.Forms.Keys.Q)));
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
+            this.thoátToolStripMenuItem.Click += new System.EventHandler(this.thoátToolStripMenuItem_Click);
             // 
             // btnRemove
             // 
@@ -152,7 +154,7 @@
             this.btnRemove.Location = new System.Drawing.Point(152, 264);
             this.btnRemove.Name = "btnRemove";
             this.btnRemove.Size = new System.Drawing.Size(187, 42);
-            this.btnRemove.TabIndex = 6;
+            this.btnRemove.TabIndex = 5;
             this.btnRemove.Text = "Nhập lại";
             this.btnRemove.UseVisualStyleBackColor = false;
             this.btnRemove.Click += new System.EventHandler(this.btnRemove_Click);
@@ -167,7 +169,7 @@
             this.btnSave.Location = new System.Drawing.Point(345, 264);
             this.btnSave.Name = "btnSave";
             this.btnSave.Size = new System.Drawing.Size(188, 42);
-            this.btnSave.TabIndex = 5;
+            this.btnSave.TabIndex = 4;
             this.btnSave.Text = "Lưu thay đổi";
             this.btnSave.UseVisualStyleBackColor = false;
             this.btnSave.Click += new System.EventHandler(this.btnSave_Click);

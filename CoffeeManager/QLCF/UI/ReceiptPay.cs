@@ -10,6 +10,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using QLCF.Repository;
 using QLCF.Services;
+using System.Globalization;
 
 namespace QLCF.UI
 {
@@ -55,7 +56,11 @@ namespace QLCF.UI
                     }
                 }
             }
-            txtTotalPrice.Text = totalPrice.ToString();
+            CultureInfo culture = new CultureInfo("vi-VN");
+            txtTotalPrice.Text = totalPrice.ToString("C", culture);
+            dgvListProductReceipt.Columns[0].ReadOnly = true;
+            dgvListProductReceipt.Columns[1].ReadOnly = true;
+            dgvListProductReceipt.Columns[2].ReadOnly = true;
         }
         void DeleteProduct(int idPro)
         {
@@ -83,6 +88,8 @@ namespace QLCF.UI
 
         void Buy()
         {
+            if (dgvListProductReceipt.RowCount <= 0)
+                return;
             if(MessageBox.Show("Bạn có chắc chắn mua các sản phẩm này không!", "Thông báo", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
                 bool check = false;
@@ -109,7 +116,7 @@ namespace QLCF.UI
                             }
                         }
                     }
-                    _serviceReceipt.Pay_S(new Receipt() { id = idReceiptCurrent, dateReceipt = DateTime.Now, totalPrice = Convert.ToInt32(txtTotalPrice.Text) });
+                    _serviceReceipt.Pay_S(new Receipt() { id = idReceiptCurrent, dateReceipt = DateTime.Now, totalPrice = Convert.ToInt32(txtTotalPrice.Text.Split(',')[0]) });
                 }
                 if (check)
                 {
@@ -176,6 +183,11 @@ namespace QLCF.UI
                 LoadListProductReceipt();
             }
             
+        }
+
+        private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            this.Close();
         }
     }
     #endregion

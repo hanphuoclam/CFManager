@@ -28,9 +28,13 @@ namespace QLCF.UI
         void PaintDGV()
         {//width = 549
             dgvListBillInfo.Columns[0].Width = 70;
+            dgvListBillInfo.Columns[0].ReadOnly = true;
             dgvListBillInfo.Columns[1].Width = 120;
+            dgvListBillInfo.Columns[1].ReadOnly = true;
             dgvListBillInfo.Columns[2].Width = 209;
+            dgvListBillInfo.Columns[2].ReadOnly = true;
             dgvListBillInfo.Columns[3].Width = 150;
+            dgvListBillInfo.Columns[3].ReadOnly = true;
         }
         void LoadListBillInfo(int idBill)
         {

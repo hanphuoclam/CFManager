@@ -179,7 +179,11 @@ namespace QLCF
             int idBill = _serviceBill.GetUncheckBillByIdTable_S(table.id);
             int idProduct = (cmbProduct.SelectedItem as Product).id;
             int count = (int)nmdCount.Value;
-
+            if(count > _serviceProduct.GetProductById_S(idProduct).inventory)
+            {
+                MessageBox.Show("Số lượng sản phẩm hiện tại không đủ. Xin nhập thêm !");
+                return;
+            }
             if(idBill == -1) // Bill not exist
             {
                 if(_serviceBill.AddBill_S(new Bill() { idTable = table.id , dateCheckIn = DateTime.Now, discount = 0, status = 0, totalPrice = 0}))
@@ -343,6 +347,9 @@ namespace QLCF
             ad.ShowDialog();
             this.Show();
         }
-        #endregion      
+        
+        #endregion
+
+
     }
 }

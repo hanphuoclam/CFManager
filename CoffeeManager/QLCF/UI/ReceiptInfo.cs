@@ -34,9 +34,13 @@ namespace QLCF.UI
         void PaintDGV()
         {//width = 595
             dgvListReceiptForm.Columns[0].Width = 70;
+            dgvListReceiptForm.Columns[0].ReadOnly = true;
             dgvListReceiptForm.Columns[1].Width = 100;
+            dgvListReceiptForm.Columns[1].ReadOnly = true;
             dgvListReceiptForm.Columns[2].Width = 275;
+            dgvListReceiptForm.Columns[2].ReadOnly = true;
             dgvListReceiptForm.Columns[3].Width = 150;
+            dgvListReceiptForm.Columns[3].ReadOnly = true;
         }
         void LoadListReceiptInfo(int idReceipt)
         {
