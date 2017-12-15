@@ -26,7 +26,7 @@ namespace QLCF.UI
             IntData();
             loadListUser();
             //addBindingUser();
-
+            editDgv();
         }
         #region methods
         public Account AccountLogin { get => accountLogin; set => accountLogin = value; }
@@ -71,13 +71,13 @@ namespace QLCF.UI
             }
             dgvListUser.DataSource = data;
             addBindingUser();
-            editDgv();
         }
 
         void addBindingUser()
         {
             txtUserName.Clear();
-            dgvListUser.Refresh();
+            txtUserName.DataBindings.Clear();
+            //dgvListUser.Refresh();
             txtUserName.DataBindings.Add(new Binding("Text",dgvListUser.DataSource,"Tên đăng nhập", true,DataSourceUpdateMode.Never));
         }
 

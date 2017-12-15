@@ -49,10 +49,28 @@ namespace QLCF.UI
             {
                 MessageBox.Show("Sai tên đăng nhập hoặc mật khẩu!");
             }
+             ViewError();
         }
-        
+        void ViewError()
+        {
+            errorProvider.Clear();
+            foreach (var item in _modelState)
+            {
+                switch (item.Key)
+                {
+                    case "username":
+                        errorProvider.SetError(txtUserName, item.Value);
+                        break;
+                    case "passwd":
+                        errorProvider.SetError(txtPassword, item.Value);
+                        break;
+                    default:
+                        break;
+                }
+            }
+        }
         #endregion
-#region Events
+        #region Events
         private void btnLogin_Click(object sender, EventArgs e)
         {
             login();

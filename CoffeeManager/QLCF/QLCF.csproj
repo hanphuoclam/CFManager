@@ -305,6 +305,12 @@
       <DependentUpon>EntityModelManagerCF.edmx</DependentUpon>
       <LastGenOutput>EntityModelManagerCF.cs</LastGenOutput>
     </Content>
+    <None Include="Resources\category.png" />
+    <None Include="Resources\Product.jpg" />
+    <None Include="Resources\QLNhapHang.png" />
+    <None Include="Resources\store.png" />
+    <None Include="Resources\bill.png" />
+    <None Include="Resources\UserMN.png" />
     <None Include="Resources\cart.png" />
     <None Include="Resources\S.png" />
     <None Include="Resources\add.png" />
