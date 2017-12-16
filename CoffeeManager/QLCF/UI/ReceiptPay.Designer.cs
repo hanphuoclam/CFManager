@@ -30,6 +30,7 @@
         {
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(ReceiptPayForm));
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListProductReceipt = new System.Windows.Forms.DataGridView();
             this.ColId = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -204,6 +205,7 @@
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtTotalPrice);
             this.Controls.Add(this.btnBuy);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MaximizeBox = false;
             this.Name = "ReceiptPayForm";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

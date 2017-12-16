@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(AdminManager));
             this.btnProductManager = new System.Windows.Forms.Button();
             this.btnBillManager = new System.Windows.Forms.Button();
             this.btnReceiptManager = new System.Windows.Forms.Button();
@@ -144,6 +145,7 @@
             this.Controls.Add(this.btnReceiptManager);
             this.Controls.Add(this.btnBillManager);
             this.Controls.Add(this.btnProductManager);
+            this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "AdminManager";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "AdminManager";
