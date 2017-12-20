@@ -16,5 +16,6 @@ namespace QLCF.Domain
         IEnumerable GetProductByIdCategory_S(int idCategory);
         P GetProductById_S(int id);
         IEnumerable ListProductforShow_S();
+        IEnumerable listSearchPro_S(string searchStr);
     }
 }

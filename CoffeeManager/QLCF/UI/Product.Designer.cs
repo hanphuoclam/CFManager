@@ -50,11 +50,16 @@
             this.thoátToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.productToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
+            this.panel4 = new System.Windows.Forms.Panel();
+            this.btnSearch = new System.Windows.Forms.Button();
+            this.txtContextSearch = new System.Windows.Forms.TextBox();
+            this.btnShow = new System.Windows.Forms.Button();
             this.panel3.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProduct)).BeginInit();
             this.menuStrip1.SuspendLayout();
+            this.panel4.SuspendLayout();
             this.SuspendLayout();
             // 
             // label4
@@ -127,7 +132,7 @@
             this.btnAddProduct.ForeColor = System.Drawing.Color.White;
             this.btnAddProduct.Image = global::QLCF.Properties.Resources._new;
             this.btnAddProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnAddProduct.Location = new System.Drawing.Point(20, 48);
+            this.btnAddProduct.Location = new System.Drawing.Point(23, 18);
             this.btnAddProduct.Name = "btnAddProduct";
             this.btnAddProduct.Size = new System.Drawing.Size(130, 45);
             this.btnAddProduct.TabIndex = 11;
@@ -142,7 +147,7 @@
             this.btnDeleteProduct.ForeColor = System.Drawing.Color.White;
             this.btnDeleteProduct.Image = global::QLCF.Properties.Resources.delete;
             this.btnDeleteProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnDeleteProduct.Location = new System.Drawing.Point(20, 118);
+            this.btnDeleteProduct.Location = new System.Drawing.Point(20, 84);
             this.btnDeleteProduct.Name = "btnDeleteProduct";
             this.btnDeleteProduct.Size = new System.Drawing.Size(130, 45);
             this.btnDeleteProduct.TabIndex = 10;
@@ -157,7 +162,7 @@
             this.btnEditProduct.ForeColor = System.Drawing.Color.White;
             this.btnEditProduct.Image = global::QLCF.Properties.Resources.edit;
             this.btnEditProduct.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnEditProduct.Location = new System.Drawing.Point(181, 48);
+            this.btnEditProduct.Location = new System.Drawing.Point(181, 18);
             this.btnEditProduct.Name = "btnEditProduct";
             this.btnEditProduct.Size = new System.Drawing.Size(130, 45);
             this.btnEditProduct.TabIndex = 9;
@@ -172,7 +177,7 @@
             this.btnExit.ForeColor = System.Drawing.Color.White;
             this.btnExit.Image = global::QLCF.Properties.Resources.exit;
             this.btnExit.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
-            this.btnExit.Location = new System.Drawing.Point(181, 118);
+            this.btnExit.Location = new System.Drawing.Point(181, 84);
             this.btnExit.Name = "btnExit";
             this.btnExit.Size = new System.Drawing.Size(130, 45);
             this.btnExit.TabIndex = 8;
@@ -182,20 +187,20 @@
             // 
             // panel3
             // 
+            this.panel3.BackColor = System.Drawing.Color.Transparent;
             this.panel3.Controls.Add(this.btnAddProduct);
             this.panel3.Controls.Add(this.btnDeleteProduct);
             this.panel3.Controls.Add(this.btnEditProduct);
             this.panel3.Controls.Add(this.btnExit);
-            this.panel3.Location = new System.Drawing.Point(6, 413);
+            this.panel3.Location = new System.Drawing.Point(514, 483);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(338, 176);
+            this.panel3.Size = new System.Drawing.Size(338, 142);
             this.panel3.TabIndex = 9;
             // 
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
             this.panel2.Controls.Add(this.cmbListCategory);
-            this.panel2.Controls.Add(this.panel3);
             this.panel2.Controls.Add(this.label4);
             this.panel2.Controls.Add(this.label3);
             this.panel2.Controls.Add(this.label2);
@@ -203,9 +208,9 @@
             this.panel2.Controls.Add(this.txtInventory);
             this.panel2.Controls.Add(this.txtPriceProduct);
             this.panel2.Controls.Add(this.txtNameProduct);
-            this.panel2.Location = new System.Drawing.Point(508, 33);
+            this.panel2.Location = new System.Drawing.Point(514, 147);
             this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(344, 592);
+            this.panel2.Size = new System.Drawing.Size(344, 330);
             this.panel2.TabIndex = 6;
             // 
             // cmbListCategory
@@ -288,13 +293,65 @@
             this.menuStrip1.TabIndex = 4;
             this.menuStrip1.Text = "menuStrip1";
             // 
+            // panel4
+            // 
+            this.panel4.BackColor = System.Drawing.Color.Transparent;
+            this.panel4.Controls.Add(this.btnShow);
+            this.panel4.Controls.Add(this.btnSearch);
+            this.panel4.Controls.Add(this.txtContextSearch);
+            this.panel4.Location = new System.Drawing.Point(514, 33);
+            this.panel4.Name = "panel4";
+            this.panel4.Size = new System.Drawing.Size(344, 108);
+            this.panel4.TabIndex = 10;
+            // 
+            // btnSearch
+            // 
+            this.btnSearch.BackColor = System.Drawing.Color.Black;
+            this.btnSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearch.ForeColor = System.Drawing.Color.White;
+            this.btnSearch.Image = global::QLCF.Properties.Resources.iconSearch;
+            this.btnSearch.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSearch.Location = new System.Drawing.Point(187, 54);
+            this.btnSearch.Name = "btnSearch";
+            this.btnSearch.Size = new System.Drawing.Size(151, 45);
+            this.btnSearch.TabIndex = 12;
+            this.btnSearch.Text = "Tìm kiếm";
+            this.btnSearch.UseVisualStyleBackColor = false;
+            this.btnSearch.Click += new System.EventHandler(this.btnSearch_Click);
+            // 
+            // txtContextSearch
+            // 
+            this.txtContextSearch.BackColor = System.Drawing.Color.White;
+            this.txtContextSearch.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtContextSearch.Location = new System.Drawing.Point(3, 13);
+            this.txtContextSearch.Name = "txtContextSearch";
+            this.txtContextSearch.Size = new System.Drawing.Size(335, 35);
+            this.txtContextSearch.TabIndex = 11;
+            this.txtContextSearch.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtContextSearch_KeyDown);
+            // 
+            // btnShow
+            // 
+            this.btnShow.BackColor = System.Drawing.Color.Black;
+            this.btnShow.Font = new System.Drawing.Font("Microsoft Sans Serif", 18F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnShow.ForeColor = System.Drawing.Color.White;
+            this.btnShow.ImageAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnShow.Location = new System.Drawing.Point(20, 54);
+            this.btnShow.Name = "btnShow";
+            this.btnShow.Size = new System.Drawing.Size(151, 45);
+            this.btnShow.TabIndex = 13;
+            this.btnShow.Text = "Xem tất cả";
+            this.btnShow.UseVisualStyleBackColor = false;
+            this.btnShow.Click += new System.EventHandler(this.btnShow_Click);
+            // 
             // ProductForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::QLCF.Properties.Resources._880x670;
             this.ClientSize = new System.Drawing.Size(864, 631);
+            this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel2);
+            this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -309,6 +366,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProduct)).EndInit();
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
+            this.panel4.ResumeLayout(false);
+            this.panel4.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -335,5 +394,9 @@
         private System.Windows.Forms.MenuStrip menuStrip1;
         private System.Windows.Forms.DataGridView dgvListProduct;
         private System.Windows.Forms.ComboBox cmbListCategory;
+        private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnSearch;
+        private System.Windows.Forms.TextBox txtContextSearch;
+        private System.Windows.Forms.Button btnShow;
     }
 }

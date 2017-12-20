@@ -7,6 +7,7 @@ using QLCF.Domain;
 using System.Collections;
 using System.Linq.Expressions;
 using System.Data;
+using System.Data.SqlClient;
 
 namespace QLCF.Repository
 {
@@ -102,6 +103,17 @@ namespace QLCF.Repository
         public IEnumerable<U> GetBy<U>(Expression<Func<Product, bool>> exp, Expression<Func<Product, U>> columns)
         {
             return db.Products.Where<Product>(exp).Select<Product, U>(columns);
+        }
+        public IEnumerable<Product> listSearchPro(string searchStr)
+        {
+            // return db.Database.SqlQuery<Product>("SELECT * FROM dbo.Product WHERE CONVERT(VARBINARY(100), name) LIKE N'%' + CAST(CONVERT(VARBINARY(100), N'"+searchStr+"') AS NVARCHAR(100)) + N'%'").ToList();
+            //var clientnameParameter = new SqlParameter("@nameinput", searchStr);
+            //return db.Database.SqlQuery<Product>("USP_GetListProductByName", clientnameParameter).ToList();
+            SqlParameter param = new SqlParameter("@nameinput", searchStr);
+            using (var dc = new Domain.CFMEntities())
+            {
+                return dc.Database.SqlQuery<Product>("USP_GetListProductByName @nameinput", param).ToList();
+            }  
         }
     }
 }

@@ -80,6 +80,9 @@ namespace QLCF.UI
             txtNameProduct.Clear();
             txtPriceProduct.Clear();
             txtInventory.Clear();
+            txtNameProduct.DataBindings.Clear();
+            txtPriceProduct.DataBindings.Clear();
+            txtInventory.DataBindings.Clear();
             txtNameProduct.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "Tên sản phẩm",true,DataSourceUpdateMode.Never));
             txtPriceProduct.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "Đơn giá", true, DataSourceUpdateMode.Never));
             txtInventory.DataBindings.Add(new Binding("Text", dgvListProduct.DataSource, "SL Tồn", true, DataSourceUpdateMode.Never));
@@ -130,6 +133,38 @@ namespace QLCF.UI
                 MessageBox.Show("Xóa thành công!!!");
             }
             LoadListFood();
+        }
+        void Search()
+        {
+            string searchtext = txtContextSearch.Text;
+            IEnumerable list = _serviceProduct.listSearchPro_S(searchtext);
+            if(list == null)
+            {
+                MessageBox.Show("Không tìm thấy kết quả!");
+                return;
+            }
+            DataTable data = new DataTable();
+            data.Columns.Add("ID");
+            data.Columns.Add("Tên sản phẩm");
+            data.Columns.Add("Danh mục");
+            data.Columns.Add("Đơn giá");
+            data.Columns.Add("SL Tồn");
+            foreach (Product item in list)
+            {
+                string cate = _serviceCategory.GetCategoryById_S(item.idCategory).name;
+                DataRow row = data.NewRow();
+                row["ID"] = item.id;
+                row["Tên sản phẩm"] = item.name;
+                row["Danh mục"] = cate;
+                row["Đơn giá"] = item.price;
+                row["SL Tồn"] = item.inventory;
+                data.Rows.Add(row);
+            }
+
+            dgvListProduct.DataSource = data;
+            //dgvListProduct.Columns["ID"].Visible = false;
+            AddBindingFood();
+            PaintDGV();
         }
         #endregion
 
@@ -193,6 +228,22 @@ namespace QLCF.UI
         private void thoátToolStripMenuItem_Click(object sender, EventArgs e)
         {
             this.Close();
+        }
+
+        private void btnSearch_Click(object sender, EventArgs e)
+        {
+            Search();
+        }
+        private void txtContextSearch_KeyDown(object sender, KeyEventArgs e)
+        {
+            if(e.KeyCode == Keys.Enter)
+            {
+                Search();
+            }
+        }
+        private void btnShow_Click(object sender, EventArgs e)
+        {
+            LoadListFood();
         }
         #endregion
 

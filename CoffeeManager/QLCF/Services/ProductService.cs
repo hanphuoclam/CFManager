@@ -56,5 +56,10 @@ namespace QLCF.Services
         {
             return _repository.ListProductforShow();
         }
+
+        public IEnumerable listSearchPro_S(string searchStr)
+        {
+            return _repository.listSearchPro(searchStr);
+        }
     }
 }

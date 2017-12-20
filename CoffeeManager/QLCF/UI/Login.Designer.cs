@@ -66,6 +66,7 @@
             this.txtPassword.TabIndex = 2;
             this.txtPassword.Text = "1";
             this.txtPassword.UseSystemPasswordChar = true;
+            this.txtPassword.KeyDown += new System.Windows.Forms.KeyEventHandler(this.txtPassword_KeyDown);
             // 
             // txtUserName
             // 
