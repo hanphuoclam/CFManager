@@ -130,7 +130,11 @@ namespace QLCF.UI
                 return;
             if (_serviceProduct.DeleteProduct_S(idProduct))
             {
-                MessageBox.Show("Xóa thành công!!!");
+                MessageBox.Show("Xóa thành công.");
+            }
+            else
+            {
+                MessageBox.Show("Thất bại. Sản phẩm đã có hóa đơn hoặc phiếu nhập hàng đang tồn tại!!!");
             }
             LoadListFood();
         }
@@ -171,6 +175,8 @@ namespace QLCF.UI
         #region Events
         private void dgvListProduct_CellClick(object sender, DataGridViewCellEventArgs e)
         {
+            try
+            {
             if (dgvListProduct.Rows[e.RowIndex].Cells[e.ColumnIndex].Value != null)
             {
                 int idProduct = 1;
@@ -196,6 +202,8 @@ namespace QLCF.UI
                 }
                 cmbListCategory.SelectedIndex = index;
             }
+            }catch
+            { }
         }
 
         private void btnAddProduct_Click(object sender, EventArgs e)

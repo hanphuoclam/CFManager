@@ -23,7 +23,6 @@ namespace QLCF.UI
         private void btnProductManager_Click(object sender, EventArgs e)
         {
             ProductForm p = new ProductForm();
-            this.Hide();
             p.ShowDialog();
             this.Show();
         }
@@ -31,7 +30,6 @@ namespace QLCF.UI
         private void btnBillManager_Click(object sender, EventArgs e)
         {
             BillForm b = new BillForm();
-            this.Hide();
             b.ShowDialog();
             this.Show();
         }
@@ -39,7 +37,6 @@ namespace QLCF.UI
         private void btnReceiptManager_Click(object sender, EventArgs e)
         {
             ReceiptForm r = new ReceiptForm();
-            this.Hide();
             r.ShowDialog();
             this.Show();
         }
@@ -47,7 +44,6 @@ namespace QLCF.UI
         private void btnUserManager_Click(object sender, EventArgs e)
         {
             UserManagerForm u = new UserManagerForm(accountLogin);
-            this.Hide();
             u.ShowDialog();
             this.Show();
         }
@@ -55,7 +51,6 @@ namespace QLCF.UI
         private void btnCategoryManager_Click(object sender, EventArgs e)
         {
             FormCategory c = new FormCategory();
-            this.Hide();
             c.ShowDialog();
             this.Show();
         }
@@ -63,7 +58,6 @@ namespace QLCF.UI
         private void btnManagerReceipt_Click(object sender, EventArgs e)
         {
             ReceiptManagerForm r = new ReceiptManagerForm();
-            this.Hide();
             r.ShowDialog();
             this.Show();
         }

@@ -52,6 +52,7 @@ namespace QLCF.UI
         void addBindingCategory()
         {
             txtNameCategory.Clear();
+            txtNameCategory.DataBindings.Clear();
             txtNameCategory.DataBindings.Add(new Binding("Text", dgvListCategory.DataSource, "Name", true, DataSourceUpdateMode.Never));
         }
         void addCategory()
@@ -90,7 +91,11 @@ namespace QLCF.UI
                 return;
             if (_serviceProdutCategory.DeleteProductCategory_S(idProductCategory))
             {
-                MessageBox.Show("Xóa thành công!!!");
+                MessageBox.Show("Xóa thành công.");
+            }
+            else
+            {
+                MessageBox.Show("Thất bại. Danh mục hiện đang có sản phẩm đang tồn tại!");
             }
             loadListCategory();
 

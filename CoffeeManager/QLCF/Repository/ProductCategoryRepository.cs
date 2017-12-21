@@ -40,6 +40,11 @@ namespace QLCF.Repository
         public bool DeleteProductCategory(int id)
         {
             ProductCategory productCategory = GetCategoryById(id);
+            IEnumerable<Product> listPro = (from c in db.Products
+                                            where c.idCategory == id
+                                            select c).ToList();
+            if (listPro.Count() > 0)
+                return false;
             try
             {
                 db.ProductCategories.Remove(productCategory);

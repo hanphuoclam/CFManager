@@ -45,6 +45,16 @@ namespace QLCF.Repository
         public bool DeleteProduct(int id)
         {
             Product originalPro = GetProductById(id);
+            IEnumerable listBillinfo = (from c in db.BillInfoes
+                                    where c.idProduct == id
+                                    select c).ToList();
+            IEnumerable listReceiptInfo = (from x in db.ReceiptInfoes
+                                           where x.idProduct == id
+                                           select x).ToList();
+            if(QLCF.Infrastructure.MethodsSupport.Count(listBillinfo) > 0 || QLCF.Infrastructure.MethodsSupport.Count(listReceiptInfo) > 0)
+            {
+                return false;
+            }
             try
             {
                 db.Products.Remove(originalPro);
