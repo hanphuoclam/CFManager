@@ -205,6 +205,7 @@ namespace QLCF
             }
             ShowBill(table.id);
             LoadTable();
+            nmdCount.Value = 1;
         }
         void CheckOut()
         {
@@ -232,6 +233,7 @@ namespace QLCF
                     LoadTable();
                 }
             }
+            cmbDiscount.SelectedIndex = 15;
         }
         void SwitchTable()
         {

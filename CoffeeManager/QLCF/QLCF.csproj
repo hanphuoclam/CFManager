@@ -113,9 +113,6 @@
     <Compile Include="Domain\sp_helpdiagrams_Result.cs">
       <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
     </Compile>
-    <Compile Include="Domain\sysdiagram.cs">
-      <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
-    </Compile>
     <Compile Include="Domain\TableFood.cs">
       <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
     </Compile>

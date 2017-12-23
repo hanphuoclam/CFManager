@@ -34,7 +34,6 @@ namespace QLCF.Domain
         public virtual DbSet<ProductCategory> ProductCategories { get; set; }
         public virtual DbSet<Receipt> Receipts { get; set; }
         public virtual DbSet<ReceiptInfo> ReceiptInfoes { get; set; }
-        public virtual DbSet<sysdiagram> sysdiagrams { get; set; }
         public virtual DbSet<TableFood> TableFoods { get; set; }
     
         public virtual int sp_alterdiagram(string diagramname, Nullable<int> owner_id, Nullable<int> version, byte[] definition)

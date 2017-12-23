@@ -56,8 +56,7 @@ namespace QLCF.UI
                     }
                 }
             }
-            CultureInfo culture = new CultureInfo("vi-VN");
-            txtTotalPrice.Text = totalPrice.ToString("C", culture);
+            txtTotalPrice.Text = totalPrice.ToString();
             dgvListProductReceipt.Columns[0].ReadOnly = true;
             dgvListProductReceipt.Columns[1].ReadOnly = true;
             dgvListProductReceipt.Columns[2].ReadOnly = true;
@@ -116,7 +115,7 @@ namespace QLCF.UI
                             }
                         }
                     }
-                    _serviceReceipt.Pay_S(new Receipt() { id = idReceiptCurrent, dateReceipt = DateTime.Now, totalPrice = Convert.ToInt32(txtTotalPrice.Text.Split(',')[0]) });
+                    _serviceReceipt.Pay_S(new Receipt() { id = idReceiptCurrent, dateReceipt = DateTime.Now, totalPrice = Double.Parse( txtTotalPrice.Text) });
                 }
                 if (check)
                 {
