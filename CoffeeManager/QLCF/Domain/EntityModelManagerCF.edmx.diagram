@@ -19,6 +19,11 @@
         <AssociationConnector Association="CFMModel.FK__Product__idCateg__1A14E395" />
         <AssociationConnector Association="CFMModel.FK__ReceiptIn__idPro__2D27B809" />
         <AssociationConnector Association="CFMModel.FK__ReceiptIn__idRec__2C3393D0" />
+        <EntityTypeShape EntityType="CFMModel.BehaviorUser" Width="1.5" PointX="8" PointY="8.5" />
+        <EntityTypeShape EntityType="CFMModel.InformationUser" Width="1.5" PointX="8" PointY="5.75" />
+        <EntityTypeShape EntityType="CFMModel.sysdiagram" Width="1.5" PointX="5.375" PointY="0.75" />
+        <AssociationConnector Association="CFMModel.FK__BehaviorU__userN__5FB337D6" />
+        <AssociationConnector Association="CFMModel.FK__Informati__userN__5CD6CB2B" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

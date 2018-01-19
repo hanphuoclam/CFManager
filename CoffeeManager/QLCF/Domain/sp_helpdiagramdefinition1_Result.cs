@@ -10,15 +10,10 @@
 namespace QLCF.Domain
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Account
+    public partial class sp_helpdiagramdefinition1_Result
     {
-        public string userName { get; set; }
-        public string passWord { get; set; }
-        public Nullable<int> type { get; set; }
-    
-        public virtual BehaviorUser BehaviorUser { get; set; }
-        public virtual InformationUser InformationUser { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

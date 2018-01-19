@@ -10,15 +10,13 @@
 namespace QLCF.Domain
 {
     using System;
-    using System.Collections.Generic;
     
-    public partial class Account
+    public partial class USP_GetListProductByName_Result
     {
-        public string userName { get; set; }
-        public string passWord { get; set; }
-        public Nullable<int> type { get; set; }
-    
-        public virtual BehaviorUser BehaviorUser { get; set; }
-        public virtual InformationUser InformationUser { get; set; }
+        public int id { get; set; }
+        public string name { get; set; }
+        public Nullable<double> price { get; set; }
+        public Nullable<int> inventory { get; set; }
+        public int idCategory { get; set; }
     }
 }

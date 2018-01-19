@@ -26,6 +26,8 @@ namespace QLCF.Domain
         public Nullable<int> discount { get; set; }
         public Nullable<double> totalPrice { get; set; }
         public Nullable<int> status { get; set; }
+        public string Note { get; set; }
+        public string DisplayNameCheckOut { get; set; }
     
         public virtual TableFood TableFood { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
