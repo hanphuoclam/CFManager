@@ -12,13 +12,13 @@ namespace QLCF.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class Account
+    public partial class InformationUser
     {
         public string userName { get; set; }
-        public string passWord { get; set; }
-        public Nullable<int> type { get; set; }
+        public string displayName { get; set; }
+        public System.DateTime atTimeInLastLogin { get; set; }
+        public Nullable<double> TimeUsedInLastLogin { get; set; }
     
-        public virtual BehaviorUser BehaviorUser { get; set; }
-        public virtual InformationUser InformationUser { get; set; }
+        public virtual Account Account { get; set; }
     }
 }

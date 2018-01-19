@@ -12,13 +12,12 @@ namespace QLCF.Domain
     using System;
     using System.Collections.Generic;
     
-    public partial class Account
+    public partial class sysdiagram
     {
-        public string userName { get; set; }
-        public string passWord { get; set; }
-        public Nullable<int> type { get; set; }
-    
-        public virtual BehaviorUser BehaviorUser { get; set; }
-        public virtual InformationUser InformationUser { get; set; }
+        public string name { get; set; }
+        public int principal_id { get; set; }
+        public int diagram_id { get; set; }
+        public Nullable<int> version { get; set; }
+        public byte[] definition { get; set; }
     }
 }

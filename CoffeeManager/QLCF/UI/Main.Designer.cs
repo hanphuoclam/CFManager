@@ -65,6 +65,7 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.lsvBill = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.btnMoreHandling = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmdCount)).BeginInit();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -77,6 +78,11 @@
             // 
             this.nmdCount.Font = new System.Drawing.Font("Microsoft Sans Serif", 21.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
             this.nmdCount.Location = new System.Drawing.Point(277, 48);
+            this.nmdCount.Minimum = new decimal(new int[] {
+            100,
+            0,
+            0,
+            -2147483648});
             this.nmdCount.Name = "nmdCount";
             this.nmdCount.Size = new System.Drawing.Size(47, 40);
             this.nmdCount.TabIndex = 3;
@@ -452,6 +458,7 @@
             // panel2
             // 
             this.panel2.BackColor = System.Drawing.Color.Transparent;
+            this.panel2.Controls.Add(this.btnMoreHandling);
             this.panel2.Controls.Add(this.panel4);
             this.panel2.Controls.Add(this.lsvBill);
             this.panel2.Controls.Add(this.panel3);
@@ -472,7 +479,7 @@
             this.lsvBill.GridLines = true;
             this.lsvBill.Location = new System.Drawing.Point(3, 149);
             this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(436, 382);
+            this.lsvBill.Size = new System.Drawing.Size(436, 335);
             this.lsvBill.TabIndex = 1;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
@@ -487,6 +494,16 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(439, 140);
             this.panel3.TabIndex = 0;
+            // 
+            // btnMoreHandling
+            // 
+            this.btnMoreHandling.Location = new System.Drawing.Point(204, 513);
+            this.btnMoreHandling.Name = "btnMoreHandling";
+            this.btnMoreHandling.Size = new System.Drawing.Size(75, 23);
+            this.btnMoreHandling.TabIndex = 6;
+            this.btnMoreHandling.Text = "More...";
+            this.btnMoreHandling.UseVisualStyleBackColor = true;
+            this.btnMoreHandling.Click += new System.EventHandler(this.btnMoreHandling_Click);
             // 
             // MainForm
             // 
@@ -553,6 +570,7 @@
         private System.Windows.Forms.ListView lsvBill;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.ComboBox cmbTableFood;
+        private System.Windows.Forms.Button btnMoreHandling;
     }
 }
 

@@ -26,6 +26,28 @@ namespace QLCF.Repository
         private CFMEntities db = CFMEntities.Instance;
         public bool AddBillInfo(BillInfo billInfo)
         {
+            var billexist = GetListBillInfoByIdBill(billInfo.idBill);
+            foreach(BillInfo item in billexist)
+            {
+                if(item.idProduct == billInfo.idProduct)
+                {
+                    try
+                    {
+                        if (billInfo.count + item.count >= 0)
+                            item.count += billInfo.count;
+                        else
+                            return false;
+                        UpdateBillInfo(item);
+                        db.SaveChanges();
+                        return true;
+                    }catch
+                    {
+
+                    }
+                }
+            }
+            if (billInfo.count <= 0)
+                return false;
             try
             {
                 db.BillInfoes.Add(billInfo);
@@ -62,8 +84,21 @@ namespace QLCF.Repository
             return true;
         }
 
+        public BillInfo GetBillInfoById(int id)
+        {
+            return db.BillInfoes.Where(c => c.id == id).FirstOrDefault();
+        }
+
         public IEnumerable<BillInfo> GetListBillInfoByIdBill(int idBill)
         {
+            var listBillInfo = (from a in db.BillInfoes
+                    where a.idBill == idBill
+                    select a).ToList();
+            foreach(BillInfo item in listBillInfo)
+            {
+                if (item.count == 0)
+                    DeleteBillInfoByIdProduct(item.idProduct);
+            }
             return (from a in db.BillInfoes
                     where a.idBill == idBill
                     select a).ToList();
