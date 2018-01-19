@@ -30,11 +30,6 @@ namespace QLCF.Services
             return false;
         }
 
-        public BillInfo GetBillInfoById_S(int id)
-        {
-            return _repository.GetBillInfoById(id);
-        }
-
         public IEnumerable GetListBillInfoByIdBill_S(int idBill)
         {
             return _repository.GetListBillInfoByIdBill(idBill);

@@ -13,6 +13,5 @@ namespace QLCF.Domain
         bool AddBillInfo_S(B billInfo);
         bool DeleteBillInfoByIdProduct_S(int idProduct);
         bool UpdateBillInfo_S(BillInfo billInfo);
-        B GetBillInfoById_S(int id);
     }
 }

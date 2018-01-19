@@ -184,7 +184,6 @@ namespace QLCF
                 MessageBox.Show("Số lượng sản phẩm hiện tại không đủ. Xin nhập thêm !");
                 return;
             }
-            if (count == 0) return;
             if(idBill == -1) // Bill not exist
             {
                 if(_serviceBill.AddBill_S(new Bill() { idTable = table.id , dateCheckIn = DateTime.Now, discount = 0, status = 0, totalPrice = 0}))
@@ -350,17 +349,9 @@ namespace QLCF
             ad.ShowDialog();
             this.Show();
         }
-
-
+        
         #endregion
 
-        private void btnMoreHandling_Click(object sender, EventArgs e)
-        {
-            TableFood table = lsvBill.Tag as TableFood;
-            if (table == null)
-                return;
-            HandlingMoreForm h = new HandlingMoreForm(table.id);
-            h.ShowDialog();
-        }
+
     }
 }

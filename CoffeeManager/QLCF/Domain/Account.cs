@@ -17,8 +17,5 @@ namespace QLCF.Domain
         public string userName { get; set; }
         public string passWord { get; set; }
         public Nullable<int> type { get; set; }
-    
-        public virtual BehaviorUser BehaviorUser { get; set; }
-        public virtual InformationUser InformationUser { get; set; }
     }
 }

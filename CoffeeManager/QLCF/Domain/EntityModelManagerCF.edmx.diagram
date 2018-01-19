@@ -5,44 +5,20 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="85f79a897c5d434a87f528a3bb4548bf" Name="Diagram1">
-<<<<<<< HEAD
-        <EntityTypeShape EntityType="CFMModel.Account" Width="1.5" PointX="5.75" PointY="7" IsExpanded="true" />
-        <EntityTypeShape EntityType="CFMModel.Bill" Width="1.5" PointX="3" PointY="10.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CFMModel.BillInfo" Width="1.5" PointX="5.25" PointY="3.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CFMModel.Product" Width="1.5" PointX="3" PointY="3.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CFMModel.ProductCategory" Width="1.5" PointX="0.75" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="CFMModel.Receipt" Width="1.5" PointX="3" PointY="7.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="CFMModel.ReceiptInfo" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
-        <EntityTypeShape EntityType="CFMModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2" IsExpanded="true" />
-        <EntityTypeShape EntityType="CFMModel.TableFood" Width="1.5" PointX="0.75" PointY="11" IsExpanded="true" />
-        <AssociationConnector Association="CFMModel.FK__Bill__idTable__20C1E124" ManuallyRouted="false" />
-        <AssociationConnector Association="CFMModel.FK__BillInfo__idBill__239E4DCF" ManuallyRouted="false" />
-        <AssociationConnector Association="CFMModel.FK__BillInfo__idProd__24927208" ManuallyRouted="false" />
-        <AssociationConnector Association="CFMModel.FK__Product__idCateg__1A14E395" ManuallyRouted="false" />
-        <AssociationConnector Association="CFMModel.FK__ReceiptIn__idPro__2D27B809" ManuallyRouted="false" />
-        <AssociationConnector Association="CFMModel.FK__ReceiptIn__idRec__2C3393D0" ManuallyRouted="false" />
-        <EntityTypeShape EntityType="CFMModel.BehaviorUser" Width="1.5" PointX="8" PointY="8.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="CFMModel.InformationUser" Width="1.5" PointX="8" PointY="5.75" />
-        <AssociationConnector Association="CFMModel.FK__BehaviorU__userN__5FB337D6" />
-        <AssociationConnector Association="CFMModel.FK__Informati__userN__5CD6CB2B" />
-        <AssociationConnector Association="CFMModel.FK__BehaviorU__userN__5FB337D6" />
-        <AssociationConnector Association="CFMModel.FK__Informati__userN__5CD6CB2B" />
-=======
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-        
-&gt;&gt;&gt;&gt;&gt;&gt;&gt; cad5a46d2773d82770c4a0261762c8dd96011f16
+        <EntityTypeShape EntityType="CFMModel.Account" Width="1.5" PointX="5.75" PointY="7" />
+        <EntityTypeShape EntityType="CFMModel.Bill" Width="1.5" PointX="3" PointY="7.125" />
+        <EntityTypeShape EntityType="CFMModel.BillInfo" Width="1.5" PointX="2.875" PointY="0.625" />
+        <EntityTypeShape EntityType="CFMModel.Product" Width="1.5" PointX="3" PointY="3.5" />
+        <EntityTypeShape EntityType="CFMModel.ProductCategory" Width="1.5" PointX="0.75" PointY="4" />
+        <EntityTypeShape EntityType="CFMModel.Receipt" Width="1.5" PointX="8.25" PointY="1.875" />
+        <EntityTypeShape EntityType="CFMModel.ReceiptInfo" Width="1.5" PointX="5.25" PointY="3.75" />
+        <EntityTypeShape EntityType="CFMModel.TableFood" Width="1.5" PointX="0.75" PointY="7.5" />
+        <AssociationConnector Association="CFMModel.FK__Bill__idTable__20C1E124" />
+        <AssociationConnector Association="CFMModel.FK__BillInfo__idBill__239E4DCF" />
+        <AssociationConnector Association="CFMModel.FK__BillInfo__idProd__24927208" />
+        <AssociationConnector Association="CFMModel.FK__Product__idCateg__1A14E395" />
+        <AssociationConnector Association="CFMModel.FK__ReceiptIn__idPro__2D27B809" />
+        <AssociationConnector Association="CFMModel.FK__ReceiptIn__idRec__2C3393D0" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>

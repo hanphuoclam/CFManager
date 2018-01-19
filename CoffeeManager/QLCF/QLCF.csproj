@@ -57,28 +57,10 @@
     <Compile Include="Domain\Account.cs">
       <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
     </Compile>
-    <Compile Include="Domain\BehaviorUser.cs">
-      <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
-    </Compile>
     <Compile Include="Domain\Bill.cs">
       <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
     </Compile>
     <Compile Include="Domain\BillInfo.cs">
-      <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Domain\InformationUser.cs">
-      <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Domain\sp_helpdiagramdefinition1_Result.cs">
-      <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Domain\sp_helpdiagrams1_Result.cs">
-      <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Domain\sysdiagram.cs">
-      <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Domain\USP_GetListProductByName_Result.cs">
       <DependentUpon>EntityModelManagerCF.tt</DependentUpon>
     </Compile>
     <Compile Include="Repository\CFMEntities.cs" />
@@ -189,12 +171,6 @@
     <Compile Include="UI\ChangePasswd.Designer.cs">
       <DependentUpon>ChangePasswd.cs</DependentUpon>
     </Compile>
-    <Compile Include="UI\HandlingMore.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="UI\HandlingMore.Designer.cs">
-      <DependentUpon>HandlingMore.cs</DependentUpon>
-    </Compile>
     <Compile Include="UI\Login.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,9 +235,6 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ChangePasswd.resx">
       <DependentUpon>ChangePasswd.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="UI\HandlingMore.resx">
-      <DependentUpon>HandlingMore.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
