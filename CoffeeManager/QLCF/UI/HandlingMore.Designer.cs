@@ -35,11 +35,21 @@
             this.panel1 = new System.Windows.Forms.Panel();
             this.dgvListProChoosed = new System.Windows.Forms.DataGridView();
             this.panel2 = new System.Windows.Forms.Panel();
-            this.panel3 = new System.Windows.Forms.Panel();
-            this.cmbListTable = new System.Windows.Forms.ComboBox();
-            this.txtTotalPrice = new System.Windows.Forms.TextBox();
             this.btnChangeTable = new System.Windows.Forms.Button();
+            this.cmbListTable = new System.Windows.Forms.ComboBox();
+            this.panel3 = new System.Windows.Forms.Panel();
             this.btnCheckOut = new System.Windows.Forms.Button();
+            this.txtTotalPrice = new System.Windows.Forms.TextBox();
+            this.colIdBillInfo = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colName = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCount = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPrice = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colChecked = new System.Windows.Forms.DataGridViewCheckBoxColumn();
+            this.colID = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colNamePro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colPricePro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colCountPro = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.colEdit = new System.Windows.Forms.DataGridViewButtonColumn();
             ((System.ComponentModel.ISupportInitialize)(this.dgvProductChanged)).BeginInit();
             this.menuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvListProChoosed)).BeginInit();
@@ -50,6 +60,12 @@
             // dgvProductChanged
             // 
             this.dgvProductChanged.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvProductChanged.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colIdBillInfo,
+            this.colName,
+            this.colCount,
+            this.colPrice,
+            this.colChecked});
             this.dgvProductChanged.Location = new System.Drawing.Point(12, 81);
             this.dgvProductChanged.Name = "dgvProductChanged";
             this.dgvProductChanged.Size = new System.Drawing.Size(428, 510);
@@ -77,7 +93,7 @@
             // thoátToolStripMenuItem
             // 
             this.thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
-            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.thoátToolStripMenuItem.Size = new System.Drawing.Size(105, 22);
             this.thoátToolStripMenuItem.Text = "Thoát";
             // 
             // panel1
@@ -90,6 +106,12 @@
             // dgvListProChoosed
             // 
             this.dgvListProChoosed.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.dgvListProChoosed.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.colID,
+            this.colNamePro,
+            this.colPricePro,
+            this.colCountPro,
+            this.colEdit});
             this.dgvListProChoosed.Location = new System.Drawing.Point(446, 81);
             this.dgvListProChoosed.Name = "dgvListProChoosed";
             this.dgvListProChoosed.Size = new System.Drawing.Size(474, 358);
@@ -106,30 +128,6 @@
             this.panel2.Size = new System.Drawing.Size(236, 146);
             this.panel2.TabIndex = 4;
             // 
-            // panel3
-            // 
-            this.panel3.Controls.Add(this.btnCheckOut);
-            this.panel3.Controls.Add(this.txtTotalPrice);
-            this.panel3.Location = new System.Drawing.Point(688, 445);
-            this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(232, 146);
-            this.panel3.TabIndex = 5;
-            // 
-            // cmbListTable
-            // 
-            this.cmbListTable.FormattingEnabled = true;
-            this.cmbListTable.Location = new System.Drawing.Point(20, 17);
-            this.cmbListTable.Name = "cmbListTable";
-            this.cmbListTable.Size = new System.Drawing.Size(189, 21);
-            this.cmbListTable.TabIndex = 0;
-            // 
-            // txtTotalPrice
-            // 
-            this.txtTotalPrice.Location = new System.Drawing.Point(23, 18);
-            this.txtTotalPrice.Name = "txtTotalPrice";
-            this.txtTotalPrice.Size = new System.Drawing.Size(192, 20);
-            this.txtTotalPrice.TabIndex = 0;
-            // 
             // btnChangeTable
             // 
             this.btnChangeTable.Location = new System.Drawing.Point(79, 70);
@@ -140,6 +138,23 @@
             this.btnChangeTable.UseVisualStyleBackColor = true;
             this.btnChangeTable.Click += new System.EventHandler(this.btnChangeTable_Click);
             // 
+            // cmbListTable
+            // 
+            this.cmbListTable.FormattingEnabled = true;
+            this.cmbListTable.Location = new System.Drawing.Point(20, 17);
+            this.cmbListTable.Name = "cmbListTable";
+            this.cmbListTable.Size = new System.Drawing.Size(189, 21);
+            this.cmbListTable.TabIndex = 0;
+            // 
+            // panel3
+            // 
+            this.panel3.Controls.Add(this.btnCheckOut);
+            this.panel3.Controls.Add(this.txtTotalPrice);
+            this.panel3.Location = new System.Drawing.Point(688, 445);
+            this.panel3.Name = "panel3";
+            this.panel3.Size = new System.Drawing.Size(232, 146);
+            this.panel3.TabIndex = 5;
+            // 
             // btnCheckOut
             // 
             this.btnCheckOut.Location = new System.Drawing.Point(98, 70);
@@ -148,6 +163,67 @@
             this.btnCheckOut.TabIndex = 2;
             this.btnCheckOut.Text = "button2";
             this.btnCheckOut.UseVisualStyleBackColor = true;
+            // 
+            // txtTotalPrice
+            // 
+            this.txtTotalPrice.Location = new System.Drawing.Point(23, 18);
+            this.txtTotalPrice.Name = "txtTotalPrice";
+            this.txtTotalPrice.Size = new System.Drawing.Size(192, 20);
+            this.txtTotalPrice.TabIndex = 0;
+            // 
+            // colIdBillInfo
+            // 
+            this.colIdBillInfo.HeaderText = "ID";
+            this.colIdBillInfo.Name = "colIdBillInfo";
+            // 
+            // colName
+            // 
+            this.colName.HeaderText = "Tên sản phẩm";
+            this.colName.Name = "colName";
+            // 
+            // colCount
+            // 
+            this.colCount.HeaderText = "Số lượng";
+            this.colCount.Name = "colCount";
+            // 
+            // colPrice
+            // 
+            this.colPrice.HeaderText = "Đơn giá";
+            this.colPrice.Name = "colPrice";
+            // 
+            // colChecked
+            // 
+            this.colChecked.HeaderText = "Chọn";
+            this.colChecked.Name = "colChecked";
+            // 
+            // colID
+            // 
+            this.colID.HeaderText = "ID BillInfo";
+            this.colID.Name = "colID";
+            this.colID.ReadOnly = true;
+            // 
+            // colNamePro
+            // 
+            this.colNamePro.HeaderText = "Tên sản phẩm";
+            this.colNamePro.Name = "colNamePro";
+            this.colNamePro.ReadOnly = true;
+            // 
+            // colPricePro
+            // 
+            this.colPricePro.HeaderText = "Đơn giá";
+            this.colPricePro.Name = "colPricePro";
+            this.colPricePro.ReadOnly = true;
+            // 
+            // colCountPro
+            // 
+            this.colCountPro.HeaderText = "Số lượng";
+            this.colCountPro.Name = "colCountPro";
+            // 
+            // colEdit
+            // 
+            this.colEdit.HeaderText = "Lưu chỉnh sửa";
+            this.colEdit.Name = "colEdit";
+            this.colEdit.Text = "Lưu chỉnh sửa";
             // 
             // HandlingMoreForm
             // 
@@ -189,5 +265,15 @@
         private System.Windows.Forms.ComboBox cmbListTable;
         private System.Windows.Forms.Button btnCheckOut;
         private System.Windows.Forms.TextBox txtTotalPrice;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colIdBillInfo;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colName;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCount;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPrice;
+        private System.Windows.Forms.DataGridViewCheckBoxColumn colChecked;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colID;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colNamePro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colPricePro;
+        private System.Windows.Forms.DataGridViewTextBoxColumn colCountPro;
+        private System.Windows.Forms.DataGridViewButtonColumn colEdit;
     }
 }

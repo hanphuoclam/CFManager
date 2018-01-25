@@ -357,9 +357,11 @@ namespace QLCF
         private void btnMoreHandling_Click(object sender, EventArgs e)
         {
             TableFood table = lsvBill.Tag as TableFood;
-             if (table == null)
-                 return;
-             HandlingMoreForm h = new HandlingMoreForm(table.id);
+            if (table == null)
+                return;
+            int idBill = _serviceBill.GetUncheckBillByIdTable_S(table.id);
+            IEnumerable listBillInfo = _serviceBillInfo.GetListBillInfoByIdBill_S(idBill);
+             HandlingMoreForm h = new HandlingMoreForm(table.id, listBillInfo);
              h.ShowDialog();
         }
     }
