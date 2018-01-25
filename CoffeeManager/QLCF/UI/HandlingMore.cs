@@ -157,7 +157,7 @@ namespace QLCF.UI
             if (CheckBillNull(idBillBeSwitch))
             {
                 _serviceBill.DeleteBillById_S(idBillBeSwitch);
-                MessageBox.Show("Xóa bill null");
+                //MessageBox.Show("Xóa bill null");
             }
             if (check)
             {
@@ -234,7 +234,104 @@ namespace QLCF.UI
             int LengthListOrg = QLCF.Infrastructure.MethodsSupport.Count(listBillInfo);
             int LengthNewList = QLCF.Infrastructure.MethodsSupport.Count(listbillInfo);
 
-            return false;
+            return LengthListOrg == LengthNewList ? true : false;
+        }
+        void CheckOut()
+        {
+            if (MessageBox.Show(String.Format("Bạn có chắc chắn muốn thanh toán những sản phẩm của bàn {0} đã chọn ở trên không!", _idTable), "Thông báo", MessageBoxButtons.OKCancel) != DialogResult.OK)
+                return;
+            int idBillBeCheckOut = _serviceBill.GetUncheckBillByIdTable_S(_idTable);
+            bool check = true;
+
+            if(!CompareList(_listProductChoosed)) // So sánh số lượng sản phẩm được chọn và số sp ban đầu
+            {
+                check = false;
+            }
+            else
+            {
+                // Kiểm tra số lượng được chọn bằng số lượng của billInfo ban đầu
+                foreach (BillInfo item in _listProductChoosed)
+                {
+                    if (!CheckProCountChoosed(item))
+                    {
+                        check = false;
+                        break;
+                    }
+                }
+            }
+            
+            if(check)
+            {
+                int idBill = _serviceBill.GetUncheckBillByIdTable_S(_idTable);
+                int discount = Convert.ToInt32(cmbDiscount.SelectedItem);
+                double totalPrice = double.Parse(txtTotalPrice.Text.Split(',')[0]);
+                double costsIncurred = double.Parse(txtCostsIncurred.Text);
+                double finalTotalPrice = (totalPrice * (100 - discount) / 100) + costsIncurred;
+
+                if (idBill != -1)
+                {
+                    if (MessageBox.Show(String.Format("Bạn có chắc chắn muốn thanh toán bàn : {0}\nTổng tiền tạm tính là : {1}\nChi phí phát sinh : {2}\nGiảm giá : {3}\nTổng tiền phải trả (Tổng tiền - Giảm giá + Chi phí phát sinh) : {4}"
+                        , _idTable, totalPrice,costsIncurred, totalPrice + costsIncurred - finalTotalPrice , finalTotalPrice)
+                        , "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        if (_serviceBill.CheckOut_S(new Bill()
+                        { id = idBill, discount = discount, dateCheckIn = DateTime.Now, idTable = _idTable, totalPrice = finalTotalPrice, status = 1 }))
+                        {
+                            MessageBox.Show("Thanh toán thành công!");
+                            _serviceTableFood.UpdateStatus_S(new TableFood() { id = _idTable, status = "Trống" });
+                        }
+                    }
+                }
+            }
+            else
+            {
+                int idBillCurrent = -1;
+                if (_serviceBill.AddBill_S(new Bill() { idTable = _idTable, dateCheckIn = DateTime.Now, discount = 0, status = 0, totalPrice = 0 }))
+                {
+                    idBillCurrent = _serviceBill.GetMaxIdBill_S().GetValueOrDefault();
+                    foreach (BillInfo item in _listProductChoosed)
+                    {//Chuyển billinfo(checked) of bàn được chọn(đang thao tác) => bàn mới
+                        if (CheckProCountChoosed(item))
+                        {// Kiểm tra nếu số lượng được chọn bằng số lượng của billInfo ban đầu
+
+                            if (_serviceBillInfo.UpdateBillInfo_S(new BillInfo()
+                            { id = item.id, idBill = idBillCurrent, idProduct = item.idProduct, count = item.count }))
+                            { // idBill ở đây là của bill mới tạo nên lấy giá trị max của bill 
+                            
+                            }
+                        }
+                        else
+                        {//Số lượng được chọn ít hơn số lượng ban đầu
+                            if (_serviceBillInfo.AddBillInfo_S(new BillInfo()
+                            { idBill = idBillCurrent, idProduct = item.idProduct, count = item.count }))
+                            { // idBill ở đây là của bill mới tạo nên lấy giá trị max của bill 
+                            
+                            }
+                            UpdateProCount(item);
+                        }
+                    }
+                }
+
+                int discount = Convert.ToInt32(cmbDiscount.SelectedItem);
+                double totalPrice = double.Parse(txtTotalPrice.Text.Split(',')[0]);
+                double costsIncurred = double.Parse(txtCostsIncurred.Text);
+                double finalTotalPrice = (totalPrice * (100 - discount) / 100) + costsIncurred;
+
+                if (idBillCurrent != -1)
+                {
+                    if (MessageBox.Show(String.Format("Bạn có chắc chắn muốn thanh toán những sản phẩm đã chọn ở bàn : {0}\nTổng tiền tạm tính là : {1}\nChi phí phát sinh : {2}\nGiảm giá : {3}\nTổng tiền phải trả (Tổng tiền - Giảm giá + Chi phí phát sinh) : {4}"
+                        , _idTable, totalPrice, costsIncurred, totalPrice+costsIncurred-finalTotalPrice, finalTotalPrice)
+                        , "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
+                    {
+                        if (_serviceBill.CheckOut_S(new Bill()
+                        { id = idBillCurrent, discount = discount, dateCheckIn = DateTime.Now, idTable = _idTable, totalPrice = finalTotalPrice, status = 1 }))
+                        {
+                            MessageBox.Show("Thanh toán thành công!");
+                        }
+                    }
+                }
+            }
+
         }
         #endregion
         #region Events
@@ -298,7 +395,37 @@ namespace QLCF.UI
         {
             ChangeProductTable();
         }
+        private void btnCheckOut_Click(object sender, EventArgs e)
+        {
+            CheckOut();
+        }
+        private void txtCostsIncurred_TextChanged(object sender, EventArgs e)
+        {
+            if (txtCostsIncurred.Text == "") return;
+            int discount = Convert.ToInt32(cmbDiscount.SelectedItem);
+            double totalPrice = double.Parse(txtTotalPrice.Text.Split(',')[0]);
+            double costsIncurred = double.Parse(txtCostsIncurred.Text);
+            txtSumTotalPrice.Text = ((totalPrice * (100 - discount) / 100) + costsIncurred).ToString();
+        }
+
+        private void txtCostsIncurred_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (!char.IsControl(e.KeyChar) && !char.IsDigit(e.KeyChar))
+            {
+                e.Handled = true;
+            }
+        }
+
+        private void cmbDiscount_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            int discount = Convert.ToInt32(cmbDiscount.SelectedItem);
+            double totalPrice = double.Parse(txtTotalPrice.Text.Split(',')[0]);
+            double costsIncurred = double.Parse(txtCostsIncurred.Text);
+            txtSumTotalPrice.Text = ((totalPrice * (100 - discount) / 100) + costsIncurred).ToString();
+        }
         #endregion
+
+
     }
 }
 

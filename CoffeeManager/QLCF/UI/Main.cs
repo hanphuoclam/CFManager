@@ -48,7 +48,7 @@ namespace QLCF
                 ChangeAccount(accountLogin.type);
             }
         }
-#region Methods
+        #region Methods
         void InitData()
         {
             this._serviceTable = new TableFoodService(new TableFoodRepository());
@@ -68,7 +68,7 @@ namespace QLCF
             foreach (TableFood item in listTable)
             {
                 Button btn = new Button();
-                switch(item.name)
+                switch (item.name)
                 {
                     case "Bàn 1":
                         btn = btnTable_1;
@@ -104,7 +104,7 @@ namespace QLCF
                 btn.Text = item.name + Environment.NewLine + "(" + item.status + ")";
                 btn.Click += btn_Click;
                 btn.Tag = item;
-                switch(item.status)
+                switch (item.status)
                 {
                     case "Trống":
                         btn.BackColor = Color.Aqua;
@@ -139,7 +139,7 @@ namespace QLCF
             IEnumerable listBillInfo = _serviceBillInfo.GetListBillInfoByIdBill_S(idBill);
             lsvBill.Items.Clear();
             double totalPriceOfBill = 0;
-            foreach(BillInfo item in listBillInfo)
+            foreach (BillInfo item in listBillInfo)
             {
                 ListViewItem lvItem = new ListViewItem(item.Product.name);
                 lvItem.SubItems.Add(item.count.ToString());
@@ -171,7 +171,7 @@ namespace QLCF
         void AddProduct()
         {
             TableFood table = lsvBill.Tag as TableFood;
-            if(table == null)
+            if (table == null)
             {
                 MessageBox.Show("Xin chọn bàn!!");
                 return;
@@ -179,7 +179,7 @@ namespace QLCF
             int idBill = _serviceBill.GetUncheckBillByIdTable_S(table.id);
             int idProduct = (cmbProduct.SelectedItem as Product).id;
             int count = (int)nmdCount.Value;
-            if(count > _serviceProduct.GetProductById_S(idProduct).inventory)
+            if (count > _serviceProduct.GetProductById_S(idProduct).inventory)
             {
                 MessageBox.Show("Số lượng sản phẩm hiện tại không đủ. Xin nhập thêm !");
                 return;
@@ -187,8 +187,8 @@ namespace QLCF
             if (count == 0) return;
             if (idBill == -1) // Bill not exist
             {
-                if(_serviceBill.AddBill_S(new Bill() { idTable = table.id , dateCheckIn = DateTime.Now, discount = 0, status = 0, totalPrice = 0}))
-                    if(_serviceBillInfo.AddBillInfo_S(new BillInfo()
+                if (_serviceBill.AddBill_S(new Bill() { idTable = table.id, dateCheckIn = DateTime.Now, discount = 0, status = 0, totalPrice = 0 }))
+                    if (_serviceBillInfo.AddBillInfo_S(new BillInfo()
                     { idBill = _serviceBill.GetMaxIdBill_S().GetValueOrDefault(), idProduct = idProduct, count = count }))
                     {
                         //Cập nhật status 
@@ -218,14 +218,14 @@ namespace QLCF
             double totalPrice = double.Parse(txtTotalPrice.Text.Split(',')[0]);
             double finalTotalPrice = totalPrice * (100 - discount) / 100;
 
-            if(idBill != -1)
+            if (idBill != -1)
             {
-                if(MessageBox.Show(String.Format("Bạn có chắc chắn muốn thanh toán bàn : {0}\nTổng tiền là : {1}\nGiảm giá : {2}\nTổng tiền phải trả là : {3}"
-                    ,table.name,totalPrice,totalPrice- finalTotalPrice, finalTotalPrice)
-                    ,"Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(String.Format("Bạn có chắc chắn muốn thanh toán bàn : {0}\nTổng tiền là : {1}\nGiảm giá : {2}\nTổng tiền phải trả là : {3}"
+                    , table.name, totalPrice, totalPrice - finalTotalPrice, finalTotalPrice)
+                    , "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
-                    if(_serviceBill.CheckOut_S(new Bill()
-                    { id=idBill, discount = discount, dateCheckIn = DateTime.Now, idTable = table.id, totalPrice = finalTotalPrice, status = 1}))
+                    if (_serviceBill.CheckOut_S(new Bill()
+                    { id = idBill, discount = discount, dateCheckIn = DateTime.Now, idTable = table.id, totalPrice = finalTotalPrice, status = 1 }))
                     {
                         MessageBox.Show("Thanh toán thành công!");
                         _serviceTable.UpdateStatus_S(new TableFood() { id = table.id, name = table.name, status = "Trống" });
@@ -250,17 +250,17 @@ namespace QLCF
             bool check = false;
             if (idBillSwitchTo == -1)
             {
-                if(MessageBox.Show(String.Format("Bạn có chắc chắn muốn chuyển {0} sang {1} không?"
-                    ,table.name,(cmbTableFood.SelectedItem as TableFood).name),"Thông báo",MessageBoxButtons.OKCancel) == DialogResult.OK)
+                if (MessageBox.Show(String.Format("Bạn có chắc chắn muốn chuyển {0} sang {1} không?"
+                    , table.name, (cmbTableFood.SelectedItem as TableFood).name), "Thông báo", MessageBoxButtons.OKCancel) == DialogResult.OK)
                 {
                     if (_serviceBill.AddBill_S(new Bill() { idTable = idTableSwitchTo, dateCheckIn = DateTime.Now, discount = 0, status = 0, totalPrice = 0 }))
                     {//Tạo bill mới cho bàn đc chuyển tới
                         int idBillCurrent = _serviceBill.GetMaxIdBill_S().GetValueOrDefault();
                         foreach (BillInfo item in listBillInfo_TableBeSwitch)
                         {//Chuyển tất cả billinfo của bàn được chuyển qua bàn mới
-                            
+
                             if (_serviceBillInfo.UpdateBillInfo_S(new BillInfo()
-                            { id = item.id ,idBill = idBillCurrent, idProduct = item.idProduct, count = item.count}))
+                            { id = item.id, idBill = idBillCurrent, idProduct = item.idProduct, count = item.count }))
                             { // idBill ở đây là của bill mới tạo nên lấy giá trị max của bill 
                                 check = true;
                             }
@@ -276,7 +276,7 @@ namespace QLCF
                     foreach (BillInfo item in listBillInfo_TableBeSwitch)
                     {//Chuyển tất các các billinfo cho bàn đc chuyển tới
                         if (_serviceBillInfo.UpdateBillInfo_S(new BillInfo()
-                        { id = item.id ,idBill = idBillSwitchTo, idProduct = item.idProduct, count = item.count }))
+                        { id = item.id, idBill = idBillSwitchTo, idProduct = item.idProduct, count = item.count }))
                         {
                             check = true;
                         }
@@ -290,8 +290,8 @@ namespace QLCF
                 if (idBillSwitchTo == -1)
                 {
                     MessageBox.Show("Chuyển bàn thành công!");
-                    _serviceTable.UpdateStatus_S(new TableFood() { id = idTableSwitchTo , status = "Có Khách" });
-                } 
+                    _serviceTable.UpdateStatus_S(new TableFood() { id = idTableSwitchTo, status = "Có Khách" });
+                }
                 else
                     MessageBox.Show("Gọp bàn thành công!");
             }
@@ -361,8 +361,9 @@ namespace QLCF
                 return;
             int idBill = _serviceBill.GetUncheckBillByIdTable_S(table.id);
             IEnumerable listBillInfo = _serviceBillInfo.GetListBillInfoByIdBill_S(idBill);
-             HandlingMoreForm h = new HandlingMoreForm(table.id, listBillInfo);
-             h.ShowDialog();
+            HandlingMoreForm h = new HandlingMoreForm(table.id, listBillInfo);
+            h.ShowDialog();
+            LoadTable();
         }
     }
 }
