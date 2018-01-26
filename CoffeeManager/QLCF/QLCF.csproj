@@ -189,6 +189,12 @@
     <Compile Include="UI\ChangePasswd.Designer.cs">
       <DependentUpon>ChangePasswd.cs</DependentUpon>
     </Compile>
+    <Compile Include="UI\CheckOutManyTable.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="UI\CheckOutManyTable.Designer.cs">
+      <DependentUpon>CheckOutManyTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="UI\HandlingMore.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -259,6 +265,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="UI\ChangePasswd.resx">
       <DependentUpon>ChangePasswd.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="UI\CheckOutManyTable.resx">
+      <DependentUpon>CheckOutManyTable.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="UI\HandlingMore.resx">
       <DependentUpon>HandlingMore.cs</DependentUpon>

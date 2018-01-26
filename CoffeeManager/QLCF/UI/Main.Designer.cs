@@ -63,9 +63,9 @@
             this.btnTable_3 = new System.Windows.Forms.Button();
             this.btnTable_8 = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.btnMoreHandling = new System.Windows.Forms.Button();
             this.lsvBill = new System.Windows.Forms.ListView();
             this.panel3 = new System.Windows.Forms.Panel();
-            this.btnMoreHandling = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.nmdCount)).BeginInit();
             this.panel4.SuspendLayout();
             this.menuStrip1.SuspendLayout();
@@ -462,6 +462,17 @@
             this.panel2.Size = new System.Drawing.Size(445, 675);
             this.panel2.TabIndex = 5;
             // 
+            // btnMoreHandling
+            // 
+            this.btnMoreHandling.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(163)));
+            this.btnMoreHandling.Location = new System.Drawing.Point(186, 504);
+            this.btnMoreHandling.Name = "btnMoreHandling";
+            this.btnMoreHandling.Size = new System.Drawing.Size(75, 30);
+            this.btnMoreHandling.TabIndex = 6;
+            this.btnMoreHandling.Text = "MORE";
+            this.btnMoreHandling.UseVisualStyleBackColor = true;
+            this.btnMoreHandling.Click += new System.EventHandler(this.btnMoreHandling_Click);
+            // 
             // lsvBill
             // 
             this.lsvBill.BackColor = System.Drawing.Color.Silver;
@@ -474,7 +485,7 @@
             this.lsvBill.GridLines = true;
             this.lsvBill.Location = new System.Drawing.Point(3, 149);
             this.lsvBill.Name = "lsvBill";
-            this.lsvBill.Size = new System.Drawing.Size(436, 346);
+            this.lsvBill.Size = new System.Drawing.Size(436, 355);
             this.lsvBill.TabIndex = 1;
             this.lsvBill.UseCompatibleStateImageBehavior = false;
             this.lsvBill.View = System.Windows.Forms.View.Details;
@@ -489,16 +500,6 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(439, 140);
             this.panel3.TabIndex = 0;
-            // 
-            // btnMoreHandling
-            // 
-            this.btnMoreHandling.Location = new System.Drawing.Point(199, 508);
-            this.btnMoreHandling.Name = "btnMoreHandling";
-            this.btnMoreHandling.Size = new System.Drawing.Size(75, 23);
-            this.btnMoreHandling.TabIndex = 6;
-            this.btnMoreHandling.Text = "more...";
-            this.btnMoreHandling.UseVisualStyleBackColor = true;
-            this.btnMoreHandling.Click += new System.EventHandler(this.btnMoreHandling_Click);
             // 
             // MainForm
             // 

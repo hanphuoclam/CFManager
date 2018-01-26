@@ -32,6 +32,7 @@ namespace QLCF.UI
             initData();
             LoadListProductOfTableChoosed();
             LoadListTable();
+            lblHelloWorld.Text = "Xin chào bạn. Bạn đang thao tác trên bàn " + _idTable.ToString();
         }
 
         void initData()
@@ -422,6 +423,11 @@ namespace QLCF.UI
             double totalPrice = double.Parse(txtTotalPrice.Text.Split(',')[0]);
             double costsIncurred = double.Parse(txtCostsIncurred.Text);
             txtSumTotalPrice.Text = ((totalPrice * (100 - discount) / 100) + costsIncurred).ToString();
+        }
+        private void btnCheckOutManyTable_Click(object sender, EventArgs e)
+        {
+            CheckOutManyTableForm c = new CheckOutManyTableForm();
+            c.ShowDialog();
         }
         #endregion
 
